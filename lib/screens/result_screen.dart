@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import '../services/data_service.dart';
 import '../utils/constants.dart';
 import 'home_screen.dart';
+import 'quiz_screen.dart';
 
 class ResultScreen extends StatelessWidget {
   final String topicName;
+  final String topikId;
   final int kelas;
   final int skor;
   final int benar;
@@ -14,6 +17,7 @@ class ResultScreen extends StatelessWidget {
   const ResultScreen({
     super.key,
     required this.topicName,
+    required this.topikId,
     required this.kelas,
     required this.skor,
     required this.benar,
@@ -22,9 +26,18 @@ class ResultScreen extends StatelessWidget {
     required this.results,
   });
 
+  String? _getNextTopicId() {
+    final topicOrder = AppConstants.getTopicOrder(kelas);
+    final idx = topicOrder.indexOf(topikId);
+    if (idx < 0 || idx >= topicOrder.length - 1) return null;
+    return topicOrder[idx + 1];
+  }
+
   @override
   Widget build(BuildContext context) {
     final color = AppConstants.warnaKelas[kelas] ?? AppColors.primary;
+    final nextTopicId = _getNextTopicId();
+
     return Scaffold(
       backgroundColor: AppColors.background,
       body: SafeArea(
@@ -51,7 +64,7 @@ class ResultScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 Text(
-                  lulus ? 'Selamat! 🎉' : 'Hampir Bisa! 💪',
+                  lulus ? 'Selamat!' : 'Hampir Bisa!',
                   style: const TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
@@ -110,7 +123,7 @@ class ResultScreen extends StatelessWidget {
                                       : AppColors.warning,
                                 ),
                               ),
-                              Text(
+                              const Text(
                                 'Skor',
                                 style: TextStyle(
                                   fontSize: 12,
@@ -174,7 +187,7 @@ class ResultScreen extends StatelessWidget {
                 const SizedBox(height: 24),
                 if (lulus)
                   Text(
-                    'Kamu berhasil membuka materi berikutnya! 🚀',
+                    'Kamu berhasil membuka materi berikutnya!',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 14,
@@ -183,7 +196,7 @@ class ResultScreen extends StatelessWidget {
                   )
                 else
                   Text(
-                    'Nilai minimal lulus: ${AppConstants.skorLulusMinimum} 📚',
+                    'Nilai minimal lulus: ${AppConstants.skorLulusMinimum}',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 14,
@@ -213,6 +226,40 @@ class ResultScreen extends StatelessWidget {
                     ),
                   ),
                 if (!lulus) const SizedBox(height: 12),
+                if (lulus && nextTopicId != null)
+                  SizedBox(
+                    width: double.infinity,
+                    height: 50,
+                    child: ElevatedButton.icon(
+                      onPressed: () async {
+                        final nextTopic =
+                            await DataService.instance.getTopic(nextTopicId);
+                        if (context.mounted) {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => QuizScreen(
+                                topic: nextTopic,
+                                kelas: kelas,
+                              ),
+                            ),
+                          );
+                        }
+                      },
+                      icon: const Icon(Icons.arrow_forward),
+                      label: const Text('Materi Selanjutnya',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: color,
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                    ),
+                  ),
+                if (lulus && nextTopicId != null) const SizedBox(height: 12),
                 SizedBox(
                   width: double.infinity,
                   height: 50,

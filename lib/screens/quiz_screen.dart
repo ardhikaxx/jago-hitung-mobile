@@ -137,6 +137,7 @@ class _QuizScreenState extends State<QuizScreen> with SingleTickerProviderStateM
         MaterialPageRoute(
           builder: (_) => ResultScreen(
             topicName: widget.topic.topik,
+            topikId: widget.topic.id,
             kelas: widget.kelas,
             skor: skor,
             benar: _benarCount,

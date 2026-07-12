@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "92 - 40 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "jawaban": "52",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "140 - 62 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "pilihan": [
         "68",
         "73",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "262 - 40 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "jawaban": "222",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "540 - 100 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "pilihan": [
         "420",
         "430",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "362 - 4 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "jawaban": "358",
       "petunjuk": [
         "Tuliskan angkanya saja.",

@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "43 + 5 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "jawaban": "48",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "67 - 9 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "pilihan": [
         "56",
         "57",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "43 + 67 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "jawaban": "110",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "67 - 5 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "pilihan": [
         "60",
         "61",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "Ibu punya 43 kue dan membeli 9 lagi. Jumlah kue ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "52",
       "petunjuk": [
         "Tuliskan angkanya saja.",

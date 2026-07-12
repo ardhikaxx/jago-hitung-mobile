@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "Jarum pendek di 3 dan jarum panjang di 12 menunjukkan pukul ...",
-      "ilustrasi": "00",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "pilihan": [
         "03.00",
         "03.30",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "2 jam setelah pukul 04.00 adalah pukul ...",
-      "ilustrasi": "00",
+      "ilustrasi": "assets/images/soal/clock_add_2h.jpg",
       "jawaban": "6",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "Pukul setengah tujuh ditulis ...",
-      "ilustrasi": "30",
+      "ilustrasi": "assets/images/soal/clock_0630.jpg",
       "pilihan": [
         "06.30",
         "07.30",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "Dari pukul 08.00 ke 11.00 ada ... jam",
-      "ilustrasi": "00",
+      "ilustrasi": "assets/images/soal/clock_duration_3h.jpg",
       "jawaban": "3",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Jarum panjang di angka 6 berarti ... menit",
-      "ilustrasi": "30",
+      "ilustrasi": "assets/images/soal/clock_minute_30.jpg",
       "pilihan": [
         "15",
         "30",

@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "22, 23, 24, ...",
-      "ilustrasi": "...",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "jawaban": "25",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Urutkan dari kecil ke besar.",
-      "ilustrasi": "...",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "pilihan": [
         "22, 24, 26",
         "26, 24, 22",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "32, 30, 28, ...",
-      "ilustrasi": "...",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "jawaban": "26",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Bilangan di antara 22 dan 24 adalah ...",
-      "ilustrasi": "...",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "pilihan": [
         "21",
         "23",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "22, 27, 32, ...",
-      "ilustrasi": "...",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "jawaban": "37",
       "petunjuk": [
         "Tuliskan angkanya saja.",

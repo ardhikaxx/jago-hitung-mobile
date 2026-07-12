@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "87 - 37 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "jawaban": "50",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "137 - 57 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "pilihan": [
         "70",
         "75",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "257 - 37 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "jawaban": "220",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "537 - 100 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "pilihan": [
         "417",
         "427",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "357 - 3 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/clock.jpg",
       "jawaban": "354",
       "petunjuk": [
         "Tuliskan angkanya saja.",

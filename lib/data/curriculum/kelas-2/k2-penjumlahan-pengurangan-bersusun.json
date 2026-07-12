@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "16 + 4 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "20",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "22 - 7 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "13",
         "14",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "16 + 22 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "38",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "22 - 4 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "16",
         "17",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "Ibu punya 16 kue dan membeli 7 lagi. Jumlah kue ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "23",
       "petunjuk": [
         "Tuliskan angkanya saja.",

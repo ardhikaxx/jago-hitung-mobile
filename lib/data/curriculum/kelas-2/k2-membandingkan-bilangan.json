@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "Mana yang lebih besar: 28 atau 42?",
-      "ilustrasi": "<>",
+      "ilustrasi": "assets/images/soal/geometric_shapes.jpg",
       "pilihan": [
         "28",
         "42",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Tanda yang tepat untuk 8 ... 4 adalah",
-      "ilustrasi": "<>",
+      "ilustrasi": "assets/images/soal/geometric_shapes.jpg",
       "pilihan": [
         "<",
         ">",
@@ -44,7 +44,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "Selisih 42 dan 28 adalah ...",
-      "ilustrasi": "<>",
+      "ilustrasi": "assets/images/soal/geometric_shapes.jpg",
       "jawaban": "14",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -56,7 +56,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Mana yang paling kecil?",
-      "ilustrasi": "<>",
+      "ilustrasi": "assets/images/soal/geometric_shapes.jpg",
       "pilihan": [
         "28",
         "42",
@@ -74,7 +74,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "28 lebih dekat ke ...",
-      "ilustrasi": "<>",
+      "ilustrasi": "assets/images/soal/geometric_shapes.jpg",
       "pilihan": [
         "27",
         "38",

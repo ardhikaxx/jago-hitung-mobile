@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "54 : 9 = ...",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/pizza_half.jpg",
       "pilihan": [
         "4",
         "5",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "66 : 6 = ...",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/pizza_half.jpg",
       "jawaban": "11",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "54 kue dibagi ke 6 piring sama banyak. Tiap piring berisi ...",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "7",
         "8",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "90 : 10 = ...",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/pizza_half.jpg",
       "jawaban": "9",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Bilangan yang tepat: ... x 9 = 54",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/counting_apples.jpg",
       "pilihan": [
         "4",
         "5",

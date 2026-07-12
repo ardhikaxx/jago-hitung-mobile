@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "7 x 4 = ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/timbangan_berat.jpg",
       "pilihan": [
         "22",
         "25",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "8 x 4 = ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/timbangan_berat.jpg",
       "jawaban": "32",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "4 kelompok berisi 7 benda. Jumlah benda ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "24",
         "26",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "7 x 10 = ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/timbangan_berat.jpg",
       "jawaban": "70",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Faktor yang hilang: 7 x ... = 28",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/timbangan_berat.jpg",
       "pilihan": [
         "2",
         "3",

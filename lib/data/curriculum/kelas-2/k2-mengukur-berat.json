@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "1 liter = ... mililiter",
-      "ilustrasi": "L",
+      "ilustrasi": "assets/images/soal/timbangan_berat.jpg",
       "jawaban": "1000",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "2 kg = ... gram",
-      "ilustrasi": "kg",
+      "ilustrasi": "assets/images/soal/timbangan_berat.jpg",
       "pilihan": [
         "20",
         "200",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "3 liter = ... mililiter",
-      "ilustrasi": "L",
+      "ilustrasi": "assets/images/soal/timbangan_berat.jpg",
       "jawaban": "3000",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "5000 gram = ... kg",
-      "ilustrasi": "kg",
+      "ilustrasi": "assets/images/soal/timbangan_berat.jpg",
       "pilihan": [
         "3",
         "4",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "2 jam = ... menit",
-      "ilustrasi": "unit",
+      "ilustrasi": "assets/images/soal/timbangan_berat.jpg",
       "jawaban": "120",
       "petunjuk": [
         "Tuliskan angkanya saja.",

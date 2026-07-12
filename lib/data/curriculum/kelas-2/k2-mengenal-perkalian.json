@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "5 x 8 = ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "34",
         "37",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "6 x 8 = ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "jawaban": "48",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "8 kelompok berisi 5 benda. Jumlah benda ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "36",
         "38",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "5 x 10 = ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "jawaban": "50",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Faktor yang hilang: 5 x ... = 40",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "6",
         "7",

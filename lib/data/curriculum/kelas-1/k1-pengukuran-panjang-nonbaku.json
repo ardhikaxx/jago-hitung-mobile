@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "Pita 8 cm disambung 5 cm. Panjangnya ... cm",
-      "ilustrasi": "cm",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "jawaban": "13",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Mana yang lebih panjang?",
-      "ilustrasi": "cm",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "pilihan": [
         "12 cm",
         "9 cm",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "20 cm - 6 cm = ... cm",
-      "ilustrasi": "cm",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "jawaban": "14",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "1 meter sama dengan ... cm",
-      "ilustrasi": "m",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "pilihan": [
         "10",
         "50",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "3 m = ... cm",
-      "ilustrasi": "m",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "jawaban": "300",
       "petunjuk": [
         "Tuliskan angkanya saja.",

@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "6 + 3 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "7",
         "8",
@@ -27,7 +27,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "9 - 6 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "1",
         "2",
@@ -45,7 +45,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "10 + 5 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "15",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -57,7 +57,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "12 - 3 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "9",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Bilangan yang tepat untuk melengkapi 6 + ... = 9 adalah",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "1",
         "2",

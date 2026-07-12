@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "Pasangan 7 agar menjadi 10 adalah ...",
-      "ilustrasi": "10",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "1",
         "2",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "4 + ... = 10",
-      "ilustrasi": "10",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "jawaban": "6",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "Pasangan 5 agar menjadi 10 adalah ...",
-      "ilustrasi": "10",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "4",
         "5",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "8 + ... = 10",
-      "ilustrasi": "10",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "jawaban": "2",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Mana yang jumlahnya 10?",
-      "ilustrasi": "10",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "6 + 4",
         "6 + 3",

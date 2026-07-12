@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "2, 4, 6, ...",
-      "ilustrasi": "2",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "jawaban": "8",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Angka setelah 10 jika loncat 2 adalah ...",
-      "ilustrasi": "2",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "11",
         "12",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "12, 14, 16, ...",
-      "ilustrasi": "2",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "jawaban": "18",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Mana bilangan loncat 2?",
-      "ilustrasi": "2",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "3, 5, 7",
         "4, 6, 8",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "12, 14, 16, ...",
-      "ilustrasi": "2",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "jawaban": "18",
       "petunjuk": [
         "Tuliskan angkanya saja.",

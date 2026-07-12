@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "25, 26, 27, ...",
-      "ilustrasi": "...",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "28",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Urutkan dari kecil ke besar.",
-      "ilustrasi": "...",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "25, 27, 29",
         "29, 27, 25",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "35, 33, 31, ...",
-      "ilustrasi": "...",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "29",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Bilangan di antara 25 dan 27 adalah ...",
-      "ilustrasi": "...",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "24",
         "26",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "25, 30, 35, ...",
-      "ilustrasi": "...",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "40",
       "petunjuk": [
         "Tuliskan angkanya saja.",

@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "Pada bilangan 55, angka puluhannya adalah ...",
-      "ilustrasi": "10",
+      "ilustrasi": "assets/images/soal/geometric_shapes.jpg",
       "pilihan": [
         "5",
         "5",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "5 puluhan dan 5 satuan membentuk bilangan ...",
-      "ilustrasi": "10",
+      "ilustrasi": "assets/images/soal/geometric_shapes.jpg",
       "jawaban": "55",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "Nilai angka 5 pada 55 adalah ...",
-      "ilustrasi": "10",
+      "ilustrasi": "assets/images/soal/geometric_shapes.jpg",
       "pilihan": [
         "5",
         "50",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "Bilangan 87 memiliki satuan ...",
-      "ilustrasi": "10",
+      "ilustrasi": "assets/images/soal/geometric_shapes.jpg",
       "jawaban": "7",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "55 = ... puluhan + ... satuan",
-      "ilustrasi": "10",
+      "ilustrasi": "assets/images/soal/geometric_shapes.jpg",
       "pilihan": [
         "5 dan 5",
         "5 dan 5",

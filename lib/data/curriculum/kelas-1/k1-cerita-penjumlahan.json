@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "Rani punya 4 apel dan mendapat 7 apel lagi. Jumlah apel Rani ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/counting_apples.jpg",
       "pilihan": [
         "9",
         "10",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "Di meja ada 6 buku, ditambah 7 buku. Banyak buku ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "jawaban": "13",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "4 + 8 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "10",
         "11",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "Ada 7 bola dan 8 bola. Total bola ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/bola_mainan.jpg",
       "jawaban": "15",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Cerita \"bertambah\" biasanya memakai operasi ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "tambah",
         "kurang",

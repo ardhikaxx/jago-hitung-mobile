@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "4 + 6 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "8",
         "9",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "8 + 8 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "jawaban": "16",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "Ada 4 pensil lalu ditambah 6 pensil. Jumlahnya ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "pilihan": [
         "8",
         "9",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "10 + 1 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "jawaban": "11",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Bilangan yang tepat untuk melengkapi 4 + ... = 10 adalah",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "4",
         "5",

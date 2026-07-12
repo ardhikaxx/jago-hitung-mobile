@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "Rani punya 13 apel, dimakan 8. Sisa apel ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/counting_apples.jpg",
       "pilihan": [
         "3",
         "4",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "Ada 15 buku, dipinjam 5. Sisa buku ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "jawaban": "10",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "14 - 8 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/counting_apples.jpg",
       "pilihan": [
         "4",
         "5",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "14 - 9 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/counting_apples.jpg",
       "jawaban": "5",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Cerita \"sisa\" biasanya memakai operasi ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/counting_apples.jpg",
       "pilihan": [
         "tambah",
         "kurang",

@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "5, 10, 15, ...",
-      "ilustrasi": "5",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "jawaban": "20",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Angka setelah 25 jika loncat 5 adalah ...",
-      "ilustrasi": "5",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "26",
         "28",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "35, 40, 45, ...",
-      "ilustrasi": "5",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "jawaban": "50",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Mana bilangan loncat 5?",
-      "ilustrasi": "5",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "10, 15, 20",
         "11, 15, 19",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "35, 40, 45, ...",
-      "ilustrasi": "5",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "jawaban": "50",
       "petunjuk": [
         "Tuliskan angkanya saja.",

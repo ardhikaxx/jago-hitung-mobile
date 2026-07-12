@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "5 + 7 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "10",
         "11",
@@ -27,7 +27,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "12 - 5 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "5",
         "6",
@@ -45,7 +45,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "9 + 9 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "jawaban": "18",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -57,7 +57,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "15 - 7 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "jawaban": "8",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Bilangan yang tepat untuk melengkapi 5 + ... = 12 adalah",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "5",
         "6",

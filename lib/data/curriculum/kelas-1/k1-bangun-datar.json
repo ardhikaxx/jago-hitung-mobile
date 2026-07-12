@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "Bangun yang memiliki 3 sisi adalah ...",
-      "ilustrasi": "[]",
+      "ilustrasi": "assets/images/soal/segitiga_sisi.jpg",
       "pilihan": [
         "segitiga",
         "persegi",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Bangun yang tidak memiliki sudut adalah ...",
-      "ilustrasi": "O",
+      "ilustrasi": "assets/images/soal/lingkaran.jpg",
       "pilihan": [
         "lingkaran",
         "segitiga",
@@ -45,7 +45,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "Persegi memiliki berapa sisi?",
-      "ilustrasi": "[]",
+      "ilustrasi": "assets/images/soal/persegi_sisi.jpg",
       "jawaban": "4",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Bangun dengan 4 sisi sama panjang adalah ...",
-      "ilustrasi": "[]",
+      "ilustrasi": "assets/images/soal/persegi_sama_panjang.jpg",
       "pilihan": [
         "persegi",
         "lingkaran",
@@ -75,7 +75,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "Segitiga memiliki berapa sudut?",
-      "ilustrasi": "<)",
+      "ilustrasi": "assets/images/soal/segitiga_sudut.jpg",
       "jawaban": "3",
       "petunjuk": [
         "Tuliskan angkanya saja.",

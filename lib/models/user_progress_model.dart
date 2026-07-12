@@ -2,6 +2,7 @@ class UserProgress {
   final String uid;
   final String nama;
   final String email;
+  final String profileImage;
   final int kelasAktif;
   final Map<String, TopicProgress> topikProgress;
   final DateTime createdAt;
@@ -10,6 +11,7 @@ class UserProgress {
     required this.uid,
     required this.nama,
     required this.email,
+    this.profileImage = '',
     this.kelasAktif = 1,
     Map<String, TopicProgress>? topikProgress,
     DateTime? createdAt,
@@ -21,6 +23,7 @@ class UserProgress {
       'uid': uid,
       'nama': nama,
       'email': email,
+      'profileImage': profileImage,
       'kelasAktif': kelasAktif,
       'topikProgress': topikProgress.map((key, value) => MapEntry(key, value.toMap())),
       'createdAt': createdAt.toIso8601String(),
@@ -58,6 +61,7 @@ class UserProgress {
       uid: map['uid'] ?? '',
       nama: map['nama'] ?? '',
       email: map['email'] ?? '',
+      profileImage: map['profileImage'] ?? '',
       kelasAktif: map['kelasAktif'] ?? 1,
       topikProgress: parsedTopik,
       createdAt: parsedCreatedAt,

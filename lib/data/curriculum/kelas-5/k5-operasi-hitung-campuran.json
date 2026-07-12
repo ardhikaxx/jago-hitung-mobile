@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "6 + 4 x 3 = ...",
-      "ilustrasi": "+x",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "jawaban": "18",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "(8 + 2) x 5 = ...",
-      "ilustrasi": "()",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "40",
         "45",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "30 - 12 : 3 = ...",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "jawaban": "26",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "20 : 5 + 6 = ...",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "8",
         "9",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "(7 + 5) : 3 = ...",
-      "ilustrasi": "()",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "jawaban": "4",
       "petunjuk": [
         "Tuliskan angkanya saja.",

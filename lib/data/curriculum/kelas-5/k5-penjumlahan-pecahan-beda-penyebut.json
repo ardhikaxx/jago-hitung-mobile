@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "1/4 + 2/4 = ...",
-      "ilustrasi": "1/4",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "3/4",
         "2/4",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "3/5 - 1/5 = ...",
-      "ilustrasi": "1/5",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "1/5",
         "2/5",
@@ -45,7 +45,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "1/2 sama dengan desimal ...",
-      "ilustrasi": "0.5",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "0.2",
         "0.25",
@@ -63,7 +63,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "50% sama dengan pecahan ...",
-      "ilustrasi": "%",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "1/2",
         "1/3",
@@ -81,7 +81,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "25% dari 100 adalah ...",
-      "ilustrasi": "%",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "25",
       "petunjuk": [
         "Tuliskan angkanya saja.",

@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "Persegi dengan sisi 5 cm memiliki keliling ... cm",
-      "ilustrasi": "[]",
+      "ilustrasi": "assets/images/soal/bola_mainan.jpg",
       "jawaban": "20",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "Persegi panjang 5 cm x 6 cm memiliki luas ... cm2",
-      "ilustrasi": "L",
+      "ilustrasi": "assets/images/soal/bola_mainan.jpg",
       "jawaban": "30",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -33,7 +33,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "Keliling persegi panjang 8 cm x 5 cm adalah ... cm",
-      "ilustrasi": "[]",
+      "ilustrasi": "assets/images/soal/bola_mainan.jpg",
       "pilihan": [
         "20",
         "24",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "Luas persegi sisi 6 cm adalah ... cm2",
-      "ilustrasi": "L",
+      "ilustrasi": "assets/images/soal/bola_mainan.jpg",
       "jawaban": "36",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -63,7 +63,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Rumus luas persegi panjang adalah ...",
-      "ilustrasi": "L",
+      "ilustrasi": "assets/images/soal/bola_mainan.jpg",
       "pilihan": [
         "p x l",
         "s x s x s",

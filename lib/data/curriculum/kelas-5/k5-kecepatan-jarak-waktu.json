@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "Jarak 60 km ditempuh 2 jam. Kecepatan ... km/jam",
-      "ilustrasi": "km",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "jawaban": "30",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Kecepatan 40 km/jam selama 2 jam menempuh ... km",
-      "ilustrasi": "km",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "pilihan": [
         "20",
         "40",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "Jarak 90 km dengan kecepatan 30 km/jam memerlukan ... jam",
-      "ilustrasi": "km",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "jawaban": "3",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Rumus jarak adalah ...",
-      "ilustrasi": "km",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "pilihan": [
         "kecepatan x waktu",
         "kecepatan : waktu",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "50 km/jam selama 3 jam menempuh ... km",
-      "ilustrasi": "km",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "jawaban": "150",
       "petunjuk": [
         "Tuliskan angkanya saja.",

@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "Skala 1:100, jarak peta 3 cm berarti jarak sebenarnya ... cm",
-      "ilustrasi": "1:n",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "jawaban": "300",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Skala 1:1000, jarak peta 2 cm berarti ... cm",
-      "ilustrasi": "map",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "pilihan": [
         "200",
         "1000",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "Jarak sebenarnya 500 cm pada skala 1:100 menjadi ... cm di peta",
-      "ilustrasi": "map",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "jawaban": "5",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Skala menunjukkan perbandingan jarak ...",
-      "ilustrasi": "map",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "pilihan": [
         "peta dan sebenarnya",
         "berat dan waktu",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "Skala 1:50, jarak peta 4 cm berarti ... cm",
-      "ilustrasi": "1:n",
+      "ilustrasi": "assets/images/soal/penggaris_cm.jpg",
       "jawaban": "200",
       "petunjuk": [
         "Tuliskan angkanya saja.",

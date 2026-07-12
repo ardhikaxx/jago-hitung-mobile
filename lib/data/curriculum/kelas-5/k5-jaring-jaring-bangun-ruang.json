@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "Kubus sisi 4 cm memiliki volume ... cm3",
-      "ilustrasi": "V",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "jawaban": "64",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Balok 5 x 4 x 3 memiliki volume ...",
-      "ilustrasi": "V",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "pilihan": [
         "12",
         "20",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "Kubus sisi 3 cm memiliki volume ... cm3",
-      "ilustrasi": "V",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "jawaban": "27",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Rumus volume balok adalah ...",
-      "ilustrasi": "V",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "pilihan": [
         "p x l x t",
         "s x s",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "Luas permukaan kubus sisi 2 cm adalah ... cm2",
-      "ilustrasi": "SA",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "jawaban": "24",
       "petunjuk": [
         "Tuliskan angkanya saja.",

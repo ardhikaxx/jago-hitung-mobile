@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "7 pangkat 2 = ...",
-      "ilustrasi": "^2",
+      "ilustrasi": "assets/images/soal/pohon_faktor.jpg",
       "jawaban": "49",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Akar dari 64 adalah ...",
-      "ilustrasi": "rt",
+      "ilustrasi": "assets/images/soal/pohon_faktor.jpg",
       "pilihan": [
         "6",
         "7",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "9 pangkat 2 = ...",
-      "ilustrasi": "^2",
+      "ilustrasi": "assets/images/soal/pohon_faktor.jpg",
       "jawaban": "81",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Akar dari 100 adalah ...",
-      "ilustrasi": "rt",
+      "ilustrasi": "assets/images/soal/pohon_faktor.jpg",
       "pilihan": [
         "8",
         "9",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "5 pangkat 2 = ...",
-      "ilustrasi": "^2",
+      "ilustrasi": "assets/images/soal/pohon_faktor.jpg",
       "jawaban": "25",
       "petunjuk": [
         "Tuliskan angkanya saja.",

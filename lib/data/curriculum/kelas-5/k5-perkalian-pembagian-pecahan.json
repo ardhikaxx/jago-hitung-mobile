@@ -1,0 +1,93 @@
+{
+  "id": "k5-perkalian-pembagian-pecahan",
+  "kelas": 5,
+  "topik": "Perkalian & Pembagian Pecahan",
+  "deskripsi": "Belajar mengalikan dan membagi pecahan dengan contoh sederhana.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "1/4 + 2/4 = ...",
+      "ilustrasi": "1/4",
+      "pilihan": [
+        "3/4",
+        "2/4",
+        "1/2",
+        "4/4"
+      ],
+      "jawaban": "3/4",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Penyebut sama, jumlahkan pembilang."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "3/5 - 1/5 = ...",
+      "ilustrasi": "1/5",
+      "pilihan": [
+        "1/5",
+        "2/5",
+        "3/5",
+        "4/5"
+      ],
+      "jawaban": "2/5",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "3/5 - 1/5 = 2/5."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "1/2 sama dengan desimal ...",
+      "ilustrasi": "0.5",
+      "pilihan": [
+        "0.2",
+        "0.25",
+        "0.5",
+        "0.75"
+      ],
+      "jawaban": "0.5",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "1/2 = 0.5."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "50% sama dengan pecahan ...",
+      "ilustrasi": "%",
+      "pilihan": [
+        "1/2",
+        "1/3",
+        "1/4",
+        "3/4"
+      ],
+      "jawaban": "1/2",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "50% = 50/100 = 1/2."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "25% dari 100 adalah ...",
+      "ilustrasi": "%",
+      "jawaban": "25",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "25 persen dari 100 adalah 25."
+    }
+  ]
+}

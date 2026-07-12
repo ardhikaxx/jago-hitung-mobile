@@ -1,0 +1,87 @@
+{
+  "id": "k1-review-kelas-1",
+  "kelas": 1,
+  "topik": "Review Matematika Kelas 1",
+  "deskripsi": "Campuran soal untuk mengulang semua kemampuan kelas 1.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "6 + 3 = ...",
+      "ilustrasi": "+",
+      "pilihan": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "jawaban": "9",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "6 + 3 = 9."
+    },
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "9 - 6 = ...",
+      "ilustrasi": "-",
+      "pilihan": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "jawaban": "3",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "9 - 6 = 3."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "10 + 5 = ...",
+      "ilustrasi": "+",
+      "jawaban": "15",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "10 + 5 = 15."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "12 - 3 = ...",
+      "ilustrasi": "-",
+      "jawaban": "9",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "12 - 3 = 9."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Bilangan yang tepat untuk melengkapi 6 + ... = 9 adalah",
+      "ilustrasi": "+",
+      "pilihan": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "jawaban": "3",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Karena 6 + 3 = 9."
+    }
+  ]
+}

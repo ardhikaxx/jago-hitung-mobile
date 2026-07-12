@@ -1,0 +1,93 @@
+{
+  "id": "k4-pola-bilangan-lanjut",
+  "kelas": 4,
+  "topik": "Pola Bilangan Lanjut",
+  "deskripsi": "Lanjutkan pola tambah, kurang, dan kali sederhana.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "8 + 8 = ...",
+      "ilustrasi": "+",
+      "pilihan": [
+        "14",
+        "15",
+        "16",
+        "17"
+      ],
+      "jawaban": "16",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "8 + 8 = 16."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "12 + 10 = ...",
+      "ilustrasi": "+",
+      "jawaban": "22",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "12 + 10 = 22."
+    },
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "16 - 8 = ...",
+      "ilustrasi": "-",
+      "pilihan": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "jawaban": "8",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "16 - 8 = 8."
+    },
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "8 x 8 = ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "58",
+        "61",
+        "64",
+        "67"
+      ],
+      "jawaban": "64",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "8 x 8 = 64."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Materi \"Pola Bilangan Lanjut\" melatih kemampuan ...",
+      "ilustrasi": "*",
+      "pilihan": [
+        "berhitung",
+        "membaca cerita",
+        "menggambar bebas",
+        "menyanyi"
+      ],
+      "jawaban": "berhitung",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Materi ini bagian dari latihan matematika."
+    }
+  ]
+}

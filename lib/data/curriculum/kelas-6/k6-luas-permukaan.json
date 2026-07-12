@@ -1,0 +1,81 @@
+{
+  "id": "k6-luas-permukaan",
+  "kelas": 6,
+  "topik": "Luas Permukaan Bangun Ruang",
+  "deskripsi": "Hitung luas permukaan kubus dan balok.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "Kubus sisi 4 cm memiliki volume ... cm3",
+      "ilustrasi": "V",
+      "jawaban": "64",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "4 x 4 x 4 = 64."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Balok 5 x 4 x 3 memiliki volume ...",
+      "ilustrasi": "V",
+      "pilihan": [
+        "12",
+        "20",
+        "60",
+        "80"
+      ],
+      "jawaban": "60",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "5 x 4 x 3 = 60."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "Kubus sisi 3 cm memiliki volume ... cm3",
+      "ilustrasi": "V",
+      "jawaban": "27",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "3 x 3 x 3 = 27."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Rumus volume balok adalah ...",
+      "ilustrasi": "V",
+      "pilihan": [
+        "p x l x t",
+        "s x s",
+        "2 x p",
+        "p + l + t"
+      ],
+      "jawaban": "p x l x t",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Volume balok = panjang x lebar x tinggi."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "Luas permukaan kubus sisi 2 cm adalah ... cm2",
+      "ilustrasi": "SA",
+      "jawaban": "24",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "6 x 2 x 2 = 24."
+    }
+  ]
+}

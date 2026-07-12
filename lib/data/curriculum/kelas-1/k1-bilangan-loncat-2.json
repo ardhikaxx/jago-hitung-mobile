@@ -1,0 +1,81 @@
+{
+  "id": "k1-bilangan-loncat-2",
+  "kelas": 1,
+  "topik": "Bilangan Loncat 2",
+  "deskripsi": "Berhitung maju dengan loncatan dua angka.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "2, 4, 6, ...",
+      "ilustrasi": "2",
+      "jawaban": "8",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Loncatan 2 menghasilkan 8."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Angka setelah 10 jika loncat 2 adalah ...",
+      "ilustrasi": "2",
+      "pilihan": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "jawaban": "12",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "10 + 2 = 12."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "12, 14, 16, ...",
+      "ilustrasi": "2",
+      "jawaban": "18",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Loncatan berikutnya 18."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Mana bilangan loncat 2?",
+      "ilustrasi": "2",
+      "pilihan": [
+        "3, 5, 7",
+        "4, 6, 8",
+        "5, 8, 11",
+        "6, 9, 12"
+      ],
+      "jawaban": "4, 6, 8",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "4, 6, 8 naik 2."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "12, 14, 16, ...",
+      "ilustrasi": "2",
+      "jawaban": "18",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Pola naik 2."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "k1-bangun-datar",
+  "kelas": 1,
+  "topik": "Mengenal Bangun Datar",
+  "deskripsi": "Segitiga, lingkaran, dan kotak ada di mana-mana!",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Bangun yang memiliki 3 sisi adalah ...",
+      "ilustrasi": "[]",
+      "pilihan": [
+        "segitiga",
+        "persegi",
+        "lingkaran",
+        "persegi panjang"
+      ],
+      "jawaban": "segitiga",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Segitiga memiliki 3 sisi."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Bangun yang tidak memiliki sudut adalah ...",
+      "ilustrasi": "O",
+      "pilihan": [
+        "lingkaran",
+        "segitiga",
+        "persegi",
+        "trapesium"
+      ],
+      "jawaban": "lingkaran",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Lingkaran tidak memiliki sudut."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "Persegi memiliki berapa sisi?",
+      "ilustrasi": "[]",
+      "jawaban": "4",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Persegi memiliki 4 sisi."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Bangun dengan 4 sisi sama panjang adalah ...",
+      "ilustrasi": "[]",
+      "pilihan": [
+        "persegi",
+        "lingkaran",
+        "segitiga",
+        "jajar genjang"
+      ],
+      "jawaban": "persegi",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Persegi memiliki 4 sisi sama panjang."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "Segitiga memiliki berapa sudut?",
+      "ilustrasi": "<)",
+      "jawaban": "3",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Segitiga memiliki 3 sudut."
+    }
+  ]
+}

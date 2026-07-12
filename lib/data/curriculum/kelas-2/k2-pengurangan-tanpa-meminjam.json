@@ -1,0 +1,81 @@
+{
+  "id": "k2-pengurangan-tanpa-meminjam",
+  "kelas": 2,
+  "topik": "Pengurangan Tanpa Meminjam",
+  "deskripsi": "Kurangkan bilangan dua angka tanpa meminjam.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "87 - 37 = ...",
+      "ilustrasi": "-",
+      "jawaban": "50",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Hasilnya 50."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "137 - 57 = ...",
+      "ilustrasi": "-",
+      "pilihan": [
+        "70",
+        "75",
+        "80",
+        "85"
+      ],
+      "jawaban": "80",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Hasilnya 80."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "257 - 37 = ...",
+      "ilustrasi": "-",
+      "jawaban": "220",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Hasilnya 220."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "537 - 100 = ...",
+      "ilustrasi": "-",
+      "pilihan": [
+        "417",
+        "427",
+        "437",
+        "447"
+      ],
+      "jawaban": "437",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Kurangi 100."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "357 - 3 = ...",
+      "ilustrasi": "-",
+      "jawaban": "354",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Hasilnya 354."
+    }
+  ]
+}

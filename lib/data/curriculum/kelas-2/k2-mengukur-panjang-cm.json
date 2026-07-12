@@ -1,0 +1,81 @@
+{
+  "id": "k2-mengukur-panjang-cm",
+  "kelas": 2,
+  "topik": "Mengukur Panjang dengan cm",
+  "deskripsi": "Gunakan centimeter untuk menghitung panjang benda.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "Pita 8 cm disambung 5 cm. Panjangnya ... cm",
+      "ilustrasi": "cm",
+      "jawaban": "13",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "8 + 5 = 13 cm."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Mana yang lebih panjang?",
+      "ilustrasi": "cm",
+      "pilihan": [
+        "12 cm",
+        "9 cm",
+        "7 cm",
+        "5 cm"
+      ],
+      "jawaban": "12 cm",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "12 cm paling panjang."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "20 cm - 6 cm = ... cm",
+      "ilustrasi": "cm",
+      "jawaban": "14",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "20 - 6 = 14 cm."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "1 meter sama dengan ... cm",
+      "ilustrasi": "m",
+      "pilihan": [
+        "10",
+        "50",
+        "100",
+        "1000"
+      ],
+      "jawaban": "100",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "1 m = 100 cm."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "3 m = ... cm",
+      "ilustrasi": "m",
+      "jawaban": "300",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "3 x 100 = 300 cm."
+    }
+  ]
+}

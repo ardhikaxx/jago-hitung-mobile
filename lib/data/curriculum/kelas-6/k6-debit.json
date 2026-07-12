@@ -1,0 +1,81 @@
+{
+  "id": "k6-debit",
+  "kelas": 6,
+  "topik": "Debit Air",
+  "deskripsi": "Hubungkan volume, waktu, dan debit.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "Air 60 liter mengalir selama 3 menit. Debit ... liter/menit",
+      "ilustrasi": "L/s",
+      "jawaban": "20",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "60 : 3 = 20."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Debit 5 L/menit selama 4 menit menghasilkan ... liter",
+      "ilustrasi": "L/s",
+      "pilihan": [
+        "9",
+        "15",
+        "20",
+        "25"
+      ],
+      "jawaban": "20",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "5 x 4 = 20."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "Volume 100 liter dengan debit 25 L/menit perlu ... menit",
+      "ilustrasi": "L/s",
+      "jawaban": "4",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "100 : 25 = 4."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Rumus debit adalah ...",
+      "ilustrasi": "L/s",
+      "pilihan": [
+        "volume : waktu",
+        "volume x waktu",
+        "waktu : volume",
+        "jarak : waktu"
+      ],
+      "jawaban": "volume : waktu",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Debit = volume dibagi waktu."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "Debit 10 L/menit selama 6 menit menghasilkan ... liter",
+      "ilustrasi": "L/s",
+      "jawaban": "60",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "10 x 6 = 60."
+    }
+  ]
+}

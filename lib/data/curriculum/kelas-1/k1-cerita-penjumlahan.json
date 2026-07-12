@@ -1,0 +1,87 @@
+{
+  "id": "k1-cerita-penjumlahan",
+  "kelas": 1,
+  "topik": "Soal Cerita Penjumlahan",
+  "deskripsi": "Pakai cerita pendek untuk memahami operasi tambah.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Rani punya 4 apel dan mendapat 7 apel lagi. Jumlah apel Rani ...",
+      "ilustrasi": "+",
+      "pilihan": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "jawaban": "11",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Jumlahnya 11."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "Di meja ada 6 buku, ditambah 7 buku. Banyak buku ...",
+      "ilustrasi": "+",
+      "jawaban": "13",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Banyak buku 13."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "4 + 8 = ...",
+      "ilustrasi": "+",
+      "pilihan": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "jawaban": "12",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Hasilnya 12."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "Ada 7 bola dan 8 bola. Total bola ...",
+      "ilustrasi": "+",
+      "jawaban": "15",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Total bola 15."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Cerita \"bertambah\" biasanya memakai operasi ...",
+      "ilustrasi": "+",
+      "pilihan": [
+        "tambah",
+        "kurang",
+        "bagi",
+        "kali"
+      ],
+      "jawaban": "tambah",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Bertambah berarti penjumlahan."
+    }
+  ]
+}

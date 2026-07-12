@@ -1,0 +1,87 @@
+{
+  "id": "k2-tabel-perkalian-2",
+  "kelas": 2,
+  "topik": "Tabel Perkalian 2",
+  "deskripsi": "Hafalkan dan pahami perkalian dua.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "6 x 3 = ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "12",
+        "15",
+        "18",
+        "21"
+      ],
+      "jawaban": "18",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "6 x 3 = 18."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "7 x 3 = ...",
+      "ilustrasi": "x",
+      "jawaban": "21",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "7 x 3 = 21."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "3 kelompok berisi 6 benda. Jumlah benda ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "14",
+        "16",
+        "18",
+        "20"
+      ],
+      "jawaban": "18",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Ini sama dengan 3 x 6 = 18."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "6 x 10 = ...",
+      "ilustrasi": "x",
+      "jawaban": "60",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "6 x 10 = 60."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Faktor yang hilang: 6 x ... = 18",
+      "ilustrasi": "x",
+      "pilihan": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "jawaban": "3",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Faktor yang hilang adalah 3."
+    }
+  ]
+}

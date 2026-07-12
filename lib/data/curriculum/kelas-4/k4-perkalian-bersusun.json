@@ -1,0 +1,87 @@
+{
+  "id": "k4-perkalian-bersusun",
+  "kelas": 4,
+  "topik": "Perkalian Bersusun",
+  "deskripsi": "Kalikan bilangan dua dan tiga angka secara bertahap.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "9 x 7 = ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "57",
+        "60",
+        "63",
+        "66"
+      ],
+      "jawaban": "63",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "9 x 7 = 63."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "10 x 7 = ...",
+      "ilustrasi": "x",
+      "jawaban": "70",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "10 x 7 = 70."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "7 kelompok berisi 9 benda. Jumlah benda ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "59",
+        "61",
+        "63",
+        "65"
+      ],
+      "jawaban": "63",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Ini sama dengan 7 x 9 = 63."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "9 x 10 = ...",
+      "ilustrasi": "x",
+      "jawaban": "90",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "9 x 10 = 90."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Faktor yang hilang: 9 x ... = 63",
+      "ilustrasi": "x",
+      "pilihan": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "jawaban": "7",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Faktor yang hilang adalah 7."
+    }
+  ]
+}

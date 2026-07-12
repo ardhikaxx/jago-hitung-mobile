@@ -1,0 +1,93 @@
+{
+  "id": "k6-pola-bilangan-kompleks",
+  "kelas": 6,
+  "topik": "Pola Bilangan Kompleks",
+  "deskripsi": "Temukan aturan pola bertingkat dan campuran.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "3 + 5 = ...",
+      "ilustrasi": "+",
+      "pilihan": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "jawaban": "8",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "3 + 5 = 8."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "7 + 7 = ...",
+      "ilustrasi": "+",
+      "jawaban": "14",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "7 + 7 = 14."
+    },
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "8 - 3 = ...",
+      "ilustrasi": "-",
+      "pilihan": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "jawaban": "5",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "8 - 3 = 5."
+    },
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "3 x 5 = ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "9",
+        "12",
+        "15",
+        "18"
+      ],
+      "jawaban": "15",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "3 x 5 = 15."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Materi \"Pola Bilangan Kompleks\" melatih kemampuan ...",
+      "ilustrasi": "*",
+      "pilihan": [
+        "berhitung",
+        "membaca cerita",
+        "menggambar bebas",
+        "menyanyi"
+      ],
+      "jawaban": "berhitung",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Materi ini bagian dari latihan matematika."
+    }
+  ]
+}

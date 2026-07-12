@@ -1,0 +1,87 @@
+{
+  "id": "k4-pembulatan",
+  "kelas": 4,
+  "topik": "Pembulatan Bilangan",
+  "deskripsi": "Bulatkan bilangan ke puluhan dan ratusan terdekat.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "47 dibulatkan ke puluhan terdekat menjadi ...",
+      "ilustrasi": "~",
+      "pilihan": [
+        "40",
+        "50",
+        "47",
+        "45"
+      ],
+      "jawaban": "50",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "47 lebih dekat ke 50."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "124 dibulatkan ke ratusan terdekat menjadi ...",
+      "ilustrasi": "~",
+      "jawaban": "100",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "124 lebih dekat ke 100."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "286 dibulatkan ke puluhan terdekat menjadi ...",
+      "ilustrasi": "~",
+      "pilihan": [
+        "280",
+        "290",
+        "300",
+        "200"
+      ],
+      "jawaban": "290",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "286 lebih dekat ke 290."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "760 dibulatkan ke ratusan terdekat menjadi ...",
+      "ilustrasi": "~",
+      "jawaban": "800",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "760 lebih dekat ke 800."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Bilangan 35 dibulatkan ke puluhan menjadi ...",
+      "ilustrasi": "~",
+      "pilihan": [
+        "30",
+        "35",
+        "40",
+        "50"
+      ],
+      "jawaban": "40",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Angka satuan 5 dibulatkan naik."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "k4-pembagian-bersusun",
+  "kelas": 4,
+  "topik": "Pembagian Bersusun",
+  "deskripsi": "Bagi bilangan besar dengan cara yang rapi.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "16 : 2 = ...",
+      "ilustrasi": ":",
+      "pilihan": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "jawaban": "8",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "16 : 2 = 8."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "32 : 8 = ...",
+      "ilustrasi": ":",
+      "jawaban": "4",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "32 : 8 = 4."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "16 kue dibagi ke 8 piring sama banyak. Tiap piring berisi ...",
+      "ilustrasi": ":",
+      "pilihan": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "jawaban": "2",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Tiap piring berisi 2."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "20 : 10 = ...",
+      "ilustrasi": ":",
+      "jawaban": "2",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "20 : 10 = 2."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Bilangan yang tepat: ... x 2 = 16",
+      "ilustrasi": ":",
+      "pilihan": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "jawaban": "8",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Bilangan itu adalah 8."
+    }
+  ]
+}

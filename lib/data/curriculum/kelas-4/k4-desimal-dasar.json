@@ -1,0 +1,87 @@
+{
+  "id": "k4-desimal-dasar",
+  "kelas": 4,
+  "topik": "Desimal Dasar",
+  "deskripsi": "Kenali nilai persepuluhan dan perseratusan.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "0.5 sama dengan pecahan ...",
+      "ilustrasi": "0.5",
+      "pilihan": [
+        "1/2",
+        "1/4",
+        "1/5",
+        "2/5"
+      ],
+      "jawaban": "1/2",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "0.5 = 1/2."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "25% sama dengan ...",
+      "ilustrasi": "%",
+      "pilihan": [
+        "1/4",
+        "1/2",
+        "3/4",
+        "1/5"
+      ],
+      "jawaban": "1/4",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "25% = 25/100 = 1/4."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "10% dari 100 adalah ...",
+      "ilustrasi": "%",
+      "jawaban": "10",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "10% dari 100 adalah 10."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "0.75 sama dengan ...",
+      "ilustrasi": "0.75",
+      "pilihan": [
+        "1/4",
+        "1/2",
+        "3/4",
+        "1/5"
+      ],
+      "jawaban": "3/4",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "0.75 = 3/4."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "50% dari 80 adalah ...",
+      "ilustrasi": "%",
+      "jawaban": "40",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Setengah dari 80 adalah 40."
+    }
+  ]
+}

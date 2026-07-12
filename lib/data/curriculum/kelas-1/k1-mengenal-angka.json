@@ -1,0 +1,87 @@
+{
+  "id": "k1-mengenal-angka",
+  "kelas": 1,
+  "topik": "Mengenal Angka",
+  "deskripsi": "Mari mengenal angka 1 sampai 20 dengan cara yang seru!",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Angka setelah 3 adalah ...",
+      "ilustrasi": "#",
+      "pilihan": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "jawaban": "4",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Setelah 3 adalah 4."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "Hitung maju: 3, 4, 5, ...",
+      "ilustrasi": "#",
+      "jawaban": "6",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Urutan berikutnya adalah 6."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Mana angka yang paling kecil?",
+      "ilustrasi": "#",
+      "pilihan": [
+        "3",
+        "5",
+        "7",
+        "9"
+      ],
+      "jawaban": "3",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "3 adalah yang paling kecil."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "Angka sebelum 8 adalah ...",
+      "ilustrasi": "#",
+      "jawaban": "7",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Sebelum 8 adalah 7."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Urutan yang benar adalah ...",
+      "ilustrasi": "#",
+      "pilihan": [
+        "3, 4, 5",
+        "5, 3, 4",
+        "4, 5, 3",
+        "3, 5, 4"
+      ],
+      "jawaban": "3, 4, 5",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Angka naik satu demi satu."
+    }
+  ]
+}

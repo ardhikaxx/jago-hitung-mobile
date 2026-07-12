@@ -1,0 +1,81 @@
+{
+  "id": "k3-keliling-bangun-datar",
+  "kelas": 3,
+  "topik": "Keliling Bangun Datar",
+  "deskripsi": "Hitung keliling persegi dan persegi panjang.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "Persegi dengan sisi 3 cm memiliki keliling ... cm",
+      "ilustrasi": "[]",
+      "jawaban": "12",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Keliling persegi = 4 x sisi = 12."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "Persegi panjang 3 cm x 9 cm memiliki luas ... cm2",
+      "ilustrasi": "L",
+      "jawaban": "27",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Luas = panjang x lebar = 27."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Keliling persegi panjang 8 cm x 5 cm adalah ... cm",
+      "ilustrasi": "[]",
+      "pilihan": [
+        "20",
+        "24",
+        "26",
+        "40"
+      ],
+      "jawaban": "26",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Keliling = 2 x (8 + 5) = 26."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "Luas persegi sisi 9 cm adalah ... cm2",
+      "ilustrasi": "L",
+      "jawaban": "81",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Luas = sisi x sisi = 81."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Rumus luas persegi panjang adalah ...",
+      "ilustrasi": "L",
+      "pilihan": [
+        "p x l",
+        "s x s x s",
+        "2 x p",
+        "p + l"
+      ],
+      "jawaban": "p x l",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Luas persegi panjang adalah panjang kali lebar."
+    }
+  ]
+}

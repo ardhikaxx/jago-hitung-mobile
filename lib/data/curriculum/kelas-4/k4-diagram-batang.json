@@ -1,0 +1,81 @@
+{
+  "id": "k4-diagram-batang",
+  "kelas": 4,
+  "topik": "Diagram Batang",
+  "deskripsi": "Baca dan hitung data dari diagram batang.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "Rata-rata dari 6, 8, dan 10 adalah ...",
+      "ilustrasi": "|",
+      "jawaban": "8",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "(6 + 8 + 10) : 3 = 8."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Modus dari 2, 3, 3, 4, 5 adalah ...",
+      "ilustrasi": "|",
+      "pilihan": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "jawaban": "3",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Angka 3 paling sering muncul."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "Median dari 4, 6, 8 adalah ...",
+      "ilustrasi": "|",
+      "jawaban": "6",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Nilai tengahnya 6."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Jumlah data 5, 7, 9 adalah ...",
+      "ilustrasi": "|",
+      "pilihan": [
+        "12",
+        "18",
+        "21",
+        "24"
+      ],
+      "jawaban": "21",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "5 + 7 + 9 = 21."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "Rata-rata dari 10 dan 20 adalah ...",
+      "ilustrasi": "|",
+      "jawaban": "15",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "(10 + 20) : 2 = 15."
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "k3-perkalian-pembagian",
+    "topik": "Perkalian & Pembagian",
+    "deskripsi": "Ayo kuasai perkalian dan pembagian sampai angka 100!",
+    "jumlahSoal": 5,
+    "icon": "x:"
+  },
+  {
+    "id": "k3-pecahan-sederhana",
+    "topik": "Mengenal Pecahan Sederhana",
+    "deskripsi": "Belajar bagian dari satu benda utuh.",
+    "jumlahSoal": 5,
+    "icon": "1/4"
+  },
+  {
+    "id": "k3-bilangan-sampai-1000",
+    "topik": "Bilangan Sampai 1000",
+    "deskripsi": "Baca, tulis, urutkan, dan bandingkan bilangan sampai 1000.",
+    "jumlahSoal": 5,
+    "icon": "#"
+  },
+  {
+    "id": "k3-nilai-tempat-ribuan",
+    "topik": "Nilai Tempat Ratusan",
+    "deskripsi": "Tentukan ratusan, puluhan, dan satuan.",
+    "jumlahSoal": 5,
+    "icon": "100"
+  },
+  {
+    "id": "k3-penjumlahan-bersusun",
+    "topik": "Penjumlahan Bersusun 3 Angka",
+    "deskripsi": "Jumlahkan bilangan sampai ratusan dengan teliti.",
+    "jumlahSoal": 5,
+    "icon": "+"
+  },
+  {
+    "id": "k3-pengurangan-bersusun",
+    "topik": "Pengurangan Bersusun 3 Angka",
+    "deskripsi": "Kurangkan bilangan sampai ratusan dengan teliti.",
+    "jumlahSoal": 5,
+    "icon": "-"
+  },
+  {
+    "id": "k3-perkalian-6-9",
+    "topik": "Perkalian 6 sampai 9",
+    "deskripsi": "Kuatkan tabel perkalian yang lebih menantang.",
+    "jumlahSoal": 5,
+    "icon": "x"
+  },
+  {
+    "id": "k3-perkalian-dua-angka",
+    "topik": "Perkalian Dua Angka Dasar",
+    "deskripsi": "Mulai hitung perkalian dua angka dengan angka kecil.",
+    "jumlahSoal": 5,
+    "icon": "x"
+  },
+  {
+    "id": "k3-pembagian-bersisa",
+    "topik": "Pembagian Bersisa",
+    "deskripsi": "Kenali hasil bagi dan sisa pembagian.",
+    "jumlahSoal": 5,
+    "icon": ":"
+  },
+  {
+    "id": "k3-soal-cerita-perkalian",
+    "topik": "Soal Cerita Perkalian",
+    "deskripsi": "Gunakan perkalian dalam cerita sehari-hari.",
+    "jumlahSoal": 5,
+    "icon": "?"
+  },
+  {
+    "id": "k3-soal-cerita-pembagian",
+    "topik": "Soal Cerita Pembagian",
+    "deskripsi": "Gunakan pembagian dalam cerita sehari-hari.",
+    "jumlahSoal": 5,
+    "icon": "?"
+  },
+  {
+    "id": "k3-pecahan-senilai",
+    "topik": "Pecahan Senilai Dasar",
+    "deskripsi": "Temukan pecahan berbeda yang nilainya sama.",
+    "jumlahSoal": 5,
+    "icon": "="
+  },
+  {
+    "id": "k3-membandingkan-pecahan",
+    "topik": "Membandingkan Pecahan",
+    "deskripsi": "Bandingkan pecahan dengan penyebut sederhana.",
+    "jumlahSoal": 5,
+    "icon": "<>"
+  },
+  {
+    "id": "k3-satuan-panjang",
+    "topik": "Satuan Panjang",
+    "deskripsi": "Hubungkan meter dan centimeter dalam soal mudah.",
+    "jumlahSoal": 5,
+    "icon": "m"
+  },
+  {
+    "id": "k3-keliling-bangun-datar",
+    "topik": "Keliling Bangun Datar",
+    "deskripsi": "Hitung keliling persegi dan persegi panjang.",
+    "jumlahSoal": 5,
+    "icon": "[]"
+  },
+  {
+    "id": "k3-luas-persegi-persegi-panjang",
+    "topik": "Luas Persegi dan Persegi Panjang",
+    "deskripsi": "Hitung banyak kotak satuan di dalam bangun.",
+    "jumlahSoal": 5,
+    "icon": "L"
+  },
+  {
+    "id": "k3-sudut-dasar",
+    "topik": "Mengenal Sudut",
+    "deskripsi": "Kenali sudut siku-siku, lancip, dan tumpul.",
+    "jumlahSoal": 5,
+    "icon": "<)"
+  },
+  {
+    "id": "k3-diagram-gambar",
+    "topik": "Diagram Gambar",
+    "deskripsi": "Baca data sederhana dari diagram gambar.",
+    "jumlahSoal": 5,
+    "icon": "|"
+  },
+  {
+    "id": "k3-pola-bilangan",
+    "topik": "Pola Bilangan",
+    "deskripsi": "Lanjutkan pola bilangan berulang dan bertambah.",
+    "jumlahSoal": 5,
+    "icon": "..."
+  },
+  {
+    "id": "k3-review-kelas-3",
+    "topik": "Review Matematika Kelas 3",
+    "deskripsi": "Campuran soal kelas 3 untuk persiapan naik tingkat.",
+    "jumlahSoal": 5,
+    "icon": "*"
+  }
+]

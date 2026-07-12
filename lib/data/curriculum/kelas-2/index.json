@@ -1,0 +1,142 @@
+[
+  {
+    "id": "k2-penjumlahan-pengurangan-bersusun",
+    "topik": "Penjumlahan & Pengurangan Bersusun",
+    "deskripsi": "Belajar menghitung tambah dan kurang dengan cara bersusun.",
+    "jumlahSoal": 5,
+    "icon": "+-"
+  },
+  {
+    "id": "k2-mengenal-perkalian",
+    "topik": "Mengenal Perkalian",
+    "deskripsi": "Pahami perkalian sebagai penjumlahan berulang.",
+    "jumlahSoal": 5,
+    "icon": "x"
+  },
+  {
+    "id": "k2-bilangan-sampai-100",
+    "topik": "Bilangan Sampai 100",
+    "deskripsi": "Baca, tulis, dan urutkan bilangan sampai 100.",
+    "jumlahSoal": 5,
+    "icon": "#"
+  },
+  {
+    "id": "k2-nilai-tempat-ratusan",
+    "topik": "Nilai Tempat Puluhan dan Satuan",
+    "deskripsi": "Tentukan puluhan dan satuan pada bilangan dua angka.",
+    "jumlahSoal": 5,
+    "icon": "10"
+  },
+  {
+    "id": "k2-membandingkan-bilangan",
+    "topik": "Membandingkan Bilangan Dua Angka",
+    "deskripsi": "Bandingkan bilangan sampai 100 dengan tepat.",
+    "jumlahSoal": 5,
+    "icon": "<>"
+  },
+  {
+    "id": "k2-penjumlahan-tanpa-menyimpan",
+    "topik": "Penjumlahan Tanpa Menyimpan",
+    "deskripsi": "Jumlahkan bilangan dua angka yang mudah.",
+    "jumlahSoal": 5,
+    "icon": "+"
+  },
+  {
+    "id": "k2-penjumlahan-dengan-menyimpan",
+    "topik": "Penjumlahan Dengan Menyimpan",
+    "deskripsi": "Latihan menjumlahkan bilangan dua angka yang melewati puluhan.",
+    "jumlahSoal": 5,
+    "icon": "+"
+  },
+  {
+    "id": "k2-pengurangan-tanpa-meminjam",
+    "topik": "Pengurangan Tanpa Meminjam",
+    "deskripsi": "Kurangkan bilangan dua angka tanpa meminjam.",
+    "jumlahSoal": 5,
+    "icon": "-"
+  },
+  {
+    "id": "k2-pengurangan-dengan-meminjam",
+    "topik": "Pengurangan Dengan Meminjam",
+    "deskripsi": "Latihan pengurangan dua angka dengan meminjam.",
+    "jumlahSoal": 5,
+    "icon": "-"
+  },
+  {
+    "id": "k2-soal-cerita-campuran",
+    "topik": "Soal Cerita Tambah Kurang",
+    "deskripsi": "Pilih operasi yang cocok dari cerita sehari-hari.",
+    "jumlahSoal": 5,
+    "icon": "?"
+  },
+  {
+    "id": "k2-tabel-perkalian-2",
+    "topik": "Tabel Perkalian 2",
+    "deskripsi": "Hafalkan dan pahami perkalian dua.",
+    "jumlahSoal": 5,
+    "icon": "x2"
+  },
+  {
+    "id": "k2-tabel-perkalian-5",
+    "topik": "Tabel Perkalian 5",
+    "deskripsi": "Hafalkan dan pahami perkalian lima.",
+    "jumlahSoal": 5,
+    "icon": "x5"
+  },
+  {
+    "id": "k2-tabel-perkalian-10",
+    "topik": "Tabel Perkalian 10",
+    "deskripsi": "Hafalkan dan pahami perkalian sepuluh.",
+    "jumlahSoal": 5,
+    "icon": "x10"
+  },
+  {
+    "id": "k2-mengenal-pembagian",
+    "topik": "Mengenal Pembagian",
+    "deskripsi": "Pahami pembagian sebagai membagi sama banyak.",
+    "jumlahSoal": 5,
+    "icon": ":"
+  },
+  {
+    "id": "k2-pecahan-setengah-seperempat",
+    "topik": "Setengah dan Seperempat",
+    "deskripsi": "Kenali bagian setengah dan seperempat dari benda.",
+    "jumlahSoal": 5,
+    "icon": "1/2"
+  },
+  {
+    "id": "k2-mengukur-panjang-cm",
+    "topik": "Mengukur Panjang dengan cm",
+    "deskripsi": "Gunakan centimeter untuk menghitung panjang benda.",
+    "jumlahSoal": 5,
+    "icon": "cm"
+  },
+  {
+    "id": "k2-mengukur-berat",
+    "topik": "Mengukur Berat Sederhana",
+    "deskripsi": "Bandingkan dan hitung berat benda sederhana.",
+    "jumlahSoal": 5,
+    "icon": "kg"
+  },
+  {
+    "id": "k2-membaca-waktu",
+    "topik": "Membaca Waktu",
+    "deskripsi": "Baca jam tepat dan setengah jam.",
+    "jumlahSoal": 5,
+    "icon": "30"
+  },
+  {
+    "id": "k2-uang-rupiah",
+    "topik": "Menghitung Uang Rupiah",
+    "deskripsi": "Jumlahkan nilai uang dalam transaksi sederhana.",
+    "jumlahSoal": 5,
+    "icon": "Rp"
+  },
+  {
+    "id": "k2-review-kelas-2",
+    "topik": "Review Matematika Kelas 2",
+    "deskripsi": "Campuran soal kelas 2 untuk menguatkan pemahaman.",
+    "jumlahSoal": 5,
+    "icon": "*"
+  }
+]

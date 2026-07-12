@@ -1,0 +1,93 @@
+{
+  "id": "k4-bilangan-bulat",
+  "kelas": 4,
+  "topik": "Bilangan Bulat",
+  "deskripsi": "Mengenal bilangan positif, nol, dan negatif.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Mana bilangan yang lebih kecil?",
+      "ilustrasi": "+-",
+      "pilihan": [
+        "-5",
+        "-2",
+        "0",
+        "3"
+      ],
+      "jawaban": "-5",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Pada bilangan negatif, -5 lebih kecil dari -2."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "-3 + 5 = ...",
+      "ilustrasi": "+-",
+      "pilihan": [
+        "1",
+        "2",
+        "3",
+        "8"
+      ],
+      "jawaban": "2",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Dari -3 maju 5 langkah menjadi 2."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "4 - 7 = ...",
+      "ilustrasi": "+-",
+      "pilihan": [
+        "-3",
+        "3",
+        "11",
+        "-11"
+      ],
+      "jawaban": "-3",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "4 - 7 = -3."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "Jarak dari -6 ke 0 adalah ... langkah",
+      "ilustrasi": "+-",
+      "jawaban": "6",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Jaraknya 6 langkah."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Suhu naik dari -2 menjadi 3. Kenaikannya ... derajat",
+      "ilustrasi": "+-",
+      "pilihan": [
+        "1",
+        "3",
+        "5",
+        "6"
+      ],
+      "jawaban": "5",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Dari -2 ke 3 naik 5."
+    }
+  ]
+}

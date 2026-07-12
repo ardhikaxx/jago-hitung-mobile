@@ -1,0 +1,81 @@
+{
+  "id": "k1-uang-koin",
+  "kelas": 1,
+  "topik": "Mengenal Uang Koin",
+  "deskripsi": "Hitung nilai beberapa koin sederhana.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "500 + 500 = ... rupiah",
+      "ilustrasi": "Rp",
+      "jawaban": "1000",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "500 + 500 = 1000."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Dua koin 100 rupiah bernilai ... rupiah",
+      "ilustrasi": "Rp",
+      "pilihan": [
+        "100",
+        "200",
+        "300",
+        "400"
+      ],
+      "jawaban": "200",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "2 x 100 = 200."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "1000 - 300 = ... rupiah",
+      "ilustrasi": "Rp",
+      "jawaban": "700",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "1000 - 300 = 700."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Uang 2000 lebih besar dari ...",
+      "ilustrasi": "Rp",
+      "pilihan": [
+        "500",
+        "3000",
+        "2500",
+        "4000"
+      ],
+      "jawaban": "500",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "500 lebih kecil dari 2000."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "3 lembar 1000 rupiah bernilai ... rupiah",
+      "ilustrasi": "Rp",
+      "jawaban": "3000",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "3 x 1000 = 3000."
+    }
+  ]
+}

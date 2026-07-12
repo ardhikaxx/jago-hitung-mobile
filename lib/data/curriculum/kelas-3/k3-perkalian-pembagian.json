@@ -1,0 +1,87 @@
+{
+  "id": "k3-perkalian-pembagian",
+  "kelas": 3,
+  "topik": "Perkalian & Pembagian",
+  "deskripsi": "Ayo kuasai perkalian dan pembagian sampai angka 100!",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "5 x 9 = ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "39",
+        "42",
+        "45",
+        "48"
+      ],
+      "jawaban": "45",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "5 x 9 = 45."
+    },
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "45 : 5 = ...",
+      "ilustrasi": ":",
+      "pilihan": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "jawaban": "9",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "45 : 5 = 9."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "6 x 9 = ...",
+      "ilustrasi": "x",
+      "jawaban": "54",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "6 x 9 = 54."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "63 : 9 = ...",
+      "ilustrasi": ":",
+      "jawaban": "7",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "63 : 9 = 7."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Faktor yang hilang: 5 x ... = 45",
+      "ilustrasi": "x",
+      "pilihan": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "jawaban": "9",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Faktor yang hilang adalah 9."
+    }
+  ]
+}

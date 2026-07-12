@@ -1,0 +1,81 @@
+{
+  "id": "k2-review-kelas-2",
+  "kelas": 2,
+  "topik": "Review Matematika Kelas 2",
+  "deskripsi": "Campuran soal kelas 2 untuk menguatkan pemahaman.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "73 + 7 = ...",
+      "ilustrasi": "+",
+      "jawaban": "80",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "73 + 7 = 80."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "37 - 5 = ...",
+      "ilustrasi": "-",
+      "pilihan": [
+        "30",
+        "31",
+        "32",
+        "33"
+      ],
+      "jawaban": "32",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "37 - 5 = 32."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "73 + 37 = ...",
+      "ilustrasi": "+",
+      "jawaban": "110",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "73 + 37 = 110."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "37 - 7 = ...",
+      "ilustrasi": "-",
+      "pilihan": [
+        "28",
+        "29",
+        "30",
+        "31"
+      ],
+      "jawaban": "30",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "37 - 7 = 30."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "Ibu punya 73 kue dan membeli 5 lagi. Jumlah kue ...",
+      "ilustrasi": "+",
+      "jawaban": "78",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Jumlahnya 78."
+    }
+  ]
+}

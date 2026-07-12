@@ -1,0 +1,33 @@
+{
+  "id": "k1-pengenalan-angka",
+  "kelas": 1,
+  "topik": "Mengenal Angka 1-10",
+  "deskripsi": "Mari mengenal angka-angka pertama kita!",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Angka berapakah ini? 5",
+      "pilihan": ["4", "5", "6", "7"],
+      "jawaban": "5",
+      "petunjuk": [
+        "Coba hitung jari tanganmu di satu tangan!",
+        "Angka ini setelah angka 4."
+      ],
+      "penjelasan": "Ini adalah angka 5, seperti jumlah jari di satu tanganmu."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Ada berapa apel di sini? 🍎🍎🍎",
+      "pilihan": ["2", "3", "4", "5"],
+      "jawaban": "3",
+      "petunjuk": [
+        "Satu, dua, ...",
+        "Hitung satu per satu ya!"
+      ],
+      "penjelasan": "Ada 3 buah apel."
+    }
+  ]
+}

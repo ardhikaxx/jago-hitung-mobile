@@ -1,0 +1,87 @@
+{
+  "id": "k3-perkalian-6-9",
+  "kelas": 3,
+  "topik": "Perkalian 6 sampai 9",
+  "deskripsi": "Kuatkan tabel perkalian yang lebih menantang.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "3 x 8 = ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "18",
+        "21",
+        "24",
+        "27"
+      ],
+      "jawaban": "24",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "3 x 8 = 24."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "4 x 8 = ...",
+      "ilustrasi": "x",
+      "jawaban": "32",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "4 x 8 = 32."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "8 kelompok berisi 3 benda. Jumlah benda ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "20",
+        "22",
+        "24",
+        "26"
+      ],
+      "jawaban": "24",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Ini sama dengan 8 x 3 = 24."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "3 x 10 = ...",
+      "ilustrasi": "x",
+      "jawaban": "30",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "3 x 10 = 30."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Faktor yang hilang: 3 x ... = 24",
+      "ilustrasi": "x",
+      "pilihan": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "jawaban": "8",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Faktor yang hilang adalah 8."
+    }
+  ]
+}

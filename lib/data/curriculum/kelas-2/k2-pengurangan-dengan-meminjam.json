@@ -1,0 +1,81 @@
+{
+  "id": "k2-pengurangan-dengan-meminjam",
+  "kelas": 2,
+  "topik": "Pengurangan Dengan Meminjam",
+  "deskripsi": "Latihan pengurangan dua angka dengan meminjam.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "92 - 40 = ...",
+      "ilustrasi": "-",
+      "jawaban": "52",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Hasilnya 52."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "140 - 62 = ...",
+      "ilustrasi": "-",
+      "pilihan": [
+        "68",
+        "73",
+        "78",
+        "83"
+      ],
+      "jawaban": "78",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Hasilnya 78."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "262 - 40 = ...",
+      "ilustrasi": "-",
+      "jawaban": "222",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Hasilnya 222."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "540 - 100 = ...",
+      "ilustrasi": "-",
+      "pilihan": [
+        "420",
+        "430",
+        "440",
+        "450"
+      ],
+      "jawaban": "440",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Kurangi 100."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "362 - 4 = ...",
+      "ilustrasi": "-",
+      "jawaban": "358",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Hasilnya 358."
+    }
+  ]
+}

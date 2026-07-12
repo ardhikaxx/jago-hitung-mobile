@@ -1,0 +1,87 @@
+{
+  "id": "k3-review-kelas-3",
+  "kelas": 3,
+  "topik": "Review Matematika Kelas 3",
+  "deskripsi": "Campuran soal kelas 3 untuk persiapan naik tingkat.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "8 x 7 = ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "50",
+        "53",
+        "56",
+        "59"
+      ],
+      "jawaban": "56",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "8 x 7 = 56."
+    },
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "56 : 8 = ...",
+      "ilustrasi": ":",
+      "pilihan": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "jawaban": "7",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "56 : 8 = 7."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "9 x 7 = ...",
+      "ilustrasi": "x",
+      "jawaban": "63",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "9 x 7 = 63."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "70 : 7 = ...",
+      "ilustrasi": ":",
+      "jawaban": "10",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "70 : 7 = 10."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Faktor yang hilang: 8 x ... = 56",
+      "ilustrasi": "x",
+      "pilihan": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "jawaban": "7",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Faktor yang hilang adalah 7."
+    }
+  ]
+}

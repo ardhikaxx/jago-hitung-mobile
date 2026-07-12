@@ -1,0 +1,87 @@
+{
+  "id": "k1-puluhan-satuan",
+  "kelas": 1,
+  "topik": "Puluhan dan Satuan",
+  "deskripsi": "Kenali puluhan dan satuan pada bilangan dua angka.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Pada bilangan 52, angka puluhannya adalah ...",
+      "ilustrasi": "10",
+      "pilihan": [
+        "5",
+        "2",
+        "52",
+        "0"
+      ],
+      "jawaban": "5",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Angka puluhan 52 adalah 5."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "5 puluhan dan 2 satuan membentuk bilangan ...",
+      "ilustrasi": "10",
+      "jawaban": "52",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Gabung puluhan dan satuan menjadi 52."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Nilai angka 5 pada 52 adalah ...",
+      "ilustrasi": "10",
+      "pilihan": [
+        "5",
+        "50",
+        "2",
+        "52"
+      ],
+      "jawaban": "50",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Nilai puluhannya 50."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "Bilangan 82 memiliki satuan ...",
+      "ilustrasi": "10",
+      "jawaban": "2",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Satuannya adalah 2."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "52 = ... puluhan + ... satuan",
+      "ilustrasi": "10",
+      "pilihan": [
+        "5 dan 2",
+        "2 dan 5",
+        "52 dan 0",
+        "0 dan 52"
+      ],
+      "jawaban": "5 dan 2",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Puluhan lalu satuan."
+    }
+  ]
+}

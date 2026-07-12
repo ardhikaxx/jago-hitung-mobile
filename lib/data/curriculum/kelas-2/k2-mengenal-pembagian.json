@@ -1,0 +1,87 @@
+{
+  "id": "k2-mengenal-pembagian",
+  "kelas": 2,
+  "topik": "Mengenal Pembagian",
+  "deskripsi": "Pahami pembagian sebagai membagi sama banyak.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "54 : 9 = ...",
+      "ilustrasi": ":",
+      "pilihan": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "jawaban": "6",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "54 : 9 = 6."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "66 : 6 = ...",
+      "ilustrasi": ":",
+      "jawaban": "11",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "66 : 6 = 11."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "54 kue dibagi ke 6 piring sama banyak. Tiap piring berisi ...",
+      "ilustrasi": ":",
+      "pilihan": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "jawaban": "9",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Tiap piring berisi 9."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "90 : 10 = ...",
+      "ilustrasi": ":",
+      "jawaban": "9",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "90 : 10 = 9."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Bilangan yang tepat: ... x 9 = 54",
+      "ilustrasi": ":",
+      "pilihan": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "jawaban": "6",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Bilangan itu adalah 6."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "id": "k2-penjumlahan-pengurangan-bersusun",
+  "kelas": 2,
+  "topik": "Penjumlahan & Pengurangan Bersusun",
+  "deskripsi": "Belajar menghitung tambah dan kurang dengan cara bersusun.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "16 + 4 = ...",
+      "ilustrasi": "+",
+      "jawaban": "20",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "16 + 4 = 20."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "22 - 7 = ...",
+      "ilustrasi": "-",
+      "pilihan": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "jawaban": "15",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "22 - 7 = 15."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "16 + 22 = ...",
+      "ilustrasi": "+",
+      "jawaban": "38",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "16 + 22 = 38."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "22 - 4 = ...",
+      "ilustrasi": "-",
+      "pilihan": [
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "jawaban": "18",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "22 - 4 = 18."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "Ibu punya 16 kue dan membeli 7 lagi. Jumlah kue ...",
+      "ilustrasi": "+",
+      "jawaban": "23",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Jumlahnya 23."
+    }
+  ]
+}

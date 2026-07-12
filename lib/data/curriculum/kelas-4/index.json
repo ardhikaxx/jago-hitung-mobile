@@ -1,0 +1,142 @@
+[
+  {
+    "id": "k4-bilangan-bulat",
+    "topik": "Bilangan Bulat",
+    "deskripsi": "Mengenal bilangan positif, nol, dan negatif.",
+    "jumlahSoal": 5,
+    "icon": "+-"
+  },
+  {
+    "id": "k4-keliling-luas",
+    "topik": "Keliling & Luas Bangun Datar",
+    "deskripsi": "Hitung keliling dan luas bangun datar umum.",
+    "jumlahSoal": 5,
+    "icon": "L"
+  },
+  {
+    "id": "k4-operasi-bilangan-besar",
+    "topik": "Operasi Bilangan Besar",
+    "deskripsi": "Tambah dan kurang bilangan ribuan dengan strategi bersusun.",
+    "jumlahSoal": 5,
+    "icon": "+-"
+  },
+  {
+    "id": "k4-perkalian-bersusun",
+    "topik": "Perkalian Bersusun",
+    "deskripsi": "Kalikan bilangan dua dan tiga angka secara bertahap.",
+    "jumlahSoal": 5,
+    "icon": "x"
+  },
+  {
+    "id": "k4-pembagian-bersusun",
+    "topik": "Pembagian Bersusun",
+    "deskripsi": "Bagi bilangan besar dengan cara yang rapi.",
+    "jumlahSoal": 5,
+    "icon": ":"
+  },
+  {
+    "id": "k4-kpk",
+    "topik": "Kelipatan Persekutuan Kecil",
+    "deskripsi": "Temukan KPK dari dua bilangan sederhana.",
+    "jumlahSoal": 5,
+    "icon": "KPK"
+  },
+  {
+    "id": "k4-fpb",
+    "topik": "Faktor Persekutuan Besar",
+    "deskripsi": "Temukan FPB dari dua bilangan sederhana.",
+    "jumlahSoal": 5,
+    "icon": "FPB"
+  },
+  {
+    "id": "k4-faktor-kelipatan",
+    "topik": "Faktor dan Kelipatan",
+    "deskripsi": "Bedakan faktor dan kelipatan dalam berbagai bilangan.",
+    "jumlahSoal": 5,
+    "icon": "x"
+  },
+  {
+    "id": "k4-pecahan-senilai",
+    "topik": "Pecahan Senilai",
+    "deskripsi": "Sederhanakan dan samakan nilai pecahan.",
+    "jumlahSoal": 5,
+    "icon": "="
+  },
+  {
+    "id": "k4-menyederhanakan-pecahan",
+    "topik": "Menyederhanakan Pecahan",
+    "deskripsi": "Ubah pecahan ke bentuk paling sederhana.",
+    "jumlahSoal": 5,
+    "icon": "1/2"
+  },
+  {
+    "id": "k4-penjumlahan-pecahan",
+    "topik": "Penjumlahan Pecahan",
+    "deskripsi": "Jumlahkan pecahan dengan penyebut sama.",
+    "jumlahSoal": 5,
+    "icon": "+"
+  },
+  {
+    "id": "k4-pengurangan-pecahan",
+    "topik": "Pengurangan Pecahan",
+    "deskripsi": "Kurangkan pecahan dengan penyebut sama.",
+    "jumlahSoal": 5,
+    "icon": "-"
+  },
+  {
+    "id": "k4-desimal-dasar",
+    "topik": "Desimal Dasar",
+    "deskripsi": "Kenali nilai persepuluhan dan perseratusan.",
+    "jumlahSoal": 5,
+    "icon": "0.1"
+  },
+  {
+    "id": "k4-pembulatan",
+    "topik": "Pembulatan Bilangan",
+    "deskripsi": "Bulatkan bilangan ke puluhan dan ratusan terdekat.",
+    "jumlahSoal": 5,
+    "icon": "~"
+  },
+  {
+    "id": "k4-sudut-dan-busur",
+    "topik": "Mengukur Sudut",
+    "deskripsi": "Tentukan besar sudut sederhana dalam derajat.",
+    "jumlahSoal": 5,
+    "icon": "<)"
+  },
+  {
+    "id": "k4-bangun-datar-lanjut",
+    "topik": "Sifat Bangun Datar",
+    "deskripsi": "Kenali sifat persegi, persegi panjang, segitiga, dan lingkaran.",
+    "jumlahSoal": 5,
+    "icon": "[]"
+  },
+  {
+    "id": "k4-simetri",
+    "topik": "Simetri Lipat dan Putar",
+    "deskripsi": "Cari banyak simetri pada bangun datar.",
+    "jumlahSoal": 5,
+    "icon": "|"
+  },
+  {
+    "id": "k4-diagram-batang",
+    "topik": "Diagram Batang",
+    "deskripsi": "Baca dan hitung data dari diagram batang.",
+    "jumlahSoal": 5,
+    "icon": "|"
+  },
+  {
+    "id": "k4-pola-bilangan-lanjut",
+    "topik": "Pola Bilangan Lanjut",
+    "deskripsi": "Lanjutkan pola tambah, kurang, dan kali sederhana.",
+    "jumlahSoal": 5,
+    "icon": "..."
+  },
+  {
+    "id": "k4-review-kelas-4",
+    "topik": "Review Matematika Kelas 4",
+    "deskripsi": "Campuran soal inti untuk mengulang kelas 4.",
+    "jumlahSoal": 5,
+    "icon": "*"
+  }
+]

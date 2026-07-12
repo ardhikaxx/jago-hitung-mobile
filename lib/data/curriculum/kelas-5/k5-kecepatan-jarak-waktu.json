@@ -1,0 +1,81 @@
+{
+  "id": "k5-kecepatan-jarak-waktu",
+  "kelas": 5,
+  "topik": "Kecepatan, Jarak, dan Waktu",
+  "deskripsi": "Hubungkan jarak, waktu, dan kecepatan.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "Jarak 60 km ditempuh 2 jam. Kecepatan ... km/jam",
+      "ilustrasi": "km",
+      "jawaban": "30",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "60 : 2 = 30."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Kecepatan 40 km/jam selama 2 jam menempuh ... km",
+      "ilustrasi": "km",
+      "pilihan": [
+        "20",
+        "40",
+        "80",
+        "100"
+      ],
+      "jawaban": "80",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "40 x 2 = 80."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "Jarak 90 km dengan kecepatan 30 km/jam memerlukan ... jam",
+      "ilustrasi": "km",
+      "jawaban": "3",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "90 : 30 = 3."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Rumus jarak adalah ...",
+      "ilustrasi": "km",
+      "pilihan": [
+        "kecepatan x waktu",
+        "kecepatan : waktu",
+        "waktu : jarak",
+        "jarak x waktu"
+      ],
+      "jawaban": "kecepatan x waktu",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Jarak = kecepatan x waktu."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "50 km/jam selama 3 jam menempuh ... km",
+      "ilustrasi": "km",
+      "jawaban": "150",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "50 x 3 = 150."
+    }
+  ]
+}

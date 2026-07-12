@@ -1,0 +1,81 @@
+{
+  "id": "k6-persamaan-sederhana",
+  "kelas": 6,
+  "topik": "Persamaan Sederhana",
+  "deskripsi": "Cari nilai yang belum diketahui pada persamaan.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "x + 5 = 12, maka x = ...",
+      "ilustrasi": "x",
+      "jawaban": "7",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "12 - 5 = 7."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "3 x n = 18, maka n = ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "jawaban": "6",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "18 : 3 = 6."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "y - 8 = 10, maka y = ...",
+      "ilustrasi": "x",
+      "jawaban": "18",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "10 + 8 = 18."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "24 : a = 6, maka a = ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "jawaban": "4",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "24 : 4 = 6."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "2 x b + 1 = 11, maka b = ...",
+      "ilustrasi": "x",
+      "jawaban": "5",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "11 - 1 = 10, 10 : 2 = 5."
+    }
+  ]
+}

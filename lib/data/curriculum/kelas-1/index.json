@@ -1,0 +1,142 @@
+[
+  {
+    "id": "k1-mengenal-angka",
+    "topik": "Mengenal Angka",
+    "deskripsi": "Mari mengenal angka 1 sampai 20 dengan cara yang seru!",
+    "jumlahSoal": 5,
+    "icon": "#"
+  },
+  {
+    "id": "k1-penjumlahan-dasar",
+    "topik": "Penjumlahan Dasar",
+    "deskripsi": "Belajar menjumlahkan benda-benda di sekitarmu.",
+    "jumlahSoal": 5,
+    "icon": "+"
+  },
+  {
+    "id": "k1-penjumlahan-pengurangan",
+    "topik": "Penjumlahan & Pengurangan Dasar (1-10)",
+    "deskripsi": "Mari belajar tambah dan kurang dengan benda di sekitar!",
+    "jumlahSoal": 5,
+    "icon": "+-"
+  },
+  {
+    "id": "k1-bangun-datar",
+    "topik": "Mengenal Bangun Datar",
+    "deskripsi": "Segitiga, lingkaran, dan kotak ada di mana-mana!",
+    "jumlahSoal": 5,
+    "icon": "[]"
+  },
+  {
+    "id": "k1-mengurutkan-angka",
+    "topik": "Mengurutkan Angka",
+    "deskripsi": "Susun angka kecil ke besar dan besar ke kecil.",
+    "jumlahSoal": 5,
+    "icon": "1-2"
+  },
+  {
+    "id": "k1-membandingkan-bilangan",
+    "topik": "Membandingkan Bilangan",
+    "deskripsi": "Tentukan bilangan yang lebih banyak, lebih sedikit, atau sama.",
+    "jumlahSoal": 5,
+    "icon": "<>"
+  },
+  {
+    "id": "k1-menghitung-benda",
+    "topik": "Menghitung Benda",
+    "deskripsi": "Latihan menghitung benda satu per satu dengan teliti.",
+    "jumlahSoal": 5,
+    "icon": "#"
+  },
+  {
+    "id": "k1-pasangan-bilangan",
+    "topik": "Pasangan Bilangan 10",
+    "deskripsi": "Temukan dua bilangan yang jika dijumlahkan menjadi 10.",
+    "jumlahSoal": 5,
+    "icon": "10"
+  },
+  {
+    "id": "k1-pengurangan-dasar",
+    "topik": "Pengurangan Dasar",
+    "deskripsi": "Belajar mengambil sebagian benda lalu menghitung sisanya.",
+    "jumlahSoal": 5,
+    "icon": "-"
+  },
+  {
+    "id": "k1-cerita-penjumlahan",
+    "topik": "Soal Cerita Penjumlahan",
+    "deskripsi": "Pakai cerita pendek untuk memahami operasi tambah.",
+    "jumlahSoal": 5,
+    "icon": "+"
+  },
+  {
+    "id": "k1-cerita-pengurangan",
+    "topik": "Soal Cerita Pengurangan",
+    "deskripsi": "Pakai cerita pendek untuk memahami operasi kurang.",
+    "jumlahSoal": 5,
+    "icon": "-"
+  },
+  {
+    "id": "k1-bilangan-loncat-2",
+    "topik": "Bilangan Loncat 2",
+    "deskripsi": "Berhitung maju dengan loncatan dua angka.",
+    "jumlahSoal": 5,
+    "icon": "2"
+  },
+  {
+    "id": "k1-bilangan-loncat-5",
+    "topik": "Bilangan Loncat 5",
+    "deskripsi": "Berhitung maju dengan loncatan lima angka.",
+    "jumlahSoal": 5,
+    "icon": "5"
+  },
+  {
+    "id": "k1-puluhan-satuan",
+    "topik": "Puluhan dan Satuan",
+    "deskripsi": "Kenali puluhan dan satuan pada bilangan dua angka.",
+    "jumlahSoal": 5,
+    "icon": "10"
+  },
+  {
+    "id": "k1-nilai-tempat",
+    "topik": "Nilai Tempat Dasar",
+    "deskripsi": "Tentukan nilai angka pada tempat puluhan dan satuan.",
+    "jumlahSoal": 5,
+    "icon": "10"
+  },
+  {
+    "id": "k1-pola-bentuk",
+    "topik": "Pola Bentuk Sederhana",
+    "deskripsi": "Lanjutkan pola bentuk yang berulang.",
+    "jumlahSoal": 5,
+    "icon": "AB"
+  },
+  {
+    "id": "k1-pengukuran-panjang-nonbaku",
+    "topik": "Mengukur Panjang Nonbaku",
+    "deskripsi": "Bandingkan panjang benda memakai satuan tidak baku.",
+    "jumlahSoal": 5,
+    "icon": "cm"
+  },
+  {
+    "id": "k1-membaca-jam-tepat",
+    "topik": "Membaca Jam Tepat",
+    "deskripsi": "Belajar membaca jam 1 tepat sampai 12 tepat.",
+    "jumlahSoal": 5,
+    "icon": "00"
+  },
+  {
+    "id": "k1-uang-koin",
+    "topik": "Mengenal Uang Koin",
+    "deskripsi": "Hitung nilai beberapa koin sederhana.",
+    "jumlahSoal": 5,
+    "icon": "Rp"
+  },
+  {
+    "id": "k1-review-kelas-1",
+    "topik": "Review Matematika Kelas 1",
+    "deskripsi": "Campuran soal untuk mengulang semua kemampuan kelas 1.",
+    "jumlahSoal": 5,
+    "icon": "*"
+  }
+]

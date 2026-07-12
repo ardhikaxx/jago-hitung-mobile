@@ -1,0 +1,81 @@
+{
+  "id": "k1-mengurutkan-angka",
+  "kelas": 1,
+  "topik": "Mengurutkan Angka",
+  "deskripsi": "Susun angka kecil ke besar dan besar ke kecil.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "25, 26, 27, ...",
+      "ilustrasi": "...",
+      "jawaban": "28",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Pola naik 1, jadi jawabannya 28."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Urutkan dari kecil ke besar.",
+      "ilustrasi": "...",
+      "pilihan": [
+        "25, 27, 29",
+        "29, 27, 25",
+        "27, 25, 29",
+        "29, 25, 27"
+      ],
+      "jawaban": "25, 27, 29",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Urutan kecil ke besar dimulai dari 25."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "35, 33, 31, ...",
+      "ilustrasi": "...",
+      "jawaban": "29",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Pola turun 2, jadi jawabannya 29."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Bilangan di antara 25 dan 27 adalah ...",
+      "ilustrasi": "...",
+      "pilihan": [
+        "24",
+        "26",
+        "28",
+        "29"
+      ],
+      "jawaban": "26",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Bilangan di antaranya adalah 26."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "25, 30, 35, ...",
+      "ilustrasi": "...",
+      "jawaban": "40",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Pola naik 5, jadi jawabannya 40."
+    }
+  ]
+}

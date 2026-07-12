@@ -1,0 +1,81 @@
+{
+  "id": "k6-skala-peta",
+  "kelas": 6,
+  "topik": "Skala Peta",
+  "deskripsi": "Hitung jarak pada peta dan jarak sebenarnya.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "Skala 1:100, jarak peta 3 cm berarti jarak sebenarnya ... cm",
+      "ilustrasi": "1:n",
+      "jawaban": "300",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "3 x 100 = 300 cm."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Skala 1:1000, jarak peta 2 cm berarti ... cm",
+      "ilustrasi": "map",
+      "pilihan": [
+        "200",
+        "1000",
+        "2000",
+        "3000"
+      ],
+      "jawaban": "2000",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "2 x 1000 = 2000."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "Jarak sebenarnya 500 cm pada skala 1:100 menjadi ... cm di peta",
+      "ilustrasi": "map",
+      "jawaban": "5",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "500 : 100 = 5."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Skala menunjukkan perbandingan jarak ...",
+      "ilustrasi": "map",
+      "pilihan": [
+        "peta dan sebenarnya",
+        "berat dan waktu",
+        "uang dan barang",
+        "suhu dan volume"
+      ],
+      "jawaban": "peta dan sebenarnya",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Skala membandingkan jarak pada gambar dan sebenarnya."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "Skala 1:50, jarak peta 4 cm berarti ... cm",
+      "ilustrasi": "1:n",
+      "jawaban": "200",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "4 x 50 = 200."
+    }
+  ]
+}

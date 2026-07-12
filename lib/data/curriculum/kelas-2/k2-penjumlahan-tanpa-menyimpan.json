@@ -1,0 +1,81 @@
+{
+  "id": "k2-penjumlahan-tanpa-menyimpan",
+  "kelas": 2,
+  "topik": "Penjumlahan Tanpa Menyimpan",
+  "deskripsi": "Jumlahkan bilangan dua angka yang mudah.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "31 + 47 = ...",
+      "ilustrasi": "+",
+      "jawaban": "78",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "31 + 47 = 78."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "131 + 47 = ...",
+      "ilustrasi": "+",
+      "pilihan": [
+        "158",
+        "168",
+        "178",
+        "188"
+      ],
+      "jawaban": "178",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Hasilnya 178."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "40 + 55 = ...",
+      "ilustrasi": "+",
+      "jawaban": "95",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Hasilnya 95."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "31 + 100 = ...",
+      "ilustrasi": "+",
+      "pilihan": [
+        "111",
+        "121",
+        "131",
+        "141"
+      ],
+      "jawaban": "131",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Tambahkan 100."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "231 + 147 = ...",
+      "ilustrasi": "+",
+      "jawaban": "378",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Hasilnya 378."
+    }
+  ]
+}

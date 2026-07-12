@@ -1,0 +1,87 @@
+{
+  "id": "k6-diagram-lingkaran",
+  "kelas": 6,
+  "topik": "Diagram Lingkaran",
+  "deskripsi": "Baca persentase dan bagian pada diagram lingkaran.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Setengah lingkaran sama dengan ...%",
+      "ilustrasi": "O",
+      "pilihan": [
+        "25",
+        "50",
+        "75",
+        "100"
+      ],
+      "jawaban": "50",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Setengah = 50%."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "Seperempat lingkaran sama dengan ...%",
+      "ilustrasi": "O",
+      "jawaban": "25",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "1/4 = 25%."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Jika 100 siswa, 30% suka matematika. Jumlahnya ... siswa",
+      "ilustrasi": "O",
+      "pilihan": [
+        "20",
+        "30",
+        "40",
+        "50"
+      ],
+      "jawaban": "30",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "30% dari 100 adalah 30."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "75% dari 100 adalah ...",
+      "ilustrasi": "O",
+      "jawaban": "75",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "75% dari 100 adalah 75."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Diagram lingkaran cocok untuk menunjukkan ...",
+      "ilustrasi": "O",
+      "pilihan": [
+        "bagian dari keseluruhan",
+        "urutan waktu saja",
+        "panjang benda",
+        "letak titik"
+      ],
+      "jawaban": "bagian dari keseluruhan",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Diagram lingkaran menunjukkan bagian dari total."
+    }
+  ]
+}

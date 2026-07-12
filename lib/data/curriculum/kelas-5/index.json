@@ -1,0 +1,142 @@
+[
+  {
+    "id": "k5-perkalian-pembagian-pecahan",
+    "topik": "Perkalian & Pembagian Pecahan",
+    "deskripsi": "Belajar mengalikan dan membagi pecahan dengan contoh sederhana.",
+    "jumlahSoal": 5,
+    "icon": "x/"
+  },
+  {
+    "id": "k5-volume-bangun-ruang",
+    "topik": "Volume Bangun Ruang",
+    "deskripsi": "Hitung volume kubus dan balok.",
+    "jumlahSoal": 5,
+    "icon": "V"
+  },
+  {
+    "id": "k5-operasi-hitung-campuran",
+    "topik": "Operasi Hitung Campuran",
+    "deskripsi": "Kerjakan operasi campuran dengan urutan yang benar.",
+    "jumlahSoal": 5,
+    "icon": "+x"
+  },
+  {
+    "id": "k5-bilangan-pangkat-dua",
+    "topik": "Bilangan Pangkat Dua",
+    "deskripsi": "Kenali kuadrat bilangan dan penggunaannya.",
+    "jumlahSoal": 5,
+    "icon": "^2"
+  },
+  {
+    "id": "k5-akar-pangkat-dua",
+    "topik": "Akar Pangkat Dua",
+    "deskripsi": "Cari akar dari bilangan kuadrat sempurna.",
+    "jumlahSoal": 5,
+    "icon": "rt"
+  },
+  {
+    "id": "k5-fpb-kpk-lanjut",
+    "topik": "FPB dan KPK Lanjut",
+    "deskripsi": "Gunakan FPB dan KPK dalam soal cerita.",
+    "jumlahSoal": 5,
+    "icon": "K"
+  },
+  {
+    "id": "k5-pecahan-campuran",
+    "topik": "Pecahan Campuran",
+    "deskripsi": "Ubah pecahan biasa dan pecahan campuran.",
+    "jumlahSoal": 5,
+    "icon": "1 1/2"
+  },
+  {
+    "id": "k5-penjumlahan-pecahan-beda-penyebut",
+    "topik": "Penjumlahan Pecahan Beda Penyebut",
+    "deskripsi": "Samakan penyebut sebelum menjumlahkan pecahan.",
+    "jumlahSoal": 5,
+    "icon": "+"
+  },
+  {
+    "id": "k5-pengurangan-pecahan-beda-penyebut",
+    "topik": "Pengurangan Pecahan Beda Penyebut",
+    "deskripsi": "Samakan penyebut sebelum mengurangkan pecahan.",
+    "jumlahSoal": 5,
+    "icon": "-"
+  },
+  {
+    "id": "k5-desimal-dan-pecahan",
+    "topik": "Desimal dan Pecahan",
+    "deskripsi": "Ubah bentuk desimal menjadi pecahan sederhana.",
+    "jumlahSoal": 5,
+    "icon": "0.5"
+  },
+  {
+    "id": "k5-persen-dasar",
+    "topik": "Persen Dasar",
+    "deskripsi": "Pahami persen sebagai per seratus.",
+    "jumlahSoal": 5,
+    "icon": "%"
+  },
+  {
+    "id": "k5-perbandingan",
+    "topik": "Perbandingan",
+    "deskripsi": "Bandingkan dua jumlah dalam bentuk rasio.",
+    "jumlahSoal": 5,
+    "icon": ":"
+  },
+  {
+    "id": "k5-skala-denah",
+    "topik": "Skala dan Denah",
+    "deskripsi": "Gunakan skala sederhana pada peta atau denah.",
+    "jumlahSoal": 5,
+    "icon": "1:n"
+  },
+  {
+    "id": "k5-kecepatan-jarak-waktu",
+    "topik": "Kecepatan, Jarak, dan Waktu",
+    "deskripsi": "Hubungkan jarak, waktu, dan kecepatan.",
+    "jumlahSoal": 5,
+    "icon": "km"
+  },
+  {
+    "id": "k5-luas-trapesium-layang",
+    "topik": "Luas Trapesium dan Layang-layang",
+    "deskripsi": "Hitung luas bangun datar khusus dengan rumus.",
+    "jumlahSoal": 5,
+    "icon": "L"
+  },
+  {
+    "id": "k5-jaring-jaring-bangun-ruang",
+    "topik": "Jaring-jaring Bangun Ruang",
+    "deskripsi": "Kenali jaring-jaring kubus dan balok.",
+    "jumlahSoal": 5,
+    "icon": "box"
+  },
+  {
+    "id": "k5-satuan-volume",
+    "topik": "Satuan Volume",
+    "deskripsi": "Ubah satuan liter dan mililiter sederhana.",
+    "jumlahSoal": 5,
+    "icon": "L"
+  },
+  {
+    "id": "k5-pengolahan-data",
+    "topik": "Pengolahan Data",
+    "deskripsi": "Hitung rata-rata, median, dan modus sederhana.",
+    "jumlahSoal": 5,
+    "icon": "|"
+  },
+  {
+    "id": "k5-peluang-sederhana",
+    "topik": "Peluang Sederhana",
+    "deskripsi": "Kenali kemungkinan kejadian dalam situasi mudah.",
+    "jumlahSoal": 5,
+    "icon": "?"
+  },
+  {
+    "id": "k5-review-kelas-5",
+    "topik": "Review Matematika Kelas 5",
+    "deskripsi": "Campuran soal kelas 5 untuk menguatkan konsep.",
+    "jumlahSoal": 5,
+    "icon": "*"
+  }
+]

@@ -1,0 +1,81 @@
+{
+  "id": "k1-bilangan-loncat-5",
+  "kelas": 1,
+  "topik": "Bilangan Loncat 5",
+  "deskripsi": "Berhitung maju dengan loncatan lima angka.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "5, 10, 15, ...",
+      "ilustrasi": "5",
+      "jawaban": "20",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Loncatan 5 menghasilkan 20."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Angka setelah 25 jika loncat 5 adalah ...",
+      "ilustrasi": "5",
+      "pilihan": [
+        "26",
+        "28",
+        "30",
+        "35"
+      ],
+      "jawaban": "30",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "25 + 5 = 30."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "35, 40, 45, ...",
+      "ilustrasi": "5",
+      "jawaban": "50",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Loncatan berikutnya 50."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Mana bilangan loncat 5?",
+      "ilustrasi": "5",
+      "pilihan": [
+        "10, 15, 20",
+        "11, 15, 19",
+        "12, 14, 16",
+        "20, 22, 24"
+      ],
+      "jawaban": "10, 15, 20",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Urutan itu naik 5."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "35, 40, 45, ...",
+      "ilustrasi": "5",
+      "jawaban": "50",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Pola naik 5."
+    }
+  ]
+}

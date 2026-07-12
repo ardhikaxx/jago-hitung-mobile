@@ -1,0 +1,87 @@
+{
+  "id": "k4-sudut-dan-busur",
+  "kelas": 4,
+  "topik": "Mengukur Sudut",
+  "deskripsi": "Tentukan besar sudut sederhana dalam derajat.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Sudut siku-siku besarnya ... derajat",
+      "ilustrasi": "<)",
+      "pilihan": [
+        "45",
+        "60",
+        "90",
+        "180"
+      ],
+      "jawaban": "90",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Sudut siku-siku = 90 derajat."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Sudut yang kurang dari 90 derajat disebut ...",
+      "ilustrasi": "<)",
+      "pilihan": [
+        "lancip",
+        "siku-siku",
+        "tumpul",
+        "lurus"
+      ],
+      "jawaban": "lancip",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Sudut lancip kurang dari 90 derajat."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "Sudut lurus besarnya ... derajat",
+      "ilustrasi": "<)",
+      "jawaban": "180",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Sudut lurus = 180 derajat."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Sudut 120 derajat termasuk sudut ...",
+      "ilustrasi": "<)",
+      "pilihan": [
+        "lancip",
+        "siku-siku",
+        "tumpul",
+        "nol"
+      ],
+      "jawaban": "tumpul",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "120 derajat lebih dari 90 dan kurang dari 180."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "Setengah putaran besarnya ... derajat",
+      "ilustrasi": "<)",
+      "jawaban": "180",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Setengah putaran = 180 derajat."
+    }
+  ]
+}

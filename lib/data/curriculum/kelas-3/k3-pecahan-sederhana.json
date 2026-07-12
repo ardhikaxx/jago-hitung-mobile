@@ -1,0 +1,93 @@
+{
+  "id": "k3-pecahan-sederhana",
+  "kelas": 3,
+  "topik": "Mengenal Pecahan Sederhana",
+  "deskripsi": "Belajar bagian dari satu benda utuh.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Setengah ditulis sebagai ...",
+      "ilustrasi": "1/2",
+      "pilihan": [
+        "1/2",
+        "1/3",
+        "1/4",
+        "2/3"
+      ],
+      "jawaban": "1/2",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Setengah adalah 1/2."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Pecahan yang senilai dengan 1/2 adalah ...",
+      "ilustrasi": "1/2",
+      "pilihan": [
+        "2/4",
+        "1/3",
+        "3/4",
+        "2/3"
+      ],
+      "jawaban": "2/4",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "1/2 = 2/4."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Mana yang lebih besar?",
+      "ilustrasi": "1/4",
+      "pilihan": [
+        "3/4",
+        "1/4",
+        "2/4",
+        "1/2"
+      ],
+      "jawaban": "3/4",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "3/4 bagian paling besar di pilihan ini."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "Jika 1 pizza dibagi 4 sama besar, setiap bagian disebut 1 per ...",
+      "ilustrasi": "1/4",
+      "jawaban": "4",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Setiap bagian adalah 1/4."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Pecahan sederhana dari 2/4 adalah ...",
+      "ilustrasi": "1/2",
+      "pilihan": [
+        "1/2",
+        "1/4",
+        "2/3",
+        "3/4"
+      ],
+      "jawaban": "1/2",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "2/4 dapat disederhanakan menjadi 1/2."
+    }
+  ]
+}

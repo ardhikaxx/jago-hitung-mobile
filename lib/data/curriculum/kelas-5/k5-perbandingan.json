@@ -1,0 +1,87 @@
+{
+  "id": "k5-perbandingan",
+  "kelas": 5,
+  "topik": "Perbandingan",
+  "deskripsi": "Bandingkan dua jumlah dalam bentuk rasio.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Perbandingan 2 apel dan 3 jeruk ditulis ...",
+      "ilustrasi": ":",
+      "pilihan": [
+        "2:3",
+        "3:2",
+        "2:5",
+        "5:2"
+      ],
+      "jawaban": "2:3",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Apel dibanding jeruk adalah 2:3."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "Jika 1 kotak berisi 6 pensil, 4 kotak berisi ... pensil",
+      "ilustrasi": ":",
+      "jawaban": "24",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "4 x 6 = 24."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Rasio 4:8 disederhanakan menjadi ...",
+      "ilustrasi": ":",
+      "pilihan": [
+        "1:2",
+        "2:1",
+        "4:1",
+        "8:4"
+      ],
+      "jawaban": "1:2",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Bagi keduanya dengan 4."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "Jika 2 kg berharga 10 ribu, 4 kg berharga ... ribu",
+      "ilustrasi": ":",
+      "jawaban": "20",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Dua kali lipat dari 10 adalah 20."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Perbandingan 6:9 disederhanakan menjadi ...",
+      "ilustrasi": ":",
+      "pilihan": [
+        "2:3",
+        "3:2",
+        "1:3",
+        "6:3"
+      ],
+      "jawaban": "2:3",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Bagi 6 dan 9 dengan 3."
+    }
+  ]
+}

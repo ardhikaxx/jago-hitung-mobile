@@ -1,0 +1,87 @@
+{
+  "id": "k1-pola-bentuk",
+  "kelas": 1,
+  "topik": "Pola Bentuk Sederhana",
+  "deskripsi": "Lanjutkan pola bentuk yang berulang.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Pola A, B, A, B, ... dilanjutkan dengan",
+      "ilustrasi": "AB",
+      "pilihan": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "jawaban": "A",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Pola berulang A lalu B."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Pola kotak, lingkaran, kotak, lingkaran, ...",
+      "ilustrasi": "AB",
+      "pilihan": [
+        "kotak",
+        "segitiga",
+        "garis",
+        "bintang"
+      ],
+      "jawaban": "kotak",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Setelah lingkaran kembali ke kotak."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "Pola 1, 2, 1, 2, ... angka berikutnya",
+      "ilustrasi": "AB",
+      "jawaban": "1",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Pola kembali ke 1."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Pola merah, biru, merah, biru, ...",
+      "ilustrasi": "AB",
+      "pilihan": [
+        "merah",
+        "biru",
+        "hijau",
+        "kuning"
+      ],
+      "jawaban": "merah",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Urutan berulang dari awal."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "Pola 3, 4, 3, 4, ... angka berikutnya",
+      "ilustrasi": "AB",
+      "jawaban": "3",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Pola kembali ke 3."
+    }
+  ]
+}

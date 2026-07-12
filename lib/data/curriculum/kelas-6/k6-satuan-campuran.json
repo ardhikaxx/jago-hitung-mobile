@@ -1,0 +1,81 @@
+{
+  "id": "k6-satuan-campuran",
+  "kelas": 6,
+  "topik": "Konversi Satuan Campuran",
+  "deskripsi": "Ubah panjang, berat, waktu, dan volume dalam soal.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "1 liter = ... mililiter",
+      "ilustrasi": "L",
+      "jawaban": "1000",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "1 liter sama dengan 1000 mililiter."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "2 kg = ... gram",
+      "ilustrasi": "kg",
+      "pilihan": [
+        "20",
+        "200",
+        "2000",
+        "20000"
+      ],
+      "jawaban": "2000",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "1 kg = 1000 gram."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "3 liter = ... mililiter",
+      "ilustrasi": "L",
+      "jawaban": "3000",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "3 x 1000 = 3000."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "5000 gram = ... kg",
+      "ilustrasi": "kg",
+      "pilihan": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "jawaban": "5",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "5000 : 1000 = 5."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "2 jam = ... menit",
+      "ilustrasi": "unit",
+      "jawaban": "120",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "2 x 60 = 120 menit."
+    }
+  ]
+}

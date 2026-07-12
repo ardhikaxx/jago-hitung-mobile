@@ -1,0 +1,92 @@
+{
+  "id": "k2-membandingkan-bilangan",
+  "kelas": 2,
+  "topik": "Membandingkan Bilangan Dua Angka",
+  "deskripsi": "Bandingkan bilangan sampai 100 dengan tepat.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Mana yang lebih besar: 28 atau 42?",
+      "ilustrasi": "<>",
+      "pilihan": [
+        "28",
+        "42",
+        "27",
+        "41"
+      ],
+      "jawaban": "42",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Bilangan yang lebih besar adalah 42."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Tanda yang tepat untuk 8 ... 4 adalah",
+      "ilustrasi": "<>",
+      "pilihan": [
+        "<",
+        ">",
+        "="
+      ],
+      "jawaban": ">",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Bandingkan kedua bilangan dari kiri ke kanan."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "Selisih 42 dan 28 adalah ...",
+      "ilustrasi": "<>",
+      "jawaban": "14",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Selisihnya 14."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Mana yang paling kecil?",
+      "ilustrasi": "<>",
+      "pilihan": [
+        "28",
+        "42",
+        "33",
+        "47"
+      ],
+      "jawaban": "28",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Bilangan paling kecil adalah 28."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "28 lebih dekat ke ...",
+      "ilustrasi": "<>",
+      "pilihan": [
+        "27",
+        "38",
+        "48",
+        "58"
+      ],
+      "jawaban": "27",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "27 hanya berjarak 1 dari 28."
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "k6-bilangan-bulat-negatif",
+    "topik": "Bilangan Bulat Negatif",
+    "deskripsi": "Pahami operasi bilangan positif dan negatif.",
+    "jumlahSoal": 5,
+    "icon": "+-"
+  },
+  {
+    "id": "k6-statistika-dasar",
+    "topik": "Statistika Dasar",
+    "deskripsi": "Belajar mean, median, modus, dan membaca data.",
+    "jumlahSoal": 5,
+    "icon": "|"
+  },
+  {
+    "id": "k6-operasi-pecahan-desimal-persen",
+    "topik": "Pecahan, Desimal, dan Persen",
+    "deskripsi": "Ubah bentuk bilangan dan gunakan dalam operasi hitung.",
+    "jumlahSoal": 5,
+    "icon": "%"
+  },
+  {
+    "id": "k6-rasio-dan-perbandingan",
+    "topik": "Rasio dan Perbandingan",
+    "deskripsi": "Selesaikan perbandingan senilai dan berbalik nilai sederhana.",
+    "jumlahSoal": 5,
+    "icon": ":"
+  },
+  {
+    "id": "k6-skala-peta",
+    "topik": "Skala Peta",
+    "deskripsi": "Hitung jarak pada peta dan jarak sebenarnya.",
+    "jumlahSoal": 5,
+    "icon": "map"
+  },
+  {
+    "id": "k6-debit",
+    "topik": "Debit Air",
+    "deskripsi": "Hubungkan volume, waktu, dan debit.",
+    "jumlahSoal": 5,
+    "icon": "L/s"
+  },
+  {
+    "id": "k6-luas-lingkaran",
+    "topik": "Luas Lingkaran",
+    "deskripsi": "Gunakan jari-jari dan diameter untuk menghitung luas.",
+    "jumlahSoal": 5,
+    "icon": "O"
+  },
+  {
+    "id": "k6-keliling-lingkaran",
+    "topik": "Keliling Lingkaran",
+    "deskripsi": "Hitung keliling lingkaran dengan pendekatan pi.",
+    "jumlahSoal": 5,
+    "icon": "O"
+  },
+  {
+    "id": "k6-volume-prisma-tabung",
+    "topik": "Volume Prisma dan Tabung",
+    "deskripsi": "Hitung volume bangun ruang lanjutan.",
+    "jumlahSoal": 5,
+    "icon": "V"
+  },
+  {
+    "id": "k6-luas-permukaan",
+    "topik": "Luas Permukaan Bangun Ruang",
+    "deskripsi": "Hitung luas permukaan kubus dan balok.",
+    "jumlahSoal": 5,
+    "icon": "SA"
+  },
+  {
+    "id": "k6-koordinat-bidang",
+    "topik": "Koordinat Bidang",
+    "deskripsi": "Baca titik pada bidang koordinat sederhana.",
+    "jumlahSoal": 5,
+    "icon": "xy"
+  },
+  {
+    "id": "k6-pola-bilangan-kompleks",
+    "topik": "Pola Bilangan Kompleks",
+    "deskripsi": "Temukan aturan pola bertingkat dan campuran.",
+    "jumlahSoal": 5,
+    "icon": "..."
+  },
+  {
+    "id": "k6-persamaan-sederhana",
+    "topik": "Persamaan Sederhana",
+    "deskripsi": "Cari nilai yang belum diketahui pada persamaan.",
+    "jumlahSoal": 5,
+    "icon": "x"
+  },
+  {
+    "id": "k6-operasi-hitung-campuran-lanjut",
+    "topik": "Operasi Hitung Campuran Lanjut",
+    "deskripsi": "Kerjakan operasi campuran dengan tanda kurung.",
+    "jumlahSoal": 5,
+    "icon": "()"
+  },
+  {
+    "id": "k6-fpb-kpk-soal-cerita",
+    "topik": "FPB dan KPK Soal Cerita",
+    "deskripsi": "Gunakan FPB dan KPK untuk memecahkan masalah.",
+    "jumlahSoal": 5,
+    "icon": "K"
+  },
+  {
+    "id": "k6-peluang",
+    "topik": "Peluang",
+    "deskripsi": "Tentukan peluang sederhana dari beberapa kemungkinan.",
+    "jumlahSoal": 5,
+    "icon": "?"
+  },
+  {
+    "id": "k6-diagram-lingkaran",
+    "topik": "Diagram Lingkaran",
+    "deskripsi": "Baca persentase dan bagian pada diagram lingkaran.",
+    "jumlahSoal": 5,
+    "icon": "O"
+  },
+  {
+    "id": "k6-satuan-campuran",
+    "topik": "Konversi Satuan Campuran",
+    "deskripsi": "Ubah panjang, berat, waktu, dan volume dalam soal.",
+    "jumlahSoal": 5,
+    "icon": "unit"
+  },
+  {
+    "id": "k6-tryout-ujian-sekolah",
+    "topik": "Tryout Ujian Sekolah",
+    "deskripsi": "Latihan campuran untuk persiapan ujian sekolah.",
+    "jumlahSoal": 5,
+    "icon": "*"
+  },
+  {
+    "id": "k6-review-kelas-6",
+    "topik": "Review Matematika Kelas 6",
+    "deskripsi": "Rangkum kemampuan penting sebelum lanjut ke SMP.",
+    "jumlahSoal": 5,
+    "icon": "*"
+  }
+]

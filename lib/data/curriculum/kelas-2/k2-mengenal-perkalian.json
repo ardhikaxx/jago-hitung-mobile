@@ -1,0 +1,87 @@
+{
+  "id": "k2-mengenal-perkalian",
+  "kelas": 2,
+  "topik": "Mengenal Perkalian",
+  "deskripsi": "Pahami perkalian sebagai penjumlahan berulang.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "5 x 8 = ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "34",
+        "37",
+        "40",
+        "43"
+      ],
+      "jawaban": "40",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "5 x 8 = 40."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "6 x 8 = ...",
+      "ilustrasi": "x",
+      "jawaban": "48",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "6 x 8 = 48."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "8 kelompok berisi 5 benda. Jumlah benda ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "36",
+        "38",
+        "40",
+        "42"
+      ],
+      "jawaban": "40",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Ini sama dengan 8 x 5 = 40."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "5 x 10 = ...",
+      "ilustrasi": "x",
+      "jawaban": "50",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "5 x 10 = 50."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Faktor yang hilang: 5 x ... = 40",
+      "ilustrasi": "x",
+      "pilihan": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "jawaban": "8",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Faktor yang hilang adalah 8."
+    }
+  ]
+}

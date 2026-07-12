@@ -1,0 +1,93 @@
+{
+  "id": "k6-peluang",
+  "kelas": 6,
+  "topik": "Peluang",
+  "deskripsi": "Tentukan peluang sederhana dari beberapa kemungkinan.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Dalam kantong ada 1 bola merah dan 3 bola biru. Warna yang lebih mungkin terambil adalah ...",
+      "ilustrasi": "?",
+      "pilihan": [
+        "merah",
+        "biru",
+        "kuning",
+        "hitam"
+      ],
+      "jawaban": "biru",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Bola biru jumlahnya lebih banyak."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Mata dadu yang mungkin muncul adalah ...",
+      "ilustrasi": "?",
+      "pilihan": [
+        "0",
+        "3",
+        "7",
+        "9"
+      ],
+      "jawaban": "3",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Dadu memiliki angka 1 sampai 6."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "Koin memiliki ... sisi",
+      "ilustrasi": "?",
+      "jawaban": "2",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Koin memiliki dua sisi."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Jika semua kartu bernomor 1, peluang mengambil angka 1 adalah ...",
+      "ilustrasi": "?",
+      "pilihan": [
+        "pasti",
+        "mustahil",
+        "jarang",
+        "tidak mungkin"
+      ],
+      "jawaban": "pasti",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Semua kartu bernomor 1."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Mengambil bola hijau dari kantong yang hanya berisi bola merah adalah ...",
+      "ilustrasi": "?",
+      "pilihan": [
+        "pasti",
+        "mungkin",
+        "mustahil",
+        "sering"
+      ],
+      "jawaban": "mustahil",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Tidak ada bola hijau."
+    }
+  ]
+}

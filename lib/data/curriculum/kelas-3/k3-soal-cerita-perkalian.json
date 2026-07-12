@@ -1,0 +1,87 @@
+{
+  "id": "k3-soal-cerita-perkalian",
+  "kelas": 3,
+  "topik": "Soal Cerita Perkalian",
+  "deskripsi": "Gunakan perkalian dalam cerita sehari-hari.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "6 x 4 = ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "18",
+        "21",
+        "24",
+        "27"
+      ],
+      "jawaban": "24",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "6 x 4 = 24."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "7 x 4 = ...",
+      "ilustrasi": "x",
+      "jawaban": "28",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "7 x 4 = 28."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "4 kelompok berisi 6 benda. Jumlah benda ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "20",
+        "22",
+        "24",
+        "26"
+      ],
+      "jawaban": "24",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Ini sama dengan 4 x 6 = 24."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "6 x 10 = ...",
+      "ilustrasi": "x",
+      "jawaban": "60",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "6 x 10 = 60."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Faktor yang hilang: 6 x ... = 24",
+      "ilustrasi": "x",
+      "pilihan": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "jawaban": "4",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Faktor yang hilang adalah 4."
+    }
+  ]
+}

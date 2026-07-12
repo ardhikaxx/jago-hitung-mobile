@@ -1,0 +1,81 @@
+{
+  "id": "k2-bilangan-sampai-100",
+  "kelas": 2,
+  "topik": "Bilangan Sampai 100",
+  "deskripsi": "Baca, tulis, dan urutkan bilangan sampai 100.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "fill_in",
+      "pertanyaan": "22, 23, 24, ...",
+      "ilustrasi": "...",
+      "jawaban": "25",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Pola naik 1, jadi jawabannya 25."
+    },
+    {
+      "id": "q2",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Urutkan dari kecil ke besar.",
+      "ilustrasi": "...",
+      "pilihan": [
+        "22, 24, 26",
+        "26, 24, 22",
+        "24, 22, 26",
+        "26, 22, 24"
+      ],
+      "jawaban": "22, 24, 26",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Urutan kecil ke besar dimulai dari 22."
+    },
+    {
+      "id": "q3",
+      "tipe": "fill_in",
+      "pertanyaan": "32, 30, 28, ...",
+      "ilustrasi": "...",
+      "jawaban": "26",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Pola turun 2, jadi jawabannya 26."
+    },
+    {
+      "id": "q4",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Bilangan di antara 22 dan 24 adalah ...",
+      "ilustrasi": "...",
+      "pilihan": [
+        "21",
+        "23",
+        "25",
+        "26"
+      ],
+      "jawaban": "23",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Bilangan di antaranya adalah 23."
+    },
+    {
+      "id": "q5",
+      "tipe": "fill_in",
+      "pertanyaan": "22, 27, 32, ...",
+      "ilustrasi": "...",
+      "jawaban": "37",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "Pola naik 5, jadi jawabannya 37."
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "k2-tabel-perkalian-5",
+  "kelas": 2,
+  "topik": "Tabel Perkalian 5",
+  "deskripsi": "Hafalkan dan pahami perkalian lima.",
+  "jumlahSoal": 5,
+  "soal": [
+    {
+      "id": "q1",
+      "tipe": "multiple_choice",
+      "pertanyaan": "7 x 4 = ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "22",
+        "25",
+        "28",
+        "31"
+      ],
+      "jawaban": "28",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "7 x 4 = 28."
+    },
+    {
+      "id": "q2",
+      "tipe": "fill_in",
+      "pertanyaan": "8 x 4 = ...",
+      "ilustrasi": "x",
+      "jawaban": "32",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "8 x 4 = 32."
+    },
+    {
+      "id": "q3",
+      "tipe": "multiple_choice",
+      "pertanyaan": "4 kelompok berisi 7 benda. Jumlah benda ...",
+      "ilustrasi": "x",
+      "pilihan": [
+        "24",
+        "26",
+        "28",
+        "30"
+      ],
+      "jawaban": "28",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Ini sama dengan 4 x 7 = 28."
+    },
+    {
+      "id": "q4",
+      "tipe": "fill_in",
+      "pertanyaan": "7 x 10 = ...",
+      "ilustrasi": "x",
+      "jawaban": "70",
+      "petunjuk": [
+        "Tuliskan angkanya saja.",
+        "Gunakan coretan jika perlu."
+      ],
+      "penjelasan": "7 x 10 = 70."
+    },
+    {
+      "id": "q5",
+      "tipe": "multiple_choice",
+      "pertanyaan": "Faktor yang hilang: 7 x ... = 28",
+      "ilustrasi": "x",
+      "pilihan": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "jawaban": "4",
+      "petunjuk": [
+        "Baca soal dengan teliti.",
+        "Coba hitung langkah demi langkah."
+      ],
+      "penjelasan": "Faktor yang hilang adalah 4."
+    }
+  ]
+}

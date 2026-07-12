@@ -15,32 +15,113 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 0;
   User? get user => AuthService.instance.currentUser;
 
   @override
   Widget build(BuildContext context) {
-    if (user == null) {
-      return const LoginScreen();
-    }
-    return Scaffold(
-      backgroundColor: AppColors.background,
-      body: SafeArea(
-        child: StreamBuilder<UserProgress?>(
-          stream: FirestoreService.instance.getUserProgressStream(user!.uid),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            final progress = snapshot.data;
-            return _buildContent(progress);
-          },
+    if (user == null) return const LoginScreen();
+
+    return StreamBuilder<UserProgress?>(
+      stream: FirestoreService.instance.getUserProgressStream(user!.uid),
+      builder: (context, snapshot) {
+        final progress = snapshot.data;
+        return Scaffold(
+          backgroundColor: AppColors.background,
+          body: SafeArea(
+            child: IndexedStack(
+              index: _currentIndex,
+              children: [
+                _KelasPage(progress: progress, user: user!),
+                _ProfilPage(progress: progress, user: user!),
+              ],
+            ),
+          ),
+          bottomSheet: _buildFloatingNavBar(),
+        );
+      },
+    );
+  }
+
+  Widget _buildFloatingNavBar() {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(24, 0, 24, 12),
+      height: 80,
+      color: Colors.transparent,
+      child: Container(
+        height: 64,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(32),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.1),
+              blurRadius: 16,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: _buildNavItem(0, Icons.school_rounded, 'Kelas'),
+            ),
+            Expanded(
+              child: _buildNavItem(1, Icons.person_rounded, 'Profil'),
+            ),
+          ],
         ),
       ),
     );
   }
 
-  Widget _buildContent(UserProgress? progress) {
-    final nama = progress?.nama ?? user!.displayName ?? 'Siswa';
+  Widget _buildNavItem(int index, IconData icon, String label) {
+    final isSelected = _currentIndex == index;
+    return GestureDetector(
+      onTap: () => setState(() => _currentIndex = index),
+      behavior: HitTestBehavior.opaque,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 250),
+        margin: const EdgeInsets.all(6),
+        decoration: BoxDecoration(
+          color: isSelected ? AppColors.primary : Colors.transparent,
+          borderRadius: BorderRadius.circular(28),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              icon,
+              size: 22,
+              color: isSelected ? Colors.white : AppColors.textSecondary,
+            ),
+            if (isSelected) ...[
+              const SizedBox(width: 6),
+              Text(
+                label,
+                style: const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _KelasPage extends StatelessWidget {
+  final UserProgress? progress;
+  final User user;
+
+  const _KelasPage({required this.progress, required this.user});
+
+  @override
+  Widget build(BuildContext context) {
+    final nama = progress?.nama ?? user.displayName ?? 'Siswa';
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
@@ -85,20 +166,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
                     ),
-                    IconButton(
-                      onPressed: () async {
-                        await AuthService.instance.signOut();
-                        if (mounted) {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (_) => const LoginScreen()),
-                          );
-                        }
-                      },
-                      icon: const Icon(Icons.logout,
-                          color: AppColors.textSecondary),
-                    ),
                   ],
                 ),
                 const SizedBox(height: 24),
@@ -136,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
               (context, index) {
                 final kelas = index + 1;
                 final unlocked = _isKelasUnlocked(kelas, progress);
-                return _buildKelasCard(kelas, unlocked, progress);
+                return _buildKelasCard(context, kelas, unlocked, progress);
               },
               childCount: 6,
             ),
@@ -155,7 +222,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return prevProgress?.lulus ?? false;
   }
 
-  Widget _buildKelasCard(int kelas, bool unlocked, UserProgress? progress) {
+  Widget _buildKelasCard(
+      BuildContext context, int kelas, bool unlocked, UserProgress? progress) {
     final color = AppConstants.warnaKelas[kelas] ?? AppColors.primary;
     final namaKelas = AppConstants.namaKelas[kelas] ?? 'Kelas $kelas';
 
@@ -248,6 +316,184 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _ProfilPage extends StatelessWidget {
+  final UserProgress? progress;
+  final User user;
+
+  const _ProfilPage({required this.progress, required this.user});
+
+  @override
+  Widget build(BuildContext context) {
+    final nama = progress?.nama ?? user.displayName ?? 'Siswa';
+    final email = progress?.email ?? user.email ?? '';
+    final kelasAktif = progress?.kelasAktif ?? 1;
+
+    int totalSelesai = 0;
+    int totalSoal = 0;
+    final p = progress;
+    if (p != null) {
+      for (int k = 1; k <= 6; k++) {
+        final topics = AppConstants.getTopicOrder(k);
+        for (final t in topics) {
+          final tp = p.getTopikProgress(t, k);
+          if (tp != null) {
+            totalSelesai++;
+            totalSoal += tp.jumlahSoal;
+          }
+        }
+      }
+    }
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(20),
+      child: Column(
+        children: [
+          const SizedBox(height: 20),
+          CircleAvatar(
+            radius: 50,
+            backgroundColor: AppColors.primary,
+            child: Text(
+              nama.isNotEmpty ? nama[0].toUpperCase() : 'S',
+              style: const TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          const SizedBox(height: 16),
+          Text(
+            nama,
+            style: const TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: AppColors.textPrimary,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            email,
+            style: const TextStyle(
+              fontSize: 14,
+              color: AppColors.textSecondary,
+            ),
+          ),
+          const SizedBox(height: 24),
+          Container(
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.05),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Column(
+              children: [
+                _buildProfileStat(
+                  Icons.book_rounded,
+                  '$totalSelesai',
+                  'Materi Dikerjakan',
+                  AppColors.primary,
+                ),
+                const Divider(height: 32),
+                _buildProfileStat(
+                  Icons.check_circle_rounded,
+                  '$totalSoal',
+                  'Total Soal Dijawab',
+                  AppColors.success,
+                ),
+                const Divider(height: 32),
+                _buildProfileStat(
+                  Icons.school_rounded,
+                  'Kelas $kelasAktif',
+                  'Kelas Aktif',
+                  AppColors.secondary,
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 24),
+          SizedBox(
+            width: double.infinity,
+            height: 50,
+            child: OutlinedButton.icon(
+              onPressed: () async {
+                await AuthService.instance.signOut();
+                if (context.mounted) {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (_) => const LoginScreen()),
+                  );
+                }
+              },
+              icon: const Icon(Icons.logout, color: AppColors.danger),
+              label: const Text(
+                'Keluar',
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.danger),
+              ),
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(color: AppColors.danger),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildProfileStat(
+      IconData icon, String value, String label, Color color) {
+    return Row(
+      children: [
+        Container(
+          width: 44,
+          height: 44,
+          decoration: BoxDecoration(
+            color: color.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Icon(icon, color: color, size: 22),
+        ),
+        const SizedBox(width: 14),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                label,
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: AppColors.textSecondary,
+                ),
+              ),
+              Text(
+                value,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

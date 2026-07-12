@@ -9,13 +9,13 @@ service cloud.firestore {
       
       // User can create their own document during registration
       allow create: if request.auth != null && request.auth.uid == userId
-        && request.resource.data.keys().hasAll(['uid', 'nama', 'email', 'kelasAktif', 'topikProgress'])
+        && request.resource.data.keys().hasAll(['uid', 'nama', 'email', 'profileImage', 'kelasAktif', 'topikProgress'])
         && request.resource.data.uid == userId;
       
-      // User can update their own document (progress, kelasAktif)
+      // User can update their own document (progress, kelasAktif, profileImage)
       allow update: if request.auth != null && request.auth.uid == userId
         && request.resource.data.diff(resource.data).affectedKeys()
-            .hasOnly(['topikProgress', 'kelasAktif']);
+            .hasOnly(['topikProgress', 'kelasAktif', 'profileImage']);
       
       // No deletion allowed
       allow delete: if false;

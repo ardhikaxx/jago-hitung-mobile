@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -7,7 +8,6 @@ class AuthService {
   AuthService._();
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  // Ganti dengan Web Client ID dari Firebase Console > Authentication > Sign-in method > Google
   static const String _webClientId = '587383240209-ddearkud4nq0luhkajpp0768pfjh0s4m.apps.googleusercontent.com';
 
   final GoogleSignIn _googleSignIn = GoogleSignIn(
@@ -18,6 +18,50 @@ class AuthService {
     ],
   );
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  static const List<String> profileImages = [
+    'assets/images/profile/icon 02.png',
+    'assets/images/profile/icon 03.png',
+    'assets/images/profile/icon 04.png',
+    'assets/images/profile/icon 05.png',
+    'assets/images/profile/icon 06.png',
+    'assets/images/profile/icon 07.png',
+    'assets/images/profile/icon 08.png',
+    'assets/images/profile/icon 09.png',
+    'assets/images/profile/icon 10.png',
+    'assets/images/profile/icon 11.png',
+    'assets/images/profile/icon 12.png',
+    'assets/images/profile/Icon 13.png',
+    'assets/images/profile/Icon 14.png',
+    'assets/images/profile/Icon 15.png',
+    'assets/images/profile/Icon 16.png',
+    'assets/images/profile/Icon 17.png',
+    'assets/images/profile/Icon 18.png',
+    'assets/images/profile/Icon 19.png',
+    'assets/images/profile/Icon 20.png',
+    'assets/images/profile/Icon 21.png',
+    'assets/images/profile/Icon 22.png',
+    'assets/images/profile/Icon 23.png',
+    'assets/images/profile/Icon 24.png',
+    'assets/images/profile/Icon 25.png',
+    'assets/images/profile/Icon 26.png',
+    'assets/images/profile/Icon 27.png',
+    'assets/images/profile/Icon 28.png',
+    'assets/images/profile/Icon 29.png',
+    'assets/images/profile/Icon 30.png',
+    'assets/images/profile/Icon 31.png',
+    'assets/images/profile/Icon 32.png',
+    'assets/images/profile/Icon 33.png',
+    'assets/images/profile/Icon 34.png',
+    'assets/images/profile/Icon 35.png',
+    'assets/images/profile/Icon 36.png',
+    'assets/images/profile/img 01.png',
+  ];
+
+  String getRandomProfileImage() {
+    final random = Random();
+    return profileImages[random.nextInt(profileImages.length)];
+  }
 
   User? get currentUser => _auth.currentUser;
   Stream<User?> get authStateChanges => _auth.authStateChanges();
@@ -33,6 +77,7 @@ class AuthService {
       'uid': credential.user!.uid,
       'nama': nama,
       'email': email,
+      'profileImage': getRandomProfileImage(),
       'kelasAktif': 1,
       'topikProgress': {},
       'createdAt': FieldValue.serverTimestamp(),
@@ -74,6 +119,7 @@ class AuthService {
         'uid': userCredential.user!.uid,
         'nama': userCredential.user!.displayName ?? 'User',
         'email': userCredential.user!.email ?? '',
+        'profileImage': getRandomProfileImage(),
         'kelasAktif': 1,
         'topikProgress': {},
         'createdAt': FieldValue.serverTimestamp(),

@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "0.5 sama dengan pecahan ...",
-      "ilustrasi": "0.5",
+      "ilustrasi": "assets/images/soal/pizza_half.jpg",
       "pilihan": [
         "1/2",
         "1/4",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "25% sama dengan ...",
-      "ilustrasi": "%",
+      "ilustrasi": "assets/images/soal/pizza_half.jpg",
       "pilihan": [
         "1/4",
         "1/2",
@@ -45,7 +45,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "10% dari 100 adalah ...",
-      "ilustrasi": "%",
+      "ilustrasi": "assets/images/soal/pizza_half.jpg",
       "jawaban": "10",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "0.75 sama dengan ...",
-      "ilustrasi": "0.75",
+      "ilustrasi": "assets/images/soal/pizza_half.jpg",
       "pilihan": [
         "1/4",
         "1/2",
@@ -75,7 +75,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "50% dari 80 adalah ...",
-      "ilustrasi": "%",
+      "ilustrasi": "assets/images/soal/pizza_half.jpg",
       "jawaban": "40",
       "petunjuk": [
         "Tuliskan angkanya saja.",

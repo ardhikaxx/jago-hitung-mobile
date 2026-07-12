@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "KPK dari 4 dan 6 adalah ...",
-      "ilustrasi": "KPK",
+      "ilustrasi": "assets/images/soal/pohon_faktor.jpg",
       "pilihan": [
         "8",
         "10",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "FPB dari 12 dan 18 adalah ...",
-      "ilustrasi": "FPB",
+      "ilustrasi": "assets/images/soal/pohon_faktor.jpg",
       "pilihan": [
         "3",
         "6",
@@ -45,7 +45,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "Kelipatan ke-3 dari 5 adalah ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/counting_apples.jpg",
       "jawaban": "15",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Faktor dari 16 adalah ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/counting_apples.jpg",
       "pilihan": [
         "3",
         "5",
@@ -75,7 +75,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "KPK dari 3 dan 5 adalah ...",
-      "ilustrasi": "KPK",
+      "ilustrasi": "assets/images/soal/pohon_faktor.jpg",
       "jawaban": "15",
       "petunjuk": [
         "Tuliskan angkanya saja.",

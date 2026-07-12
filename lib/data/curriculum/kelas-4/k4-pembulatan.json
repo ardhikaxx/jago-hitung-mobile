@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "47 dibulatkan ke puluhan terdekat menjadi ...",
-      "ilustrasi": "~",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "40",
         "50",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "124 dibulatkan ke ratusan terdekat menjadi ...",
-      "ilustrasi": "~",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "jawaban": "100",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "286 dibulatkan ke puluhan terdekat menjadi ...",
-      "ilustrasi": "~",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "280",
         "290",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "760 dibulatkan ke ratusan terdekat menjadi ...",
-      "ilustrasi": "~",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "jawaban": "800",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Bilangan 35 dibulatkan ke puluhan menjadi ...",
-      "ilustrasi": "~",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "30",
         "35",

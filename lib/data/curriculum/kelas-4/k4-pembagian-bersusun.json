@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "16 : 2 = ...",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "6",
         "7",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "32 : 8 = ...",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "4",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "16 kue dibagi ke 8 piring sama banyak. Tiap piring berisi ...",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "0",
         "1",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "20 : 10 = ...",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "2",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Bilangan yang tepat: ... x 2 = 16",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "6",
         "7",

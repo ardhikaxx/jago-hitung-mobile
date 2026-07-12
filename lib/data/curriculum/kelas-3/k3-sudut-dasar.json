@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "Sudut siku-siku besarnya ... derajat",
-      "ilustrasi": "<)",
+      "ilustrasi": "assets/images/soal/segitiga_sudut.jpg",
       "pilihan": [
         "45",
         "60",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Sudut yang kurang dari 90 derajat disebut ...",
-      "ilustrasi": "<)",
+      "ilustrasi": "assets/images/soal/segitiga_sudut.jpg",
       "pilihan": [
         "lancip",
         "siku-siku",
@@ -45,7 +45,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "Sudut lurus besarnya ... derajat",
-      "ilustrasi": "<)",
+      "ilustrasi": "assets/images/soal/segitiga_sudut.jpg",
       "jawaban": "180",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Sudut 120 derajat termasuk sudut ...",
-      "ilustrasi": "<)",
+      "ilustrasi": "assets/images/soal/segitiga_sudut.jpg",
       "pilihan": [
         "lancip",
         "siku-siku",
@@ -75,7 +75,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "Setengah putaran besarnya ... derajat",
-      "ilustrasi": "<)",
+      "ilustrasi": "assets/images/soal/segitiga_sudut.jpg",
       "jawaban": "180",
       "petunjuk": [
         "Tuliskan angkanya saja.",

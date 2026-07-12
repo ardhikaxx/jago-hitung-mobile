@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "31 + 47 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "78",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "131 + 47 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "158",
         "168",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "40 + 55 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "95",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "31 + 100 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "pilihan": [
         "111",
         "121",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "231 + 147 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/makanan_kue.jpg",
       "jawaban": "378",
       "petunjuk": [
         "Tuliskan angkanya saja.",

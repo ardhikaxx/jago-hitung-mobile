@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "7 + 6 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "11",
         "12",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "11 + 8 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "jawaban": "19",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "13 - 7 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "4",
         "5",
@@ -57,7 +57,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "7 x 6 = ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "36",
         "39",
@@ -75,7 +75,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Materi \"Pola Bilangan\" melatih kemampuan ...",
-      "ilustrasi": "*",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "berhitung",
         "membaca cerita",

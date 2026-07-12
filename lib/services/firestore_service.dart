@@ -42,10 +42,15 @@ class FirestoreService {
         'uid': uid,
         'nama': nama,
         'email': email,
+        'profileImage': '',
         'kelasAktif': 1,
         'topikProgress': {},
         'createdAt': FieldValue.serverTimestamp(),
       });
     }
+  }
+
+  Future<void> updateProfileImage(String uid, String imagePath) async {
+    await _userDoc(uid).update({'profileImage': imagePath});
   }
 }

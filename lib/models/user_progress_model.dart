@@ -28,18 +28,39 @@ class UserProgress {
   }
 
   factory UserProgress.fromMap(Map<String, dynamic> map) {
+    DateTime parsedCreatedAt = DateTime.now();
+    if (map['createdAt'] != null) {
+      final raw = map['createdAt'];
+      if (raw is DateTime) {
+        parsedCreatedAt = raw;
+      } else if (raw is String) {
+        parsedCreatedAt = DateTime.tryParse(raw) ?? DateTime.now();
+      } else {
+        try {
+          parsedCreatedAt = raw.toDate();
+        } catch (_) {
+          parsedCreatedAt = DateTime.now();
+        }
+      }
+    }
+
+    final rawTopik = map['topikProgress'];
+    Map<String, TopicProgress> parsedTopik = {};
+    if (rawTopik is Map) {
+      rawTopik.forEach((key, value) {
+        if (value is Map<String, dynamic>) {
+          parsedTopik[key] = TopicProgress.fromMap(value);
+        }
+      });
+    }
+
     return UserProgress(
       uid: map['uid'] ?? '',
       nama: map['nama'] ?? '',
       email: map['email'] ?? '',
       kelasAktif: map['kelasAktif'] ?? 1,
-      topikProgress: (map['topikProgress'] as Map<String, dynamic>?)
-              ?.map((key, value) =>
-                  MapEntry(key, TopicProgress.fromMap(value))) ??
-          {},
-      createdAt: map['createdAt'] != null
-          ? DateTime.parse(map['createdAt'])
-          : DateTime.now(),
+      topikProgress: parsedTopik,
+      createdAt: parsedCreatedAt,
     );
   }
 
@@ -90,15 +111,29 @@ class TopicProgress {
   }
 
   factory TopicProgress.fromMap(Map<String, dynamic> map) {
+    DateTime? parsedLastAttempt;
+    if (map['lastAttempt'] != null) {
+      final raw = map['lastAttempt'];
+      if (raw is DateTime) {
+        parsedLastAttempt = raw;
+      } else if (raw is String) {
+        parsedLastAttempt = DateTime.tryParse(raw);
+      } else {
+        try {
+          parsedLastAttempt = raw.toDate();
+        } catch (_) {
+          parsedLastAttempt = null;
+        }
+      }
+    }
+
     return TopicProgress(
       topikId: map['topikId'] ?? '',
       skor: map['skor'] ?? 0,
       jumlahBenar: map['jumlahBenar'] ?? 0,
       jumlahSoal: map['jumlahSoal'] ?? 5,
       lulus: map['lulus'] ?? false,
-      lastAttempt: map['lastAttempt'] != null
-          ? DateTime.parse(map['lastAttempt'])
-          : null,
+      lastAttempt: parsedLastAttempt,
     );
   }
 }

@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "Perbandingan 2 apel dan 3 jeruk ditulis ...",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/counting_apples.jpg",
       "pilihan": [
         "2:3",
         "3:2",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "Jika 1 kotak berisi 6 pensil, 4 kotak berisi ... pensil",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "jawaban": "24",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "Rasio 4:8 disederhanakan menjadi ...",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/hewan_peliharaan.jpg",
       "pilihan": [
         "1:2",
         "2:1",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "Jika 2 kg berharga 10 ribu, 4 kg berharga ... ribu",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/hewan_peliharaan.jpg",
       "jawaban": "20",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Perbandingan 6:9 disederhanakan menjadi ...",
-      "ilustrasi": ":",
+      "ilustrasi": "assets/images/soal/hewan_peliharaan.jpg",
       "pilihan": [
         "2:3",
         "3:2",

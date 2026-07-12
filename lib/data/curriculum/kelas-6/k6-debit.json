@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "Air 60 liter mengalir selama 3 menit. Debit ... liter/menit",
-      "ilustrasi": "L/s",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "jawaban": "20",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Debit 5 L/menit selama 4 menit menghasilkan ... liter",
-      "ilustrasi": "L/s",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "9",
         "15",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "Volume 100 liter dengan debit 25 L/menit perlu ... menit",
-      "ilustrasi": "L/s",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "jawaban": "4",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Rumus debit adalah ...",
-      "ilustrasi": "L/s",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "volume : waktu",
         "volume x waktu",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "Debit 10 L/menit selama 6 menit menghasilkan ... liter",
-      "ilustrasi": "L/s",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "jawaban": "60",
       "petunjuk": [
         "Tuliskan angkanya saja.",

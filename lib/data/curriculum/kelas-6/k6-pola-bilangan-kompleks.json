@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "3 + 5 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "6",
         "7",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "7 + 7 = ...",
-      "ilustrasi": "+",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "jawaban": "14",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "8 - 3 = ...",
-      "ilustrasi": "-",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "3",
         "4",
@@ -57,7 +57,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "3 x 5 = ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "9",
         "12",
@@ -75,7 +75,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Materi \"Pola Bilangan Kompleks\" melatih kemampuan ...",
-      "ilustrasi": "*",
+      "ilustrasi": "assets/images/soal/garis_bilangan.jpg",
       "pilihan": [
         "berhitung",
         "membaca cerita",

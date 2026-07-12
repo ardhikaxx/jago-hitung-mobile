@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "Rata-rata dari 6, 8, dan 10 adalah ...",
-      "ilustrasi": "|",
+      "ilustrasi": "assets/images/soal/timbangan_berat.jpg",
       "jawaban": "8",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "Modus dari 2, 3, 3, 4, 5 adalah ...",
-      "ilustrasi": "|",
+      "ilustrasi": "assets/images/soal/timbangan_berat.jpg",
       "pilihan": [
         "2",
         "3",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "Median dari 4, 6, 8 adalah ...",
-      "ilustrasi": "|",
+      "ilustrasi": "assets/images/soal/timbangan_berat.jpg",
       "jawaban": "6",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "Jumlah data 5, 7, 9 adalah ...",
-      "ilustrasi": "|",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "pilihan": [
         "12",
         "18",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "Rata-rata dari 10 dan 20 adalah ...",
-      "ilustrasi": "|",
+      "ilustrasi": "assets/images/soal/timbangan_berat.jpg",
       "jawaban": "15",
       "petunjuk": [
         "Tuliskan angkanya saja.",

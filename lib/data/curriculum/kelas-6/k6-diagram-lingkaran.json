@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "multiple_choice",
       "pertanyaan": "Setengah lingkaran sama dengan ...%",
-      "ilustrasi": "O",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "pilihan": [
         "25",
         "50",
@@ -27,7 +27,7 @@
       "id": "q2",
       "tipe": "fill_in",
       "pertanyaan": "Seperempat lingkaran sama dengan ...%",
-      "ilustrasi": "O",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "jawaban": "25",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "multiple_choice",
       "pertanyaan": "Jika 100 siswa, 30% suka matematika. Jumlahnya ... siswa",
-      "ilustrasi": "O",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "pilihan": [
         "20",
         "30",
@@ -57,7 +57,7 @@
       "id": "q4",
       "tipe": "fill_in",
       "pertanyaan": "75% dari 100 adalah ...",
-      "ilustrasi": "O",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "jawaban": "75",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "multiple_choice",
       "pertanyaan": "Diagram lingkaran cocok untuk menunjukkan ...",
-      "ilustrasi": "O",
+      "ilustrasi": "assets/images/soal/buku_alat_tulis.jpg",
       "pilihan": [
         "bagian dari keseluruhan",
         "urutan waktu saja",

@@ -9,7 +9,7 @@
       "id": "q1",
       "tipe": "fill_in",
       "pertanyaan": "x + 5 = 12, maka x = ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "jawaban": "7",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -21,7 +21,7 @@
       "id": "q2",
       "tipe": "multiple_choice",
       "pertanyaan": "3 x n = 18, maka n = ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/counting_apples.jpg",
       "pilihan": [
         "4",
         "5",
@@ -39,7 +39,7 @@
       "id": "q3",
       "tipe": "fill_in",
       "pertanyaan": "y - 8 = 10, maka y = ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/counting_apples.jpg",
       "jawaban": "18",
       "petunjuk": [
         "Tuliskan angkanya saja.",
@@ -51,7 +51,7 @@
       "id": "q4",
       "tipe": "multiple_choice",
       "pertanyaan": "24 : a = 6, maka a = ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/counting_apples.jpg",
       "pilihan": [
         "2",
         "3",
@@ -69,7 +69,7 @@
       "id": "q5",
       "tipe": "fill_in",
       "pertanyaan": "2 x b + 1 = 11, maka b = ...",
-      "ilustrasi": "x",
+      "ilustrasi": "assets/images/soal/takaran_volume.jpg",
       "jawaban": "5",
       "petunjuk": [
         "Tuliskan angkanya saja.",

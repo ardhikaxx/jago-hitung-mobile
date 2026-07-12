@@ -7,7 +7,16 @@ class AuthService {
   AuthService._();
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  // Ganti dengan Web Client ID dari Firebase Console > Authentication > Sign-in method > Google
+  static const String _webClientId = '587383240209-ddearkud4nq0luhkajpp0768pfjh0s4m.apps.googleusercontent.com';
+
+  final GoogleSignIn _googleSignIn = GoogleSignIn(
+    serverClientId: _webClientId,
+    scopes: [
+      'email',
+      'profile',
+    ],
+  );
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   User? get currentUser => _auth.currentUser;

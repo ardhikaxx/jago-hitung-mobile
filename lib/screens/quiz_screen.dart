@@ -7,6 +7,7 @@ import '../services/auth_service.dart';
 import '../services/firestore_service.dart';
 import '../utils/constants.dart';
 import '../widgets/numpad_widget.dart';
+import '../widgets/smart_illustration_card.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -255,9 +256,10 @@ class _QuizScreenState extends State<QuizScreen> with SingleTickerProviderStateM
                     ),
                     child: Column(
                       children: [
-                        Text(
-                          q.ilustrasi,
-                          style: const TextStyle(fontSize: 32),
+                        SmartIllustrationCard(
+                          ilustrasi: q.ilustrasi,
+                          pertanyaan: q.pertanyaan,
+                          color: color,
                         ),
                         const SizedBox(height: 12),
                         Text(

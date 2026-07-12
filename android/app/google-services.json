@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "587383240209",
+    "project_id": "jago-hitung",
+    "storage_bucket": "jago-hitung.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587383240209:android:e198c65fc147deca8a63b0",
+        "android_client_info": {
+          "package_name": "com.example.jago_hitung"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC50DdKkMyRlaQog1X-L85G-otczTtunSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

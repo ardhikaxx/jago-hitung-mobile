@@ -331,6 +331,7 @@ class _ProfilPage extends StatelessWidget {
     final nama = progress?.nama ?? user.displayName ?? 'Siswa';
     final email = progress?.email ?? user.email ?? '';
     final kelasAktif = progress?.kelasAktif ?? 1;
+    final profileImage = progress?.profileImage ?? '';
 
     int totalSelesai = 0;
     int totalSoal = 0;
@@ -353,16 +354,52 @@ class _ProfilPage extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 20),
-          CircleAvatar(
-            radius: 50,
-            backgroundColor: AppColors.primary,
-            child: Text(
-              nama.isNotEmpty ? nama[0].toUpperCase() : 'S',
-              style: const TextStyle(
-                fontSize: 40,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+          GestureDetector(
+            onTap: () => _showProfileImagePicker(context),
+            child: Stack(
+              children: [
+                CircleAvatar(
+                  radius: 50,
+                  backgroundColor: AppColors.primary,
+                  backgroundImage: profileImage.isNotEmpty
+                      ? AssetImage(profileImage)
+                      : null,
+                  child: profileImage.isEmpty
+                      ? Text(
+                          nama.isNotEmpty ? nama[0].toUpperCase() : 'S',
+                          style: const TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        )
+                      : null,
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: Container(
+                    padding: const EdgeInsets.all(6),
+                    decoration: const BoxDecoration(
+                      color: AppColors.primary,
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
+                      Icons.camera_alt,
+                      size: 18,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Tap untuk ubah foto profil',
+            style: TextStyle(
+              fontSize: 12,
+              color: AppColors.textSecondary,
             ),
           ),
           const SizedBox(height: 16),
@@ -494,6 +531,91 @@ class _ProfilPage extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  void _showProfileImagePicker(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return DraggableScrollableSheet(
+          initialChildSize: 0.6,
+          minChildSize: 0.4,
+          maxChildSize: 0.85,
+          expand: false,
+          builder: (context, scrollController) {
+            return Column(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(top: 12),
+                  width: 40,
+                  height: 4,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade300,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Text(
+                    'Pilih Foto Profil',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GridView.builder(
+                    controller: scrollController,
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                    ),
+                    itemCount: AuthService.profileImages.length,
+                    itemBuilder: (context, index) {
+                      final imgPath = AuthService.profileImages[index];
+                      final currentImage = progress?.profileImage ?? '';
+                      final isSelected = imgPath == currentImage;
+                      return GestureDetector(
+                        onTap: () async {
+                          await FirestoreService.instance
+                              .updateProfileImage(user.uid, imgPath);
+                          if (context.mounted) Navigator.pop(context);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: isSelected
+                                  ? AppColors.primary
+                                  : Colors.transparent,
+                              width: 3,
+                            ),
+                          ),
+                          child: ClipOval(
+                            child: Image.asset(
+                              imgPath,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            );
+          },
+        );
+      },
     );
   }
 }

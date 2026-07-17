@@ -236,6 +236,8 @@ class _KelasPage extends StatelessWidget {
       }
     }
     final totalTopics = AppConstants.getTopicOrder(kelas).length;
+    final double progressValue =
+        totalTopics > 0 ? completedCount / totalTopics : 0;
 
     return GestureDetector(
       onTap: unlocked
@@ -250,70 +252,113 @@ class _KelasPage extends StatelessWidget {
           : null,
       child: Container(
         decoration: BoxDecoration(
-          color: unlocked ? color : AppColors.locked,
-          borderRadius: BorderRadius.circular(16),
+          gradient: unlocked
+              ? LinearGradient(
+                  colors: [
+                    color,
+                    color.withValues(alpha: 0.75),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                )
+              : null,
+          color: unlocked ? null : AppColors.locked,
+          borderRadius: BorderRadius.circular(20),
           boxShadow: unlocked
               ? [
                   BoxShadow(
-                    color: color.withValues(alpha: 0.4),
-                    blurRadius: 8,
-                    offset: const Offset(0, 4),
+                    color: color.withValues(alpha: 0.45),
+                    blurRadius: 12,
+                    offset: const Offset(0, 6),
                   )
                 ]
               : [],
         ),
-        child: Stack(
-          children: [
-            Positioned.fill(
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      unlocked
-                          ? Icons.school_rounded
-                          : Icons.lock_rounded,
-                      size: 40,
+        child: Padding(
+          padding: const EdgeInsets.all(14),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // ── Baris atas: label kiri, icon kanan ──
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Text(
+                      'Kelas $kelas',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white.withValues(alpha: 0.85),
+                        letterSpacing: 0.3,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.all(9),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.2),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Icon(
+                      unlocked ? Icons.school_rounded : Icons.lock_rounded,
+                      size: 28,
                       color: Colors.white,
                     ),
-                    const SizedBox(height: 8),
-                    Text(
-                      namaKelas,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    if (unlocked) ...[
-                      const SizedBox(height: 8),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(4),
-                        child: LinearProgressIndicator(
-                          value: totalTopics > 0
-                              ? completedCount / totalTopics
-                              : 0,
-                          backgroundColor: Colors.white.withValues(alpha: 0.3),
-                          valueColor:
-                              const AlwaysStoppedAnimation<Color>(Colors.white),
-                          minHeight: 6,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        '$completedCount/$totalTopics materi',
-                        style: const TextStyle(
-                          fontSize: 11,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ],
+                  ),
+                ],
+              ),
+
+              const Spacer(),
+
+              // ── Nama kelas besar ──
+              Text(
+                namaKelas,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  height: 1.2,
                 ),
               ),
-            ),
-          ],
+
+              const SizedBox(height: 6),
+
+              // ── Keterangan progress ──
+              if (unlocked) ...[
+                Text(
+                  '$completedCount/$totalTopics Materi',
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Colors.white.withValues(alpha: 0.85),
+                  ),
+                ),
+                const SizedBox(height: 6),
+                // ── Progress bar ──
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(6),
+                  child: LinearProgressIndicator(
+                    value: progressValue,
+                    backgroundColor: Colors.white.withValues(alpha: 0.3),
+                    valueColor:
+                        const AlwaysStoppedAnimation<Color>(Colors.white),
+                    minHeight: 6,
+                  ),
+                ),
+              ] else ...[
+                Text(
+                  'Selesaikan kelas\nsebelumnya dulu',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Colors.white.withValues(alpha: 0.75),
+                    height: 1.4,
+                  ),
+                ),
+              ],
+            ],
+          ),
         ),
       ),
     );

@@ -12,10 +12,10 @@ service cloud.firestore {
         && request.resource.data.keys().hasAll(['uid', 'nama', 'email', 'profileImage', 'kelasAktif', 'topikProgress'])
         && request.resource.data.uid == userId;
       
-      // User can update their own document (progress, kelasAktif, profileImage, achievements)
+      // User can update their own document
       allow update: if request.auth != null && request.auth.uid == userId
         && request.resource.data.diff(resource.data).affectedKeys()
-            .hasOnly(['topikProgress', 'kelasAktif', 'profileImage', 'achievements']);
+            .hasOnly(['topikProgress', 'kelasAktif', 'profileImage', 'achievements', 'koin', 'purchasedAvatars']);
       
       // No deletion allowed
       allow delete: if false;

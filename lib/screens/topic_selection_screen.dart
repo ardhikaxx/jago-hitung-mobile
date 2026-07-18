@@ -578,13 +578,25 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
         onTap: unlocked
             ? () async {
                 SoundService.instance.playClick();
+                final mode = await showDialog<String>(
+                  context: context,
+                  builder: (ctx) => _ModePickerDialog(
+                    topicName: topic.topik,
+                    color: color,
+                    kelas: widget.kelas,
+                  ),
+                );
+                if (mode == null || !mounted) return;
                 final topicData = await DataService.instance.getTopic(topic.id);
                 if (mounted) {
                   Navigator.push(
                     context,
                     PageRouteBuilder(
-                      pageBuilder: (_, a, _) =>
-                          QuizScreen(topic: topicData, kelas: widget.kelas),
+                      pageBuilder: (_, a, _) => QuizScreen(
+                        topic: topicData,
+                        kelas: widget.kelas,
+                        quizMode: mode,
+                      ),
                       transitionsBuilder: (_, a, anim, child) => SlideTransition(
                         position: Tween(
                           begin: const Offset(1, 0),
@@ -911,4 +923,161 @@ class _GamePathPainter extends CustomPainter {
   @override
   bool shouldRepaint(_GamePathPainter old) =>
       old.progress != progress || old.color != color;
+}
+
+class _ModePickerDialog extends StatelessWidget {
+  final String topicName;
+  final Color color;
+  final int kelas;
+
+  const _ModePickerDialog({required this.topicName, required this.color, required this.kelas});
+
+  String get _timerDesc {
+    if (kelas <= 2) return '60 detik per soal';
+    if (kelas <= 4) return '45 detik per soal';
+    return '30 detik per soal';
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      backgroundColor: Colors.transparent,
+      child: Container(
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(30),
+          border: Border.all(color: const Color(0xFF1D2030), width: 3),
+          boxShadow: const [
+            BoxShadow(color: Color(0xFF1D2030), offset: Offset(0, 6)),
+          ],
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Text(
+                topicName,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            const Text(
+              'Pilih Mode',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.w900,
+                color: Color(0xFF1D2030),
+              ),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Cara kamu mau main?',
+              style: TextStyle(
+                fontSize: 13,
+                color: Color(0xFF6B7280),
+              ),
+            ),
+            const SizedBox(height: 20),
+            _ModeButton(
+              icon: Icons.sentiment_satisfied_rounded,
+              label: 'Mode Biasa',
+              desc: 'Santai, tidak ada batas waktu',
+              color: color,
+              onTap: () => Navigator.pop(context, 'biasa'),
+            ),
+            const SizedBox(height: 12),
+            _ModeButton(
+              icon: Icons.bolt_rounded,
+              label: 'Mode Kilat',
+              desc: '$_timerDesc, kejar waktu!',
+              color: color,
+              onTap: () => Navigator.pop(context, 'kilat'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _ModeButton extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final String desc;
+  final Color color;
+  final VoidCallback onTap;
+
+  const _ModeButton({
+    required this.icon,
+    required this.label,
+    required this.desc,
+    required this.color,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        SoundService.instance.playClick();
+        onTap();
+      },
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.08),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 48,
+              height: 48,
+              decoration: BoxDecoration(
+                color: color.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(14),
+              ),
+              child: Icon(icon, color: color, size: 26),
+            ),
+            const SizedBox(width: 14),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    label,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w900,
+                      color: Color(0xFF1D2030),
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    desc,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF6B7280),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Icon(Icons.arrow_forward_ios_rounded, color: color, size: 16),
+          ],
+        ),
+      ),
+    );
+  }
 }

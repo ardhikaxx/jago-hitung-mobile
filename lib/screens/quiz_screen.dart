@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -20,7 +21,8 @@ import 'result_screen.dart';
 class QuizScreen extends StatefulWidget {
   final Topic topic;
   final int kelas;
-  const QuizScreen({super.key, required this.topic, required this.kelas});
+  final String quizMode;
+  const QuizScreen({super.key, required this.topic, required this.kelas, this.quizMode = 'biasa'});
 
   @override
   State<QuizScreen> createState() => _QuizScreenState();
@@ -40,6 +42,16 @@ class _QuizScreenState extends State<QuizScreen>
   bool _showHint = false;
   int _hintIndex = 0;
   late List<Question> _questions;
+
+  // Timer Mode Kilat
+  Timer? _questionTimer;
+  int _timeLeft = 30;
+  bool get _isKilat => widget.quizMode == 'kilat';
+  int get _timeLimit {
+    if (widget.kelas <= 2) return 60;
+    if (widget.kelas <= 4) return 45;
+    return 30;
+  }
 
   // Animasi
   late AnimationController _cardController;
@@ -88,10 +100,33 @@ class _QuizScreenState extends State<QuizScreen>
 
     _cardController.forward();
     SoundService.instance.init();
+    if (_isKilat) _startTimer();
+  }
+
+  void _startTimer() {
+    _timeLeft = _timeLimit;
+    _questionTimer?.cancel();
+    _questionTimer = Timer.periodic(const Duration(seconds: 1), (_) {
+      if (!mounted) return;
+      setState(() {
+        _timeLeft--;
+      });
+      if (_timeLeft <= 0) {
+        _questionTimer?.cancel();
+        if (!_answered) {
+          _checkAnswer(autoSubmit: true);
+        }
+      }
+    });
+  }
+
+  void _resetTimer() {
+    if (_isKilat) _startTimer();
   }
 
   @override
   void dispose() {
+    _questionTimer?.cancel();
     _answerCtrl.dispose();
     _cardController.dispose();
     _feedbackController.dispose();
@@ -99,14 +134,14 @@ class _QuizScreenState extends State<QuizScreen>
     super.dispose();
   }
 
-  void _checkAnswer() {
+  void _checkAnswer({bool autoSubmit = false}) {
     if (_answered) return;
 
     final jawabanUser = _currentQuestion.isMultipleChoice
         ? (_selectedChoice ?? '')
         : _answerCtrl.text.trim();
 
-    if (jawabanUser.isEmpty) {
+    if (jawabanUser.isEmpty && !autoSubmit) {
       HapticFeedback.lightImpact();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -166,7 +201,9 @@ class _QuizScreenState extends State<QuizScreen>
       _cardController.reset();
       _cardController.forward();
       _feedbackController.reset();
+      _resetTimer();
     } else {
+      _questionTimer?.cancel();
       _finishQuiz();
     }
   }
@@ -198,11 +235,17 @@ class _QuizScreenState extends State<QuizScreen>
       lastAttempt: DateTime.now(),
     );
 
+    int earnedCoins = skor ~/ 10;
+    if (_isKilat) {
+      earnedCoins *= 5;
+    }
+
     await FirestoreService.instance.saveTopikProgress(
       user!.uid,
       widget.kelas,
       widget.topic.id,
       progress,
+      coinReward: earnedCoins,
     );
 
     if (mounted) {
@@ -404,6 +447,37 @@ class _QuizScreenState extends State<QuizScreen>
                   ],
                 ),
               ),
+
+              // Timer Mode Kilat
+              if (_isKilat)
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: _timeLeft <= 5
+                        ? Colors.red.withValues(alpha: 0.5)
+                        : Colors.white.withValues(alpha: 0.2),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.4), width: 1.5),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(Icons.timer_rounded,
+                          color: Colors.white, size: 16),
+                      const SizedBox(width: 4),
+                      Text(
+                        '$_timeLeft',
+                        style: const TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              if (_isKilat) const SizedBox(width: 8),
 
               // Skor benar live
               Container(

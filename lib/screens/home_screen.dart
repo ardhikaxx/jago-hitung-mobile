@@ -49,6 +49,9 @@ class _HomeScreenState extends State<HomeScreen> {
         final progress = snapshot.data;
         if (progress != null && user != null) {
           AchievementService.instance.syncAchievements(progress, user!.uid);
+          if (progress.koin == 0 && progress.totalKoin > 0 && progress.purchasedAvatars.isEmpty) {
+            FirestoreService.instance.updateKoin(user!.uid, progress.totalKoin);
+          }
         }
         return Scaffold(
           extendBodyBehindAppBar: true,
@@ -64,6 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     _KelasPage(progress: progress, user: user!),
                     LeaderboardPage(currentProgress: progress),
+                    _ShopPage(progress: progress, user: user!),
                     _ProfilPage(progress: progress, user: user!),
                   ],
                 ),
@@ -110,7 +114,10 @@ class _HomeScreenState extends State<HomeScreen> {
               child: _buildNavItem(1, Icons.leaderboard_rounded, 'Peringkat'),
             ),
             Expanded(
-              child: _buildNavItem(2, Icons.face_retouching_natural_rounded, 'Profil'),
+              child: _buildNavItem(2, Icons.storefront_rounded, 'Toko'),
+            ),
+            Expanded(
+              child: _buildNavItem(3, Icons.face_retouching_natural_rounded, 'Profil'),
             ),
           ],
         ),
@@ -214,6 +221,22 @@ class _KelasPage extends StatelessWidget {
                               children: [
                                 const Text('PEMAIN', style: TextStyle(fontSize: 10, color: AppColors.textSecondary, fontWeight: FontWeight.bold, letterSpacing: 1.5)),
                                 Text(nama, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w900, color: AppColors.textPrimary)),
+                                const SizedBox(height: 4),
+                                Row(
+                                  children: [
+                                    Icon(Icons.auto_awesome_rounded, size: 14, color: AppColors.secondary),
+                                    const SizedBox(width: 4),
+                                    Text('${progress?.totalXP ?? 0} XP', style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: AppColors.textSecondary)),
+                                    const SizedBox(width: 12),
+                                    Icon(Icons.star_rounded, size: 14, color: AppColors.secondary),
+                                    const SizedBox(width: 4),
+                                    Text('${_totalBintang(progress)}', style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: AppColors.textSecondary)),
+                                    const SizedBox(width: 12),
+                                    Icon(Icons.monetization_on_rounded, size: 14, color: AppColors.secondary),
+                                    const SizedBox(width: 4),
+                                    Text('${progress?.koin ?? 0}', style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: AppColors.textSecondary)),
+                                  ],
+                                ),
                               ],
                             ),
                           ),
@@ -315,6 +338,21 @@ class _KelasPage extends StatelessWidget {
     final reviewId = prevTopics.last;
     final prevProgress = progress?.getTopikProgress(reviewId, kelas - 1);
     return prevProgress?.lulus ?? false;
+  }
+
+  int _totalBintang(UserProgress? progress) {
+    if (progress == null) return 0;
+    int total = 0;
+    for (final p in progress.topikProgress.values) {
+      if (p.skor >= 90) {
+        total += 3;
+      } else if (p.skor >= 70) {
+        total += 2;
+      } else if (p.skor >= AppConstants.skorLulusMinimum) {
+        total += 1;
+      }
+    }
+    return total;
   }
 
   Widget _buildKelasCard(
@@ -862,9 +900,10 @@ class _ProfilPage extends StatelessWidget {
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                     ),
-                    itemCount: AuthService.profileImages.length,
+                    itemCount: AuthService.profileImages.where((path) => AuthService.isFreeAvatar(path) || progress?.purchasedAvatars.contains(path) == true).length,
                     itemBuilder: (context, index) {
-                      final imgPath = AuthService.profileImages[index];
+                      final availableAvatars = AuthService.profileImages.where((path) => AuthService.isFreeAvatar(path) || progress?.purchasedAvatars.contains(path) == true).toList();
+                      final imgPath = availableAvatars[index];
                       final currentImage = progress?.profileImage ?? '';
                       final isSelected = imgPath == currentImage;
                       return GestureDetector(
@@ -1010,6 +1049,193 @@ class _AchievementsSection extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _ShopPage extends StatelessWidget {
+  final UserProgress? progress;
+  final User user;
+
+  const _ShopPage({required this.progress, required this.user});
+
+  @override
+  Widget build(BuildContext context) {
+    final koin = progress?.koin ?? 0;
+    final purchased = progress?.purchasedAvatars ?? [];
+    final purchasable = AuthService.purchasableAvatars;
+
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(30),
+              border: Border.all(color: const Color(0xFF1D2030), width: 3),
+              boxShadow: const [
+                BoxShadow(color: Color(0xFF1D2030), offset: Offset(0, 6)),
+              ],
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(Icons.monetization_on_rounded, color: AppColors.secondary, size: 28),
+                const SizedBox(width: 8),
+                Text(
+                  '$koin Koin',
+                  style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: AppColors.textPrimary),
+                ),
+              ],
+            ),
+          ),
+        ),
+        Expanded(
+          child: GridView.builder(
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 120),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              crossAxisSpacing: 12,
+              mainAxisSpacing: 12,
+              childAspectRatio: 0.75,
+            ),
+            itemCount: purchasable.length,
+            itemBuilder: (context, index) {
+              final avatarPath = purchasable[index];
+              final price = AuthService.getAvatarPrice(avatarPath);
+              final isPurchased = purchased.contains(avatarPath);
+              
+              return GestureDetector(
+                onTap: isPurchased ? null : () => _buyAvatar(context, avatarPath, price, koin),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: isPurchased ? AppColors.success.withValues(alpha: 0.1) : Colors.white,
+                    borderRadius: BorderRadius.circular(16),
+                    border: Border.all(
+                      color: isPurchased ? AppColors.success : const Color(0xFF1D2030),
+                      width: 2,
+                    ),
+                    boxShadow: isPurchased ? [] : const [
+                      BoxShadow(color: Color(0xFF1D2030), offset: Offset(0, 4)),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Image.asset(avatarPath),
+                        ),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(vertical: 6),
+                        decoration: BoxDecoration(
+                          color: isPurchased ? AppColors.success : AppColors.secondary,
+                          borderRadius: const BorderRadius.vertical(bottom: Radius.circular(14)),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            if (!isPurchased) ...[
+                              const Icon(Icons.monetization_on_rounded, size: 14, color: Colors.white),
+                              const SizedBox(width: 4),
+                            ],
+                            Text(
+                              isPurchased ? 'Dimiliki' : '$price',
+                              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+
+  void _buyAvatar(BuildContext context, String avatarPath, int price, int currentKoin) {
+    if (currentKoin < price) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Row(
+            children: [
+              Icon(Icons.warning_rounded, color: Colors.white),
+              SizedBox(width: 12),
+              Text('Koin kamu tidak mencukupi!', style: TextStyle(fontWeight: FontWeight.bold)),
+            ],
+          ),
+          backgroundColor: AppColors.danger,
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          duration: const Duration(seconds: 2),
+        ),
+      );
+      return;
+    }
+    SoundService.instance.playClick();
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+          side: const BorderSide(color: Color(0xFF1D2030), width: 3),
+        ),
+        title: const Text('Beli Avatar', style: TextStyle(fontWeight: FontWeight.w900, color: AppColors.textPrimary)),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(avatarPath, width: 80, height: 80),
+            const SizedBox(height: 16),
+            Text('Apakah kamu ingin membeli avatar ini seharga $price koin?', 
+              textAlign: TextAlign.center,
+              style: const TextStyle(color: AppColors.textSecondary)
+            ),
+          ],
+        ),
+        actions: [
+          Game3DButton(
+            onPressed: () {
+              SoundService.instance.playClick();
+              Navigator.pop(ctx);
+            },
+            color: Colors.white,
+            shadowColor: Colors.grey.shade400,
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Text('Batal', style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.textSecondary)),
+            ),
+          ),
+          const SizedBox(width: 8),
+          Game3DButton(
+            onPressed: () async {
+              SoundService.instance.playClick();
+              Navigator.pop(ctx);
+              await FirestoreService.instance.buyAvatar(user.uid, avatarPath, price);
+              if (context.mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Avatar berhasil dibeli!')),
+                );
+              }
+            },
+            color: AppColors.secondary,
+            shadowColor: const Color(0xFFF57C00),
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Text('Beli', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+            ),
+          ),
+        ],
       ),
     );
   }

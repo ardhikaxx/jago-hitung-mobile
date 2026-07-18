@@ -7,6 +7,8 @@ class UserProgress {
   final Map<String, TopicProgress> topikProgress;
   final DateTime createdAt;
   final List<String> achievements;
+  final int koin;
+  final List<String> purchasedAvatars;
 
   UserProgress({
     required this.uid,
@@ -17,9 +19,20 @@ class UserProgress {
     Map<String, TopicProgress>? topikProgress,
     DateTime? createdAt,
     List<String>? achievements,
+    this.koin = 0,
+    List<String>? purchasedAvatars,
   })  : topikProgress = topikProgress ?? {},
         createdAt = createdAt ?? DateTime.now(),
-        achievements = achievements ?? [];
+        achievements = achievements ?? [],
+        purchasedAvatars = purchasedAvatars ?? [];
+
+  int get totalKoin {
+    int total = 0;
+    for (var p in topikProgress.values) {
+      total += p.skor ~/ 10;
+    }
+    return total;
+  }
 
   Map<String, dynamic> toMap() {
     return {
@@ -31,6 +44,8 @@ class UserProgress {
       'topikProgress': topikProgress.map((key, value) => MapEntry(key, value.toMap())),
       'createdAt': createdAt.toIso8601String(),
       'achievements': achievements,
+      'koin': koin,
+      'purchasedAvatars': purchasedAvatars,
     };
   }
 
@@ -65,6 +80,12 @@ class UserProgress {
       });
     }
 
+    final rawKoin = map['koin'];
+    int initialKoin = 0;
+    if (rawKoin is int) {
+      initialKoin = rawKoin;
+    }
+
     return UserProgress(
       uid: map['uid'] ?? '',
       nama: map['nama'] ?? '',
@@ -75,6 +96,10 @@ class UserProgress {
       createdAt: parsedCreatedAt,
       achievements: map['achievements'] != null
           ? List<String>.from(map['achievements'])
+          : [],
+      koin: initialKoin,
+      purchasedAvatars: map['purchasedAvatars'] != null
+          ? List<String>.from(map['purchasedAvatars'])
           : [],
     );
   }

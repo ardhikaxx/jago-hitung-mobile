@@ -58,6 +58,56 @@ class AuthService {
     'assets/images/profile/img 01.png',
   ];
 
+  static const List<String> freeAvatars = [
+    'assets/images/profile/icon 02.png',
+    'assets/images/profile/icon 03.png',
+    'assets/images/profile/icon 04.png',
+  ];
+
+  static const Map<String, int> avatarPrices = {
+    'assets/images/profile/icon 05.png': 50,
+    'assets/images/profile/icon 06.png': 50,
+    'assets/images/profile/icon 07.png': 50,
+    'assets/images/profile/icon 08.png': 75,
+    'assets/images/profile/icon 09.png': 75,
+    'assets/images/profile/icon 10.png': 75,
+    'assets/images/profile/icon 11.png': 100,
+    'assets/images/profile/icon 12.png': 100,
+    'assets/images/profile/Icon 13.png': 100,
+    'assets/images/profile/Icon 14.png': 150,
+    'assets/images/profile/Icon 15.png': 150,
+    'assets/images/profile/Icon 16.png': 150,
+    'assets/images/profile/Icon 17.png': 200,
+    'assets/images/profile/Icon 18.png': 200,
+    'assets/images/profile/Icon 19.png': 200,
+    'assets/images/profile/Icon 20.png': 250,
+    'assets/images/profile/Icon 21.png': 250,
+    'assets/images/profile/Icon 22.png': 250,
+    'assets/images/profile/Icon 23.png': 300,
+    'assets/images/profile/Icon 24.png': 300,
+    'assets/images/profile/Icon 25.png': 300,
+    'assets/images/profile/Icon 26.png': 350,
+    'assets/images/profile/Icon 27.png': 350,
+    'assets/images/profile/Icon 28.png': 350,
+    'assets/images/profile/Icon 29.png': 400,
+    'assets/images/profile/Icon 30.png': 400,
+    'assets/images/profile/Icon 31.png': 400,
+    'assets/images/profile/Icon 32.png': 500,
+    'assets/images/profile/Icon 33.png': 500,
+    'assets/images/profile/Icon 34.png': 500,
+    'assets/images/profile/Icon 35.png': 600,
+    'assets/images/profile/Icon 36.png': 600,
+    'assets/images/profile/img 01.png': 750,
+  };
+
+  static bool isFreeAvatar(String path) => freeAvatars.contains(path);
+
+  static int getAvatarPrice(String path) => avatarPrices[path] ?? 0;
+
+  static List<String> get purchasableAvatars {
+    return profileImages.where((p) => !freeAvatars.contains(p)).toList();
+  }
+
   String getRandomProfileImage() {
     final random = Random();
     return profileImages[random.nextInt(profileImages.length)];
@@ -80,6 +130,8 @@ class AuthService {
       'profileImage': getRandomProfileImage(),
       'kelasAktif': 1,
       'topikProgress': {},
+      'koin': 0,
+      'purchasedAvatars': freeAvatars,
       'createdAt': FieldValue.serverTimestamp(),
     });
 
@@ -122,6 +174,8 @@ class AuthService {
         'profileImage': getRandomProfileImage(),
         'kelasAktif': 1,
         'topikProgress': {},
+        'koin': 0,
+        'purchasedAvatars': freeAvatars,
         'createdAt': FieldValue.serverTimestamp(),
       });
     }

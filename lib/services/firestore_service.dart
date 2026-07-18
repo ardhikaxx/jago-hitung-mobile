@@ -24,10 +24,12 @@ class FirestoreService {
   }
 
   Future<void> saveTopikProgress(
-      String uid, int kelas, String topikId, TopicProgress progress) async {
+      String uid, int kelas, String topikId, TopicProgress progress, {int? coinReward}) async {
     final key = '$kelas-$topikId';
+    final finalCoinReward = coinReward ?? (progress.skor ~/ 10);
     await _userDoc(uid).update({
       'topikProgress.$key': progress.toMap(),
+      'koin': FieldValue.increment(finalCoinReward),
     });
   }
 
@@ -46,6 +48,8 @@ class FirestoreService {
         'kelasAktif': 1,
         'topikProgress': {},
         'achievements': [],
+        'koin': 0,
+        'purchasedAvatars': [],
         'createdAt': FieldValue.serverTimestamp(),
       });
     }
@@ -57,6 +61,19 @@ class FirestoreService {
 
   Future<void> updateAchievements(String uid, List<String> achievementIds) async {
     await _userDoc(uid).update({'achievements': achievementIds});
+  }
+
+  Future<void> buyAvatar(String uid, String avatarPath, int price) async {
+    await _userDoc(uid).update({
+      'koin': FieldValue.increment(-price),
+      'purchasedAvatars': FieldValue.arrayUnion([avatarPath]),
+    });
+  }
+
+  Future<void> updateKoin(String uid, int amount) async {
+    await _userDoc(uid).update({
+      'koin': FieldValue.increment(amount),
+    });
   }
 
   Future<List<UserProgress>> getLeaderboard() async {

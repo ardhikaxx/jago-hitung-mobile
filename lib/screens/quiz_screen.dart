@@ -698,11 +698,11 @@ class _QuizScreenState extends State<QuizScreen>
         final isSelected = _selectedChoice == choice;
         final isCorrect = choice == q.jawaban;
 
-        Color bgColor = color;
-        Color borderColor = color;
-        Color textColor = Colors.white;
-        Color labelBg = Colors.white;
-        Color labelText = color;
+        Color bgColor = Colors.white;
+        Color borderColor = Colors.grey.shade200;
+        Color textColor = AppColors.textPrimary;
+        Color labelBg = Colors.grey.shade100;
+        Color labelText = AppColors.textSecondary;
         IconData? trailingIcon;
         Color? trailingColor;
 

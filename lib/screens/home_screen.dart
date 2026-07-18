@@ -22,6 +22,20 @@ class _HomeScreenState extends State<HomeScreen> {
   User? get user => AuthService.instance.currentUser;
 
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      SoundService.instance.playBgm();
+    });
+  }
+
+  @override
+  void dispose() {
+    SoundService.instance.stopBgm();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     if (user == null) return const LoginScreen();
 
@@ -551,6 +565,90 @@ class _ProfilPage extends StatelessWidget {
                   'Kelas $kelasAktif',
                   'Kelas Aktif',
                   AppColors.secondary,
+                ),
+              ],
+            ),
+          ),
+          // ── Settings ──
+          const SizedBox(height: 24),
+          Container(
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.05),
+                  blurRadius: 10,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Pengaturan',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.textPrimary,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                StatefulBuilder(
+                  builder: (context, setInnerState) {
+                    final bgmOn = SoundService.instance.isBgmEnabled;
+                    return Row(
+                      children: [
+                        Container(
+                          width: 44,
+                          height: 44,
+                          decoration: BoxDecoration(
+                            color: AppColors.primary.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Icon(
+                            bgmOn ? Icons.music_note_rounded : Icons.music_off_rounded,
+                            color: AppColors.primary,
+                            size: 22,
+                          ),
+                        ),
+                        const SizedBox(width: 14),
+                        const Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Musik Latar',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.textPrimary,
+                                ),
+                              ),
+                              Text(
+                                'Suara latar saat bermain',
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  color: AppColors.textSecondary,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Switch(
+                          value: bgmOn,
+                          activeThumbColor: AppColors.primary,
+                          activeTrackColor: AppColors.primary.withValues(alpha: 0.5),
+                          onChanged: (v) {
+                            SoundService.instance.setBgmEnabled(v);
+                            setInnerState(() {});
+                          },
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ],
             ),

@@ -13,6 +13,7 @@ import 'login_screen.dart';
 import 'topic_selection_screen.dart';
 import 'leaderboard_page.dart';
 import 'quiz_screen.dart';
+import 'duel_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../services/sound_service.dart';
 import '../widgets/game_3d_button.dart';
@@ -244,6 +245,59 @@ class _KelasPage extends StatelessWidget {
     }
   }
 
+  Future<void> _startDuelMode(BuildContext context, UserProgress? progress) async {
+    if (progress == null) return;
+    
+    List<TopicProgress> passedTopicProgresses = progress.topikProgress.values.where((p) => p.lulus).toList();
+    
+    if (passedTopicProgresses.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Selesaikan minimal 1 topik dulu untuk membuka Mode Duel!'),
+          backgroundColor: AppColors.warning,
+        ),
+      );
+      return;
+    }
+    
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => const Center(child: CircularProgressIndicator()),
+    );
+    
+    try {
+      List<Question> allQuestions = [];
+      passedTopicProgresses.shuffle();
+      final topicsToLoad = passedTopicProgresses.take(5).toList();
+      
+      for (var tp in topicsToLoad) {
+        final topicObj = await DataService.instance.getTopic(tp.topikId);
+        allQuestions.addAll(topicObj.soal);
+      }
+      
+      allQuestions.shuffle();
+      final selectedQuestions = allQuestions.take(10).toList(); // 10 questions for duel
+      
+      if (context.mounted) Navigator.pop(context);
+      
+      if (selectedQuestions.isEmpty) return;
+      
+      if (context.mounted) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => DuelScreen(
+              questions: selectedQuestions,
+            ),
+          ),
+        );
+      }
+    } catch (e) {
+      if (context.mounted) Navigator.pop(context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final nama = progress?.nama ?? user.displayName ?? 'Siswa';
@@ -358,6 +412,45 @@ class _KelasPage extends StatelessWidget {
                               ),
                               Text(
                                 'Mainkan untuk dapat 2x Koin!',
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Game3DButton(
+                  onPressed: () => _startDuelMode(context, progress),
+                  color: const Color(0xFFFF6B6B), // Red/Pinkish for duel
+                  shadowColor: const Color(0xFFB93333),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.sports_esports_rounded, color: Colors.white, size: 36),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text(
+                                'Duel 1 Lawan 1',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                              ),
+                              Text(
+                                'Main bareng teman di 1 HP!',
                                 style: TextStyle(
                                   color: Colors.white70,
                                   fontSize: 12,

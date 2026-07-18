@@ -759,4 +759,7 @@ class _ProfilPage extends StatelessWidget {
             );
           },
         );
+      },
+    );
+  }
 }

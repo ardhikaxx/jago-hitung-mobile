@@ -182,38 +182,63 @@ class _KelasPage extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   decoration: BoxDecoration(
-                    color: Colors.black.withValues(alpha: 0.4),
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(30),
-                    border: Border.all(color: Colors.white.withValues(alpha: 0.3), width: 2),
-                    boxShadow: [
-                      BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 8, offset: const Offset(0, 4)),
+                    border: Border.all(color: const Color(0xFF1D2030), width: 3),
+                    boxShadow: const [
+                      BoxShadow(color: Color(0xFF1D2030), offset: Offset(0, 6)),
                     ],
                   ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      CircleAvatar(
-                        radius: 20,
-                        backgroundColor: AppColors.primary,
-                        backgroundImage: progress?.profileImage.isNotEmpty == true
-                            ? AssetImage(progress!.profileImage)
-                            : null,
-                        child: progress?.profileImage.isEmpty != false
-                            ? Text(
-                                nama.isNotEmpty ? nama[0].toUpperCase() : 'S',
-                                style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-                              )
-                            : null,
-                      ),
-                      const SizedBox(width: 12),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                  child: StatefulBuilder(
+                    builder: (context, setInnerState) {
+                      final bgmOn = SoundService.instance.isBgmEnabled;
+                      return Row(
                         children: [
-                          const Text('PEMAIN', style: TextStyle(fontSize: 10, color: Colors.white70, fontWeight: FontWeight.bold, letterSpacing: 1.5)),
-                          Text(nama, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w900, color: Colors.white)),
+                          CircleAvatar(
+                            radius: 20,
+                            backgroundColor: AppColors.primary,
+                            backgroundImage: progress?.profileImage.isNotEmpty == true
+                                ? AssetImage(progress!.profileImage)
+                                : null,
+                            child: progress?.profileImage.isEmpty != false
+                                ? Text(
+                                    nama.isNotEmpty ? nama[0].toUpperCase() : 'S',
+                                    style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+                                  )
+                                : null,
+                          ),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text('PEMAIN', style: TextStyle(fontSize: 10, color: AppColors.textSecondary, fontWeight: FontWeight.bold, letterSpacing: 1.5)),
+                                Text(nama, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w900, color: AppColors.textPrimary)),
+                              ],
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              SoundService.instance.toggleBgm();
+                              setInnerState(() {});
+                            },
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: AppColors.primary.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Icon(
+                                bgmOn ? Icons.volume_up_rounded : Icons.volume_off_rounded,
+                                color: AppColors.primary,
+                                size: 22,
+                              ),
+                            ),
+                          ),
                         ],
-                      ),
-                    ],
+                      );
+                    },
                   ),
                 ),
                 const SizedBox(height: 12),

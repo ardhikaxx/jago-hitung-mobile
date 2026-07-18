@@ -3,10 +3,11 @@ import '../models/question_model.dart';
 import '../services/data_service.dart';
 import '../services/sound_service.dart';
 import '../utils/constants.dart';
+import '../widgets/level_up_overlay.dart';
 import 'home_screen.dart';
 import 'quiz_screen.dart';
 
-class ResultScreen extends StatelessWidget {
+class ResultScreen extends StatefulWidget {
   final String topicName;
   final String topikId;
   final int kelas;
@@ -32,16 +33,56 @@ class ResultScreen extends StatelessWidget {
     this.userAnswers,
   });
 
+  @override
+  State<ResultScreen> createState() => _ResultScreenState();
+}
+
+class _ResultScreenState extends State<ResultScreen>
+    with SingleTickerProviderStateMixin {
+  bool _showLevelUp = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkLevelUp();
+  }
+
+  void _checkLevelUp() {
+    final topicOrder = AppConstants.getTopicOrder(widget.kelas);
+    final isLastTopic =
+        topicOrder.isNotEmpty && widget.topikId == topicOrder.last;
+    final hasNextGrade =
+        AppConstants.namaKelas.containsKey(widget.kelas + 1);
+
+    if (widget.lulus && isLastTopic && hasNextGrade) {
+      Future.delayed(const Duration(milliseconds: 800), () {
+        if (mounted) setState(() => _showLevelUp = true);
+      });
+    }
+  }
+
   String? _getNextTopicId() {
-    final topicOrder = AppConstants.getTopicOrder(kelas);
-    final idx = topicOrder.indexOf(topikId);
+    final topicOrder = AppConstants.getTopicOrder(widget.kelas);
+    final idx = topicOrder.indexOf(widget.topikId);
     if (idx < 0 || idx >= topicOrder.length - 1) return null;
     return topicOrder[idx + 1];
   }
 
   @override
   Widget build(BuildContext context) {
-    final color = AppConstants.warnaKelas[kelas] ?? AppColors.primary;
+    if (_showLevelUp) {
+      return Scaffold(
+        body: LevelUpOverlay(
+          fromClassName: AppConstants.namaKelas[widget.kelas] ?? 'Kelas ${widget.kelas}',
+          toClassName: AppConstants.namaKelas[widget.kelas + 1] ?? 'Kelas ${widget.kelas + 1}',
+          onContinue: () {
+            setState(() => _showLevelUp = false);
+          },
+        ),
+      );
+    }
+
+    final color = AppConstants.warnaKelas[widget.kelas] ?? AppColors.primary;
     final nextTopicId = _getNextTopicId();
 
     return Scaffold(
@@ -55,22 +96,22 @@ class ResultScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(30),
                   decoration: BoxDecoration(
-                    color: lulus
+                    color: widget.lulus
                         ? AppColors.success.withValues(alpha: 0.1)
                         : AppColors.danger.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
-                    lulus
+                    widget.lulus
                         ? Icons.emoji_events_rounded
                         : Icons.replay_rounded,
                     size: 80,
-                    color: lulus ? AppColors.success : AppColors.warning,
+                    color: widget.lulus ? AppColors.success : AppColors.warning,
                   ),
                 ),
                 const SizedBox(height: 24),
                 Text(
-                  lulus ? 'Selamat!' : 'Hampir Bisa!',
+                  widget.lulus ? 'Selamat!' : 'Hampir Bisa!',
                   style: const TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
@@ -79,7 +120,7 @@ class ResultScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  topicName,
+                  widget.topicName,
                   style: const TextStyle(
                     fontSize: 16,
                     color: AppColors.textSecondary,
@@ -108,23 +149,23 @@ class ResultScreen extends StatelessWidget {
                             width: 120,
                             height: 120,
                             child: CircularProgressIndicator(
-                              value: skor / 100,
+                              value: widget.skor / 100,
                               strokeWidth: 10,
                               backgroundColor:
                                   AppColors.locked.withValues(alpha: 0.2),
                               valueColor: AlwaysStoppedAnimation<Color>(
-                                lulus ? AppColors.success : AppColors.warning,
+                                widget.lulus ? AppColors.success : AppColors.warning,
                               ),
                             ),
                           ),
                           Column(
                             children: [
                               Text(
-                                '$skor',
+                                '${widget.skor}',
                                 style: TextStyle(
                                   fontSize: 36,
                                   fontWeight: FontWeight.bold,
-                                  color: lulus
+                                  color: widget.lulus
                                       ? AppColors.success
                                       : AppColors.warning,
                                 ),
@@ -146,19 +187,19 @@ class ResultScreen extends StatelessWidget {
                         children: [
                           _buildStat(
                             Icons.check_circle,
-                            '$benar',
+                            '${widget.benar}',
                             'Benar',
                             AppColors.success,
                           ),
                           _buildStat(
                             Icons.cancel,
-                            '${jumlahSoal - benar}',
+                            '${widget.jumlahSoal - widget.benar}',
                             'Salah',
                             AppColors.danger,
                           ),
                           _buildStat(
                             Icons.quiz,
-                            '$jumlahSoal',
+                            '${widget.jumlahSoal}',
                             'Total',
                             AppColors.primary,
                           ),
@@ -169,7 +210,7 @@ class ResultScreen extends StatelessWidget {
                         spacing: 6,
                         runSpacing: 6,
                         alignment: WrapAlignment.center,
-                        children: results.map((r) {
+                        children: widget.results.map((r) {
                           return Container(
                             width: 28,
                             height: 28,
@@ -191,7 +232,7 @@ class ResultScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 24),
-                if (lulus)
+                if (widget.lulus)
                   Text(
                     'Kamu berhasil membuka materi berikutnya!',
                     textAlign: TextAlign.center,
@@ -212,7 +253,7 @@ class ResultScreen extends StatelessWidget {
                 const SizedBox(height: 24),
                 _buildReviewSection(context, color),
                 const SizedBox(height: 32),
-                if (!lulus)
+                if (!widget.lulus)
                   SizedBox(
                     width: double.infinity,
                     height: 50,
@@ -234,8 +275,8 @@ class ResultScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                if (!lulus) const SizedBox(height: 12),
-                if (lulus && nextTopicId != null)
+                if (!widget.lulus) const SizedBox(height: 12),
+                if (widget.lulus && nextTopicId != null)
                   SizedBox(
                     width: double.infinity,
                     height: 50,
@@ -250,7 +291,7 @@ class ResultScreen extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (_) => QuizScreen(
                                 topic: nextTopic,
-                                kelas: kelas,
+                                kelas: widget.kelas,
                               ),
                             ),
                           );
@@ -269,7 +310,7 @@ class ResultScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                if (lulus && nextTopicId != null) const SizedBox(height: 12),
+                if (widget.lulus && nextTopicId != null) const SizedBox(height: 12),
                 SizedBox(
                   width: double.infinity,
                   height: 50,
@@ -329,11 +370,11 @@ class ResultScreen extends StatelessWidget {
   }
 
   Widget _buildReviewSection(BuildContext context, Color color) {
-    if (questions == null || userAnswers == null) return const SizedBox.shrink();
+    if (widget.questions == null || widget.userAnswers == null) return const SizedBox.shrink();
 
     final salahIndices = <int>[];
-    for (int i = 0; i < results.length; i++) {
-      if (!results[i]) salahIndices.add(i);
+    for (int i = 0; i < widget.results.length; i++) {
+      if (!widget.results[i]) salahIndices.add(i);
     }
 
     if (salahIndices.isEmpty) {
@@ -397,8 +438,8 @@ class ResultScreen extends StatelessWidget {
           ),
         ),
         children: salahIndices.map((i) {
-          final q = questions![i];
-          final userAns = userAnswers![i];
+          final q = widget.questions![i];
+          final userAns = widget.userAnswers![i];
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             padding: const EdgeInsets.all(14),

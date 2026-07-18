@@ -11,6 +11,7 @@ import '../utils/constants.dart';
 import '../widgets/numpad_widget.dart';
 import '../widgets/smart_illustration_card.dart';
 import '../widgets/celebration_widget.dart';
+import '../widgets/matching_widget.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -33,6 +34,7 @@ class _QuizScreenState extends State<QuizScreen>
   bool _answered = false;
   bool _showHint = false;
   int _hintIndex = 0;
+  late List<Question> _questions;
 
   // Animasi
   late AnimationController _cardController;
@@ -44,7 +46,7 @@ class _QuizScreenState extends State<QuizScreen>
   late Animation<double> _pulse;
 
   User? get user => AuthService.instance.currentUser;
-  Question get _currentQuestion => widget.topic.soal[_currentIndex];
+  Question get _currentQuestion => _questions[_currentIndex];
 
   static const Map<int, String> _bgImages = {
     1: 'assets/images/bg_kelas1.jpg',
@@ -58,6 +60,8 @@ class _QuizScreenState extends State<QuizScreen>
   @override
   void initState() {
     super.initState();
+
+    _questions = List.from(widget.topic.soal)..shuffle();
 
     _cardController = AnimationController(
       vsync: this,
@@ -147,7 +151,7 @@ class _QuizScreenState extends State<QuizScreen>
   }
 
   void _nextQuestion() {
-    if (_currentIndex < widget.topic.soal.length - 1) {
+    if (_currentIndex < _questions.length - 1) {
       setState(() {
         _currentIndex++;
         _answered = false;
@@ -176,7 +180,7 @@ class _QuizScreenState extends State<QuizScreen>
   }
 
   Future<void> _finishQuiz() async {
-    final jumlahSoal = widget.topic.soal.length;
+    final jumlahSoal = _questions.length;
     final skor = (_benarCount / jumlahSoal * 100).round();
     final lulus = skor >= AppConstants.skorLulusMinimum;
 
@@ -209,7 +213,7 @@ class _QuizScreenState extends State<QuizScreen>
             jumlahSoal: jumlahSoal,
             lulus: lulus,
             results: _results,
-            questions: widget.topic.soal,
+            questions: _questions,
             userAnswers: _userAnswers,
           ),
           transitionsBuilder: (_, a, anim, child) => FadeTransition(
@@ -242,7 +246,7 @@ class _QuizScreenState extends State<QuizScreen>
   Widget build(BuildContext context) {
     final q = _currentQuestion;
     final color = AppConstants.warnaKelas[widget.kelas] ?? AppColors.primary;
-    final total = widget.topic.soal.length;
+    final total = _questions.length;
     final progressVal = (_currentIndex + 1) / total;
     final bgImage = _bgImages[widget.kelas] ?? _bgImages[1]!;
 
@@ -280,8 +284,10 @@ class _QuizScreenState extends State<QuizScreen>
                     _buildQuestionCard(q, color),
                     const SizedBox(height: 16),
 
-                    // ── Pilihan jawaban / fill in ──
-                    if (q.isMultipleChoice)
+                    // ── Pilihan jawaban / fill in / matching ──
+                    if (q.isMatching)
+                      _buildMatching(q, color)
+                    else if (q.isMultipleChoice)
                       _buildMultipleChoice(q, color)
                     else
                       _buildFillIn(q, color),
@@ -306,7 +312,8 @@ class _QuizScreenState extends State<QuizScreen>
             NumpadWidget(onTap: _onNumpadTap, showDecimal: false, color: color),
 
           // ── Tombol aksi ──
-          _buildActionButton(color),
+          if (!_currentQuestion.isMatching || _answered)
+            _buildActionButton(color),
             ],
           ),
         ],
@@ -799,6 +806,34 @@ class _QuizScreenState extends State<QuizScreen>
     );
   }
 
+  // ── MATCHING ────────────────────────────────────────────────────────────
+  Widget _buildMatching(Question q, Color color) {
+    if (q.pasanganKiri == null || q.pasanganKanan == null) {
+      return const SizedBox.shrink();
+    }
+    return MatchingWidget(
+      leftItems: q.pasanganKiri!,
+      rightItems: q.pasanganKanan!,
+      correctAnswer: q.jawaban,
+      color: color,
+      onSubmitted: (benar) {
+        setState(() {
+          _answered = true;
+          _userAnswers.add(benar ? 'benar' : 'salah');
+          if (benar) _benarCount++;
+          _results.add(benar);
+        });
+        if (benar) {
+          SoundService.instance.playCorrect();
+        } else {
+          SoundService.instance.playWrong();
+        }
+        _feedbackController.reset();
+        _feedbackController.forward();
+      },
+    );
+  }
+
   // ── FILL IN ─────────────────────────────────────────────────────────────
   Widget _buildFillIn(Question q, Color color) {
     final isBenar = _answered && _results.isNotEmpty && _results.last;
@@ -985,7 +1020,7 @@ class _QuizScreenState extends State<QuizScreen>
 
   // ── TOMBOL AKSI ─────────────────────────────────────────────────────────
   Widget _buildActionButton(Color color) {
-    final isLast = _currentIndex == widget.topic.soal.length - 1;
+    final isLast = _currentIndex == _questions.length - 1;
     final label = _answered
         ? (isLast ? '🏆 Lihat Hasil' : 'Lanjut →')
         : 'Jawab';

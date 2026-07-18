@@ -73,15 +73,17 @@
     },
     {
       "id": "q5",
-      "tipe": "fill_in",
-      "pertanyaan": "Segitiga memiliki berapa sudut?",
-      "ilustrasi": "assets/images/soal/segitiga_sudut.jpg",
-      "jawaban": "3",
+      "tipe": "matching",
+      "pertanyaan": "Pasangkan nama bangun datar dengan ciri-cirinya!",
+      "ilustrasi": "",
+      "pasangan_kiri": ["Segitiga", "Persegi", "Lingkaran"],
+      "pasangan_kanan": ["3 sisi", "4 sisi sama panjang", "Tidak punya sudut"],
+      "jawaban": "0-0,1-1,2-2",
       "petunjuk": [
-        "Tuliskan angkanya saja.",
-        "Gunakan coretan jika perlu."
+        "Sentuh item di sebelah kiri, lalu sentuh pasangannya di sebelah kanan.",
+        "Setiap item hanya bisa dipasangkan satu kali."
       ],
-      "penjelasan": "Segitiga memiliki 3 sudut."
+      "penjelasan": "Segitiga punya 3 sisi, persegi punya 4 sisi sama panjang, lingkaran tidak punya sudut."
     }
   ]
 }

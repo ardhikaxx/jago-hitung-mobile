@@ -14,6 +14,7 @@ import '../widgets/celebration_widget.dart';
 import '../widgets/matching_widget.dart';
 import '../widgets/game_3d_button.dart';
 import '../widgets/game_background.dart';
+import '../widgets/combo_overlay.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -29,6 +30,8 @@ class _QuizScreenState extends State<QuizScreen>
     with TickerProviderStateMixin {
   int _currentIndex = 0;
   int _benarCount = 0;
+  int _currentCombo = 0;
+  int _maxCombo = 0;
   final List<bool> _results = [];
   final List<String> _userAnswers = [];
   final TextEditingController _answerCtrl = TextEditingController();
@@ -130,7 +133,13 @@ class _QuizScreenState extends State<QuizScreen>
     setState(() {
       _answered = true;
       _userAnswers.add(jawabanUser);
-      if (benar) _benarCount++;
+      if (benar) {
+        _benarCount++;
+        _currentCombo++;
+        if (_currentCombo > _maxCombo) _maxCombo = _currentCombo;
+      } else {
+        _currentCombo = 0;
+      }
       _results.add(benar);
     });
 
@@ -175,8 +184,10 @@ class _QuizScreenState extends State<QuizScreen>
 
   Future<void> _finishQuiz() async {
     final jumlahSoal = _questions.length;
-    final skor = (_benarCount / jumlahSoal * 100).round();
-    final lulus = skor >= AppConstants.skorLulusMinimum;
+    final baseSkor = (_benarCount / jumlahSoal * 100).round();
+    final bonusCombo = _maxCombo >= 3 ? (_maxCombo * 5) : 0;
+    final skor = baseSkor + bonusCombo;
+    final lulus = baseSkor >= AppConstants.skorLulusMinimum;
 
     final progress = TopicProgress(
       topikId: widget.topic.id,
@@ -304,6 +315,15 @@ class _QuizScreenState extends State<QuizScreen>
           // ── Tombol aksi ──
           if (!_currentQuestion.isMatching || _answered)
             _buildActionButton(color),
+
+          // ── Combo Overlay ──
+          if (_currentCombo >= 3)
+            Positioned(
+              top: 140,
+              left: 0,
+              right: 0,
+              child: ComboOverlay(comboCount: _currentCombo),
+            ),
             ],
           ),
         ],

@@ -336,8 +336,8 @@ class _KelasPage extends StatelessWidget {
                 const SizedBox(height: 16),
                 Game3DButton(
                   onPressed: () => _startDailyChallenge(context, progress),
-                  color: AppColors.primary,
-                  shadowColor: Color.lerp(AppColors.primary, Colors.black, 0.4)!,
+                  color: AppColors.secondary,
+                  shadowColor: Color.lerp(AppColors.secondary, Colors.black, 0.4)!,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
                     child: Row(

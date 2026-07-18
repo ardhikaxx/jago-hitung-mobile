@@ -6,6 +6,7 @@ import '../models/user_progress_model.dart';
 import '../utils/constants.dart';
 import 'login_screen.dart';
 import 'topic_selection_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -51,9 +52,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
+              Positioned(
+                left: 0,
+                right: 0,
+                bottom: 0,
+                child: _buildFloatingNavBar(),
+              ),
             ],
           ),
-          bottomSheet: _buildFloatingNavBar(),
         );
       },
     );
@@ -61,19 +67,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildFloatingNavBar() {
     return Container(
-      padding: const EdgeInsets.fromLTRB(24, 0, 24, 12),
-      height: 80,
+      padding: const EdgeInsets.fromLTRB(24, 0, 24, 20),
+      height: 90,
       color: Colors.transparent,
       child: Container(
-        height: 64,
+        height: 70,
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(32),
+          color: Colors.white.withValues(alpha: 0.9),
+          borderRadius: BorderRadius.circular(35),
+          border: Border.all(color: Colors.white, width: 2),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.1),
+              color: Colors.black.withValues(alpha: 0.15),
               blurRadius: 16,
-              offset: const Offset(0, 4),
+              offset: const Offset(0, 6),
             ),
           ],
         ),
@@ -81,10 +88,10 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
-              child: _buildNavItem(0, Icons.school_rounded, 'Kelas'),
+              child: _buildNavItem(0, Icons.videogame_asset_rounded, 'Main'),
             ),
             Expanded(
-              child: _buildNavItem(1, Icons.person_rounded, 'Profil'),
+              child: _buildNavItem(1, Icons.face_retouching_natural_rounded, 'Profil'),
             ),
           ],
         ),
@@ -98,31 +105,34 @@ class _HomeScreenState extends State<HomeScreen> {
       onTap: () => setState(() => _currentIndex = index),
       behavior: HitTestBehavior.opaque,
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 250),
-        margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
+        duration: const Duration(milliseconds: 300),
+        margin: const EdgeInsets.all(6),
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.primary : Colors.transparent,
-          borderRadius: BorderRadius.circular(28),
+          color: isSelected ? const Color(0xFFFFB300) : Colors.transparent,
+          borderRadius: BorderRadius.circular(30),
+          boxShadow: isSelected ? [
+            const BoxShadow(color: Color(0xFFF57C00), offset: Offset(0, 4)),
+          ] : [],
         ),
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               icon,
-              size: 22,
+              size: isSelected ? 26 : 24,
               color: isSelected ? Colors.white : AppColors.textSecondary,
+              shadows: isSelected ? const [Shadow(color: Colors.black26, blurRadius: 4)] : [],
             ),
-            if (isSelected) ...[
-              const SizedBox(width: 6),
+            if (isSelected)
               Text(
                 label,
                 style: const TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w900,
                   color: Colors.white,
+                  shadows: [Shadow(color: Colors.black26, blurRadius: 2)],
                 ),
               ),
-            ],
           ],
         ),
       ),
@@ -143,65 +153,84 @@ class _KelasPage extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Row(
-                  children: [
-                    CircleAvatar(
-                      radius: 24,
-                      backgroundColor: AppColors.primary,
-                      child: Text(
-                        nama.isNotEmpty ? nama[0].toUpperCase() : 'S',
-                        style: const TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(alpha: 0.4),
+                    borderRadius: BorderRadius.circular(30),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.3), width: 2),
+                    boxShadow: [
+                      BoxShadow(color: Colors.black.withValues(alpha: 0.2), blurRadius: 8, offset: const Offset(0, 4)),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      CircleAvatar(
+                        radius: 20,
+                        backgroundColor: AppColors.primary,
+                        backgroundImage: progress?.profileImage.isNotEmpty == true
+                            ? AssetImage(progress!.profileImage)
+                            : null,
+                        child: progress?.profileImage.isEmpty != false
+                            ? Text(
+                                nama.isNotEmpty ? nama[0].toUpperCase() : 'S',
+                                style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+                              )
+                            : null,
                       ),
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Column(
+                      const SizedBox(width: 12),
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Halo, $nama!',
-                            style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.white,
-                              shadows: [Shadow(color: Colors.black45, blurRadius: 4)],
-                            ),
-                          ),
-                          const Text(
-                            'Pilih kelas untuk belajar',
-                            style: TextStyle(
-                              fontSize: 13,
-                              color: Colors.white70,
-                            ),
-                          ),
+                          const Text('PEMAIN', style: TextStyle(fontSize: 10, color: Colors.white70, fontWeight: FontWeight.bold, letterSpacing: 1.5)),
+                          Text(nama, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w900, color: Colors.white)),
                         ],
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 12),
+                Stack(
+                  children: [
+                    Text(
+                      'PILIH LEVEL',
+                      style: GoogleFonts.fredoka(
+                        fontSize: 44,
+                        fontWeight: FontWeight.w900,
+                        foreground: Paint()
+                          ..style = PaintingStyle.stroke
+                          ..strokeWidth = 10
+                          ..color = const Color(0xFFFFB300), // Yellow
+                      ),
+                    ),
+                    Text(
+                      'PILIH LEVEL',
+                      style: GoogleFonts.fredoka(
+                        fontSize: 44,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white, // Back to white
+                        shadows: const [Shadow(color: Colors.black45, blurRadius: 8, offset: Offset(0, 4))],
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 24),
-                const Text(
-                  'Pilih Kelas',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    shadows: [Shadow(color: Colors.black45, blurRadius: 4)],
+                const SizedBox(height: 12),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  decoration: BoxDecoration(
+                    color: const Color(0xFFFFB300),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(color: Colors.white, width: 2),
+                    boxShadow: const [BoxShadow(color: Color(0xFFF57C00), offset: Offset(0, 4))],
                   ),
-                ),
-                const SizedBox(height: 4),
-                const Text(
-                  'Selesaikan materi untuk membuka kelas berikutnya',
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: Colors.white70,
+                  child: const Text(
+                    'Siap untuk petualangan baru?',
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: Colors.white),
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -228,7 +257,7 @@ class _KelasPage extends StatelessWidget {
             ),
           ),
         ),
-        const SliverToBoxAdapter(child: SizedBox(height: 20)),
+        const SliverToBoxAdapter(child: SizedBox(height: 120)),
       ],
     );
   }
@@ -244,6 +273,7 @@ class _KelasPage extends StatelessWidget {
   Widget _buildKelasCard(
       BuildContext context, int kelas, bool unlocked, UserProgress? progress) {
     final color = AppConstants.warnaKelas[kelas] ?? AppColors.primary;
+    final shadowColor = Color.lerp(color, Colors.black, 0.4)!;
     final namaKelas = AppConstants.namaKelas[kelas] ?? 'Kelas $kelas';
 
     int completedCount = 0;
@@ -255,11 +285,10 @@ class _KelasPage extends StatelessWidget {
       }
     }
     final totalTopics = AppConstants.getTopicOrder(kelas).length;
-    final double progressValue =
-        totalTopics > 0 ? completedCount / totalTopics : 0;
+    final double progressValue = totalTopics > 0 ? completedCount / totalTopics : 0;
 
-    return GestureDetector(
-      onTap: unlocked
+    return Game3DButton(
+      onPressed: unlocked
           ? () {
               Navigator.push(
                 context,
@@ -269,127 +298,100 @@ class _KelasPage extends StatelessWidget {
               );
             }
           : null,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        decoration: BoxDecoration(
-          gradient: unlocked
-              ? LinearGradient(
-                  colors: [
-                    color,
-                    Color.lerp(color, Colors.black, 0.2)!,
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                )
-              : null,
-          color: unlocked ? null : Colors.grey.shade800,
-          borderRadius: BorderRadius.circular(24),
-          border: Border.all(
-            color: unlocked ? Colors.white.withValues(alpha: 0.8) : Colors.transparent,
-            width: 2.5,
-          ),
-          boxShadow: unlocked
-              ? [
-                  BoxShadow(
-                    color: color.withValues(alpha: 0.5),
-                    blurRadius: 16,
-                    offset: const Offset(0, 8),
-                  )
-                ]
-              : [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.3),
-                    blurRadius: 8,
-                    offset: const Offset(0, 4),
-                  )
-                ],
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(14),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // ── Baris atas: label kiri, icon kanan ──
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
+      color: unlocked ? color : Colors.grey.shade400,
+      shadowColor: unlocked ? shadowColor : Colors.grey.shade600,
+      child: Padding(
+        padding: const EdgeInsets.all(14),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.3),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     child: Text(
                       'Kelas $kelas',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white.withValues(alpha: 0.85),
-                        letterSpacing: 0.3,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
                       ),
                     ),
                   ),
-                  Container(
-                    padding: const EdgeInsets.all(9),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 0.2),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Icon(
-                      unlocked ? Icons.school_rounded : Icons.lock_rounded,
-                      size: 28,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-
-              const Spacer(),
-
-              // ── Nama kelas besar ──
-              Text(
-                namaKelas,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  fontSize: 26,
-                  fontWeight: FontWeight.w900,
+                ),
+                Icon(
+                  unlocked ? Icons.play_circle_fill_rounded : Icons.lock_rounded,
                   color: Colors.white,
-                  height: 1.2,
-                  shadows: [Shadow(color: Colors.black26, blurRadius: 4)],
-                ),
-              ),
-
-              const SizedBox(height: 6),
-
-              // ── Keterangan progress ──
-              if (unlocked) ...[
-                Text(
-                  '$completedCount/$totalTopics Materi',
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: Colors.white.withValues(alpha: 0.85),
-                  ),
-                ),
-                const SizedBox(height: 6),
-                // ── Progress bar ──
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(6),
-                  child: LinearProgressIndicator(
-                    value: progressValue,
-                    backgroundColor: Colors.white.withValues(alpha: 0.3),
-                    valueColor:
-                        const AlwaysStoppedAnimation<Color>(Colors.white),
-                    minHeight: 6,
-                  ),
-                ),
-              ] else ...[
-                Text(
-                  'Selesaikan kelas\nsebelumnya dulu',
-                  style: TextStyle(
-                    fontSize: 10,
-                    color: Colors.white.withValues(alpha: 0.75),
-                    height: 1.4,
-                  ),
+                  size: 28,
+                  shadows: const [Shadow(color: Colors.black26, blurRadius: 4)],
                 ),
               ],
-            ],
-          ),
+            ),
+            const Spacer(),
+            Text(
+              namaKelas,
+              maxLines: 2,
+              style: const TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.w900,
+                color: Colors.white,
+                height: 1.1,
+                shadows: [Shadow(color: Colors.black45, blurRadius: 6, offset: Offset(0, 2))],
+              ),
+            ),
+            const SizedBox(height: 8),
+            if (unlocked) ...[
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Stack(
+                  children: [
+                    Container(height: 10, color: Colors.black.withValues(alpha: 0.2)),
+                    FractionallySizedBox(
+                      widthFactor: progressValue,
+                      child: Container(
+                        height: 10,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF4ADE80),
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: const [BoxShadow(color: Colors.white54, blurRadius: 2, offset: Offset(0, 1))],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                '$completedCount/$totalTopics Selesai',
+                style: const TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ] else
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                decoration: BoxDecoration(
+                  color: Colors.black.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: const Text(
+                  'Terkunci',
+                  style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+          ],
         ),
       ),
     );
@@ -577,7 +579,7 @@ class _ProfilPage extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 100),
         ],
       ),
     ));
@@ -705,6 +707,68 @@ class _ProfilPage extends StatelessWidget {
           },
         );
       },
+    );
+  }
+}
+
+class Game3DButton extends StatefulWidget {
+  final Widget child;
+  final VoidCallback? onPressed;
+  final Color color;
+  final Color shadowColor;
+
+  const Game3DButton({
+    super.key,
+    required this.child,
+    this.onPressed,
+    required this.color,
+    required this.shadowColor,
+  });
+
+  @override
+  State<Game3DButton> createState() => _Game3DButtonState();
+}
+
+class _Game3DButtonState extends State<Game3DButton> {
+  bool _isPressed = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTapDown: (_) {
+        if (widget.onPressed != null) setState(() => _isPressed = true);
+      },
+      onTapUp: (_) {
+        if (widget.onPressed != null) {
+          setState(() => _isPressed = false);
+          widget.onPressed!();
+        }
+      },
+      onTapCancel: () {
+        if (widget.onPressed != null) setState(() => _isPressed = false);
+      },
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 100),
+        margin: EdgeInsets.only(top: _isPressed ? 6 : 0, bottom: _isPressed ? 0 : 6),
+        decoration: BoxDecoration(
+          color: widget.color,
+          borderRadius: BorderRadius.circular(24),
+          border: Border.all(color: Colors.white.withValues(alpha: 0.8), width: 3),
+          boxShadow: [
+            BoxShadow(
+              color: widget.shadowColor,
+              offset: Offset(0, _isPressed ? 0 : 8),
+            ),
+            if (!_isPressed)
+              BoxShadow(
+                color: Colors.black.withValues(alpha: 0.3),
+                offset: const Offset(0, 12),
+                blurRadius: 10,
+              ),
+          ],
+        ),
+        child: widget.child,
+      ),
     );
   }
 }

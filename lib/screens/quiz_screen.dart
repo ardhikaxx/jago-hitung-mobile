@@ -205,7 +205,7 @@ class _QuizScreenState extends State<QuizScreen>
             lulus: lulus,
             results: _results,
           ),
-          transitionsBuilder: (_, a, _anim, child) => FadeTransition(
+          transitionsBuilder: (_, a, anim, child) => FadeTransition(
             opacity: a,
             child: child,
           ),

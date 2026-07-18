@@ -6,12 +6,8 @@ class SoundService {
   SoundService._();
 
   final AudioPlayer _player = AudioPlayer();
-  bool _initialized = false;
 
-  Future<void> init() async {
-    if (_initialized) return;
-    _initialized = true;
-  }
+  void init() {}
 
   Future<void> playClick() async {
     try {

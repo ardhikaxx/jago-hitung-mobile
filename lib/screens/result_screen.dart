@@ -5,6 +5,7 @@ import '../services/sound_service.dart';
 import '../widgets/game_3d_button.dart';
 import '../utils/constants.dart';
 import '../widgets/level_up_overlay.dart';
+import '../widgets/game_background.dart';
 import 'home_screen.dart';
 import 'quiz_screen.dart';
 
@@ -87,9 +88,10 @@ class _ResultScreenState extends State<ResultScreen>
     final nextTopicId = _getNextTopicId();
 
     return Scaffold(
-      backgroundColor: AppColors.background,
-      body: SafeArea(
-        child: Center(
+      backgroundColor: Colors.transparent,
+      body: GameBackground(
+        child: SafeArea(
+          child: Center(
           child: SingleChildScrollView(
             padding: const EdgeInsets.all(24),
             child: Column(
@@ -350,6 +352,7 @@ class _ResultScreenState extends State<ResultScreen>
             ),
           ),
         ),
+      ),
       ),
     );
   }

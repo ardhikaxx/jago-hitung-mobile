@@ -9,6 +9,7 @@ import '../models/user_progress_model.dart';
 import '../utils/constants.dart';
 import 'quiz_screen.dart';
 import '../services/sound_service.dart';
+import '../widgets/game_background.dart';
 
 // ── Icon mapping per topik ──────────────────────────────────────────────────
 const Map<String, IconData> _topicIcons = {
@@ -155,14 +156,6 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
   late AnimationController _pathController;
   late List<AnimationController> _nodeControllers;
 
-  static const Map<int, String> _bgImages = {
-    1: 'assets/images/bg_kelas1.jpg',
-    2: 'assets/images/bg_kelas2.jpg',
-    3: 'assets/images/bg_kelas3.jpg',
-    4: 'assets/images/bg_kelas4.jpg',
-    5: 'assets/images/bg_kelas5.jpg',
-    6: 'assets/images/bg_kelas6.jpg',
-  };
 
   @override
   void initState() {
@@ -207,7 +200,6 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
   @override
   Widget build(BuildContext context) {
     final color = AppConstants.warnaKelas[widget.kelas] ?? AppColors.primary;
-    final bgImage = _bgImages[widget.kelas] ?? _bgImages[1]!;
 
     return Scaffold(
       extendBodyBehindAppBar: false,
@@ -219,8 +211,8 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
                 return Stack(
                   children: [
                     // Background
-                    Positioned.fill(
-                      child: Image.asset(bgImage, fit: BoxFit.cover),
+                    const Positioned.fill(
+                      child: GameBackground(child: SizedBox()),
                     ),
                     // Overlay gelap tipis biar node keliatan
                     Positioned.fill(
@@ -256,11 +248,8 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
   Widget _buildLoading(Color color) {
     return Stack(
       children: [
-        Positioned.fill(
-          child: Image.asset(
-            _bgImages[widget.kelas] ?? _bgImages[1]!,
-            fit: BoxFit.cover,
-          ),
+        const Positioned.fill(
+          child: GameBackground(child: SizedBox()),
         ),
         Center(
           child: Container(
@@ -473,13 +462,13 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
     final width = size.width;
 
     // Posisi X zig-zag: kiri / tengah / kanan
-    final double left = width * 0.18;
+    final double left = width * 0.22;
     final double center = width * 0.50;
-    final double right = width * 0.82;
+    final double right = width * 0.78;
     final xPattern = [center, right, center, left, center, right, center, left];
 
-    const double nodeH = 160.0; // jarak vertikal antar node
-    const double nodeR = 42.0;  // radius node
+    const double nodeH = 150.0; // jarak vertikal antar node
+    const double nodeR = 38.0;  // radius node diperkecil sedikit agar tidak overflow
     final double totalH = _topics.length * nodeH + 160;
 
     // Kumpulkan posisi tiap node (dari atas ke bawah = index terbalik)
@@ -640,6 +629,7 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
 
               // ── Lingkaran node (sekarang menjadi square ala game) ──
               Stack(
+                clipBehavior: Clip.none,
                 alignment: Alignment.center,
                 children: [
                   // Main box
@@ -648,8 +638,8 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
                     height: diameter,
                     decoration: BoxDecoration(
                       color: nodeColor,
-                      borderRadius: BorderRadius.circular(18),
-                      border: Border.all(color: const Color(0xFF1D2030), width: 3),
+                      shape: BoxShape.circle,
+                      border: Border.all(color: const Color(0xFF1D2030), width: 4),
                       boxShadow: [
                         BoxShadow(
                           color: const Color(0xFF1D2030),
@@ -665,39 +655,42 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
                     child: Center(
                       child: unlocked
                           ? (isSelesai
-                              ? Icon(Icons.check_rounded,
-                                  color: Colors.white, size: 34)
+                              ? Icon(Icons.star_rounded,
+                                  color: Colors.white, size: 40)
                               : Icon(_getTopicIcon(topic.id),
-                                  color: iconColor, size: 30))
+                                  color: iconColor, size: 32))
                           : const Icon(Icons.lock_rounded,
                               color: Colors.white60, size: 28),
                     ),
                   ),
                   // Nomor urut (pojok kanan atas)
                   Positioned(
-                    top: -6,
-                    right: -6,
-                    child: Container(
-                      width: 26,
-                      height: 26,
-                      decoration: BoxDecoration(
-                        color: unlocked ? color : Colors.grey.shade600,
-                        shape: BoxShape.circle,
-                        border: Border.all(color: const Color(0xFF1D2030), width: 2),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Color(0xFF1D2030),
-                            offset: Offset(0, 2),
-                          ),
-                        ],
-                      ),
-                      child: Center(
-                        child: Text(
-                          '${index + 1}',
-                          style: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                    top: -10,
+                    right: -10,
+                    child: Transform.rotate(
+                      angle: 0.15, // Sedikit dimiringkan (tilted) ala stiker game
+                      child: Container(
+                        width: 28,
+                        height: 28,
+                        decoration: BoxDecoration(
+                          color: unlocked ? const Color(0xFFFFD633) : Colors.grey.shade500,
+                          borderRadius: BorderRadius.circular(8), // Bentuk rounded square
+                          border: Border.all(color: const Color(0xFF1D2030), width: 2),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color(0xFF1D2030),
+                              offset: Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: Center(
+                          child: Text(
+                            '${index + 1}',
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w900,
+                              color: unlocked ? const Color(0xFF1D2030) : Colors.white,
+                            ),
                           ),
                         ),
                       ),

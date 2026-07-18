@@ -22,6 +22,7 @@ class AppColors {
   static const Color outline = Color(0xFF1D2030); // Dark stroke
 }
 
+
 class AppConstants {
   static const int skorLulusMinimum = 60;
   static const int jumlahSoalPerTopik = 5;

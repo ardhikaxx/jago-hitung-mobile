@@ -11,6 +11,7 @@ import 'topic_selection_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../services/sound_service.dart';
 import '../widgets/game_3d_button.dart';
+import '../widgets/game_background.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -50,19 +51,11 @@ class _HomeScreenState extends State<HomeScreen> {
         }
         return Scaffold(
           extendBodyBehindAppBar: true,
-          backgroundColor: AppColors.background,
+          backgroundColor: Colors.transparent,
           body: Stack(
             children: [
-              Positioned.fill(
-                child: Image.asset(
-                  'assets/images/bg_home.jpg',
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Positioned.fill(
-                child: Container(
-                  color: Colors.black.withValues(alpha: 0.3),
-                ),
+              const Positioned.fill(
+                child: GameBackground(child: SizedBox()),
               ),
               SafeArea(
                 child: IndexedStack(
@@ -666,8 +659,8 @@ class _ProfilPage extends StatelessWidget {
           const SizedBox(height: 16),
           SizedBox(
             width: double.infinity,
-            height: 50,
-            child: OutlinedButton.icon(
+            height: 54,
+            child: Game3DButton(
               onPressed: () async {
                 SoundService.instance.playClick();
                 final confirm = await showDialog<bool>(
@@ -675,39 +668,46 @@ class _ProfilPage extends StatelessWidget {
                   builder: (ctx) => AlertDialog(
                     backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(24),
+                      side: const BorderSide(color: Color(0xFF1D2030), width: 3),
                     ),
                     title: const Text(
                       'Yakin ingin keluar?',
-                      style: TextStyle(fontWeight: FontWeight.w900),
+                      style: TextStyle(fontWeight: FontWeight.w900, color: AppColors.textPrimary),
                     ),
                     content: const Text(
                       'Kamu akan kembali ke halaman login.',
+                      style: TextStyle(color: AppColors.textSecondary),
                     ),
                     actions: [
-                      TextButton(
+                      Game3DButton(
                         onPressed: () {
                           SoundService.instance.playClick();
                           Navigator.pop(ctx, false);
                         },
-                        child: const Text(
-                          'Batal',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.textSecondary,
+                        color: Colors.white,
+                        shadowColor: Colors.grey.shade400,
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          child: Text(
+                            'Batal',
+                            style: TextStyle(fontWeight: FontWeight.bold, color: AppColors.textSecondary),
                           ),
                         ),
                       ),
-                      TextButton(
+                      const SizedBox(width: 8),
+                      Game3DButton(
                         onPressed: () {
                           SoundService.instance.playClick();
                           Navigator.pop(ctx, true);
                         },
-                        child: const Text(
-                          'Keluar',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.danger,
+                        color: AppColors.danger,
+                        shadowColor: AppColors.danger.withValues(alpha: 0.6),
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          child: Text(
+                            'Keluar',
+                            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
                           ),
                         ),
                       ),
@@ -723,19 +723,18 @@ class _ProfilPage extends StatelessWidget {
                   );
                 }
               },
-              icon: const Icon(Icons.logout, color: AppColors.danger),
-              label: const Text(
-                'Keluar',
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.danger),
-              ),
-              style: OutlinedButton.styleFrom(
-                side: const BorderSide(color: AppColors.danger),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
+              color: AppColors.danger,
+              shadowColor: AppColors.danger.withValues(alpha: 0.6),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.logout, color: Colors.white),
+                  SizedBox(width: 8),
+                  Text(
+                    'Keluar',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                  ),
+                ],
               ),
             ),
           ),

@@ -7,6 +7,7 @@ import 'home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../services/sound_service.dart';
 import '../widgets/game_3d_button.dart';
+import '../widgets/game_background.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -90,18 +91,9 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          // Background Image
-          Positioned.fill(
-            child: Image.asset(
-              'assets/images/bg_login.jpg',
-              fit: BoxFit.cover,
-            ),
-          ),
-          SafeArea(
-            child: Center(
-              child: SingleChildScrollView(
+      body: GameBackground(
+        child: Center(
+          child: SingleChildScrollView(
                 padding: const EdgeInsets.all(24),
                 child: Form(
                   key: _formKey,
@@ -290,9 +282,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
-    ),
-  ],
-),
-);
-}
+      ),
+    );
+  }
 }

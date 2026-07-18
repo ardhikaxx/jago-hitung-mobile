@@ -13,6 +13,7 @@ import '../widgets/smart_illustration_card.dart';
 import '../widgets/celebration_widget.dart';
 import '../widgets/matching_widget.dart';
 import '../widgets/game_3d_button.dart';
+import '../widgets/game_background.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -49,14 +50,6 @@ class _QuizScreenState extends State<QuizScreen>
   User? get user => AuthService.instance.currentUser;
   Question get _currentQuestion => _questions[_currentIndex];
 
-  static const Map<int, String> _bgImages = {
-    1: 'assets/images/bg_kelas1.jpg',
-    2: 'assets/images/bg_kelas2.jpg',
-    3: 'assets/images/bg_kelas3.jpg',
-    4: 'assets/images/bg_kelas4.jpg',
-    5: 'assets/images/bg_kelas5.jpg',
-    6: 'assets/images/bg_kelas6.jpg',
-  };
 
   @override
   void initState() {
@@ -249,18 +242,14 @@ class _QuizScreenState extends State<QuizScreen>
     final color = AppConstants.warnaKelas[widget.kelas] ?? AppColors.primary;
     final total = _questions.length;
     final progressVal = (_currentIndex + 1) / total;
-    final bgImage = _bgImages[widget.kelas] ?? _bgImages[1]!;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
       body: Stack(
         children: [
           // Background Image
-          Positioned.fill(
-            child: Image.asset(
-              bgImage,
-              fit: BoxFit.cover,
-            ),
+          const Positioned.fill(
+            child: GameBackground(child: SizedBox()),
           ),
           // Overlay
           Positioned.fill(

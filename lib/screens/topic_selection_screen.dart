@@ -209,30 +209,7 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
     final bgImage = _bgImages[widget.kelas] ?? _bgImages[1]!;
 
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        foregroundColor: Colors.white,
-        title: Text(
-          AppConstants.namaKelas[widget.kelas] ?? '',
-          style: const TextStyle(
-            fontWeight: FontWeight.w800,
-            fontSize: 20,
-            letterSpacing: 0.5,
-            shadows: [Shadow(color: Colors.black38, blurRadius: 6, offset: Offset(0, 2))],
-          ),
-        ),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [color.withValues(alpha: 0.9), Colors.transparent],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-            ),
-          ),
-        ),
-      ),
+      extendBodyBehindAppBar: false,
       body: _loading
           ? _buildLoading(color)
           : StreamBuilder<UserProgress?>(
@@ -261,6 +238,13 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
                       ),
                     ),
                     _buildLevelPath(snapshot.data, color),
+                    // ── Custom Game Header ──
+                    Positioned(
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      child: _buildGameHeader(context, color, snapshot.data),
+                    ),
                   ],
                 );
               },
@@ -299,6 +283,186 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
     );
   }
 
+  Widget _buildGameHeader(
+      BuildContext context, Color color, UserProgress? progress) {
+    final namaKelas = AppConstants.namaKelas[widget.kelas] ?? 'Kelas ${widget.kelas}';
+    final top = MediaQuery.of(context).padding.top;
+
+    // Hitung progress
+    int selesai = 0;
+    int totalBintang = 0;
+    for (final t in _topics) {
+      final tp = progress?.getTopikProgress(t.id, widget.kelas);
+      if (tp?.lulus == true) {
+        selesai++;
+        final s = tp?.skor ?? 0;
+        totalBintang += s >= 90 ? 3 : s >= 70 ? 2 : 1;
+      }
+    }
+    final total = _topics.length;
+    final maxBintang = total * 3;
+    final progressVal = total > 0 ? selesai / total : 0.0;
+
+    return Container(
+      padding: EdgeInsets.fromLTRB(16, top + 8, 16, 16),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            color.withValues(alpha: 0.92),
+            color.withValues(alpha: 0.75),
+            color.withValues(alpha: 0.0),
+          ],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          stops: const [0.0, 0.7, 1.0],
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // ── Baris atas: tombol back + judul ──
+          Row(
+            children: [
+              // Tombol back bergaya game
+              GestureDetector(
+                onTap: () => Navigator.pop(context),
+                child: Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.25),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                      color: Colors.white.withValues(alpha: 0.5),
+                      width: 1.5,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.15),
+                        blurRadius: 8,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
+                  ),
+                  child: const Icon(
+                    Icons.arrow_back_ios_new_rounded,
+                    color: Colors.white,
+                    size: 18,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 12),
+
+              // Nama kelas + subjudul
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      namaKelas,
+                      style: const TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
+                        letterSpacing: 0.5,
+                        shadows: [
+                          Shadow(
+                            color: Colors.black38,
+                            blurRadius: 8,
+                            offset: Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Text(
+                      '$selesai dari $total materi selesai',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white.withValues(alpha: 0.85),
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              // Badge total bintang
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                decoration: BoxDecoration(
+                  color: Colors.white.withValues(alpha: 0.2),
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(
+                    color: Colors.white.withValues(alpha: 0.4),
+                    width: 1.5,
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    const Icon(
+                      Icons.star_rounded,
+                      color: Color(0xFFFFD700),
+                      size: 18,
+                      shadows: [
+                        Shadow(color: Color(0xFFFF8C00), blurRadius: 6),
+                      ],
+                    ),
+                    const SizedBox(width: 4),
+                    Text(
+                      '$totalBintang/$maxBintang',
+                      style: const TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 10),
+
+          // ── Progress bar ──
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Stack(
+              children: [
+                // Track
+                Container(
+                  height: 8,
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.25),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                // Fill
+                FractionallySizedBox(
+                  widthFactor: progressVal,
+                  child: Container(
+                    height: 8,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.white.withValues(alpha: 0.6),
+                          blurRadius: 6,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _buildLevelPath(UserProgress? progress, Color color) {
     final topicOrder = _topics.map((t) => t.id).toList();
     final size = MediaQuery.of(context).size;
@@ -322,8 +486,8 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
 
     return SingleChildScrollView(
       reverse: true,
-      padding: EdgeInsets.only(
-        top: MediaQuery.of(context).padding.top + kToolbarHeight,
+      padding: const EdgeInsets.only(
+        top: 130, // tinggi custom game header
         bottom: 40,
       ),
       child: SizedBox(

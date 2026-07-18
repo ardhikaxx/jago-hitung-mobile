@@ -698,11 +698,11 @@ class _QuizScreenState extends State<QuizScreen>
         final isSelected = _selectedChoice == choice;
         final isCorrect = choice == q.jawaban;
 
-        Color bgColor = Colors.white;
-        Color borderColor = Colors.grey.shade200;
-        Color textColor = AppColors.textPrimary;
-        Color labelBg = Colors.grey.shade100;
-        Color labelText = AppColors.textSecondary;
+        Color bgColor = color;
+        Color borderColor = color;
+        Color textColor = Colors.white;
+        Color labelBg = Colors.white;
+        Color labelText = color;
         IconData? trailingIcon;
         Color? trailingColor;
 
@@ -725,11 +725,11 @@ class _QuizScreenState extends State<QuizScreen>
             trailingColor = const Color(0xFFEF4444);
           }
         } else if (isSelected) {
-          bgColor = color.withValues(alpha: 0.15);
-          borderColor = color;
-          textColor = color;
-          labelBg = color;
-          labelText = Colors.white;
+          bgColor = Color.lerp(color, Colors.black, 0.15)!;
+          borderColor = Color.lerp(color, Colors.black, 0.3)!;
+          textColor = Colors.white;
+          labelBg = Colors.white.withValues(alpha: 0.9);
+          labelText = color;
         }
 
         return GestureDetector(

@@ -6,9 +6,11 @@ import '../models/topic_model.dart';
 import '../models/user_progress_model.dart';
 import '../services/auth_service.dart';
 import '../services/firestore_service.dart';
+import '../services/sound_service.dart';
 import '../utils/constants.dart';
 import '../widgets/numpad_widget.dart';
 import '../widgets/smart_illustration_card.dart';
+import '../widgets/celebration_widget.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -25,6 +27,7 @@ class _QuizScreenState extends State<QuizScreen>
   int _currentIndex = 0;
   int _benarCount = 0;
   final List<bool> _results = [];
+  final List<String> _userAnswers = [];
   final TextEditingController _answerCtrl = TextEditingController();
   String? _selectedChoice;
   bool _answered = false;
@@ -83,6 +86,7 @@ class _QuizScreenState extends State<QuizScreen>
     _pulse = Tween<double>(begin: 1.0, end: 1.06).animate(_pulseController);
 
     _cardController.forward();
+    SoundService.instance.init();
   }
 
   @override
@@ -127,14 +131,15 @@ class _QuizScreenState extends State<QuizScreen>
 
     setState(() {
       _answered = true;
+      _userAnswers.add(jawabanUser);
       if (benar) _benarCount++;
       _results.add(benar);
     });
 
     if (benar) {
-      HapticFeedback.mediumImpact();
+      SoundService.instance.playCorrect();
     } else {
-      HapticFeedback.heavyImpact();
+      SoundService.instance.playWrong();
     }
 
     _feedbackController.reset();
@@ -204,6 +209,8 @@ class _QuizScreenState extends State<QuizScreen>
             jumlahSoal: jumlahSoal,
             lulus: lulus,
             results: _results,
+            questions: widget.topic.soal,
+            userAnswers: _userAnswers,
           ),
           transitionsBuilder: (_, a, anim, child) => FadeTransition(
             opacity: a,
@@ -228,7 +235,7 @@ class _QuizScreenState extends State<QuizScreen>
         _answerCtrl.text += value;
       }
     });
-    HapticFeedback.selectionClick();
+    SoundService.instance.playClick();
   }
 
   @override
@@ -716,7 +723,7 @@ class _QuizScreenState extends State<QuizScreen>
           onTap: _answered
               ? null
               : () {
-                  HapticFeedback.selectionClick();
+                  SoundService.instance.playClick();
                   setState(() => _selectedChoice = choice);
                 },
           child: AnimatedContainer(
@@ -860,7 +867,7 @@ class _QuizScreenState extends State<QuizScreen>
     if (!_answered) return const SizedBox.shrink();
     final benar = _results.last;
 
-    return ScaleTransition(
+    final feedbackWidget = ScaleTransition(
       scale: _feedbackScale,
       child: Container(
         width: double.infinity,
@@ -962,6 +969,12 @@ class _QuizScreenState extends State<QuizScreen>
         ),
       ),
     );
+
+    if (benar) {
+      return CelebrationOverlay(isCorrect: true, child: feedbackWidget);
+    } else {
+      return ShakeWidget(trigger: true, child: feedbackWidget);
+    }
   }
 
   // ── TOMBOL AKSI ─────────────────────────────────────────────────────────

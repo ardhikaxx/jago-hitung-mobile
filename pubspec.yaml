@@ -17,6 +17,7 @@ dependencies:
   google_sign_in: ^6.2.2
   provider: ^6.1.2
   google_fonts: ^8.2.0
+  audioplayers: ^6.7.1
 
 dev_dependencies:
   flutter_test:
@@ -29,6 +30,7 @@ flutter:
     - assets/images/
     - assets/images/soal/
     - assets/images/profile/
+    - assets/sounds/
     - lib/data/curriculum/kelas-1/
     - lib/data/curriculum/kelas-2/
     - lib/data/curriculum/kelas-3/

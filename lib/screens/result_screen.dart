@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../models/question_model.dart';
 import '../services/data_service.dart';
 import '../utils/constants.dart';
 import 'home_screen.dart';
@@ -13,6 +14,8 @@ class ResultScreen extends StatelessWidget {
   final int jumlahSoal;
   final bool lulus;
   final List<bool> results;
+  final List<Question>? questions;
+  final List<String>? userAnswers;
 
   const ResultScreen({
     super.key,
@@ -24,6 +27,8 @@ class ResultScreen extends StatelessWidget {
     required this.jumlahSoal,
     required this.lulus,
     required this.results,
+    this.questions,
+    this.userAnswers,
   });
 
   String? _getNextTopicId() {
@@ -203,6 +208,8 @@ class ResultScreen extends StatelessWidget {
                       color: AppColors.textSecondary,
                     ),
                   ),
+                const SizedBox(height: 24),
+                _buildReviewSection(context, color),
                 const SizedBox(height: 32),
                 if (!lulus)
                   SizedBox(
@@ -314,6 +321,176 @@ class ResultScreen extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildReviewSection(BuildContext context, Color color) {
+    if (questions == null || userAnswers == null) return const SizedBox.shrink();
+
+    final salahIndices = <int>[];
+    for (int i = 0; i < results.length; i++) {
+      if (!results[i]) salahIndices.add(i);
+    }
+
+    if (salahIndices.isEmpty) {
+      return Container(
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: AppColors.success.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: AppColors.success.withValues(alpha: 0.3)),
+        ),
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.auto_awesome, color: AppColors.success, size: 22),
+            SizedBox(width: 10),
+            Text(
+              'Semua jawaban benar! Luar biasa! 🎉',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: AppColors.success,
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: ExpansionTile(
+        initiallyExpanded: true,
+        tilePadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+        childrenPadding: const EdgeInsets.fromLTRB(20, 0, 20, 16),
+        shape: Border.all(color: Colors.transparent),
+        collapsedShape: Border.all(color: Colors.transparent),
+        leading: Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: AppColors.danger.withValues(alpha: 0.1),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: const Icon(Icons.refresh_rounded, color: AppColors.danger, size: 20),
+        ),
+        title: Text(
+          'Review Jawaban Salah (${salahIndices.length})',
+          style: const TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.bold,
+            color: AppColors.textPrimary,
+          ),
+        ),
+        children: salahIndices.map((i) {
+          final q = questions![i];
+          final userAns = userAnswers![i];
+          return Container(
+            margin: const EdgeInsets.only(bottom: 12),
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: AppColors.danger.withValues(alpha: 0.05),
+              borderRadius: BorderRadius.circular(14),
+              border: Border.all(color: AppColors.danger.withValues(alpha: 0.2)),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                      decoration: BoxDecoration(
+                        color: AppColors.danger,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        'Soal ${i + 1}',
+                        style: const TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    const Spacer(),
+                    const Icon(Icons.close_rounded, color: AppColors.danger, size: 18),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  q.pertanyaan,
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.textPrimary,
+                    height: 1.4,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Row(
+                  children: [
+                    const Icon(Icons.person_rounded, size: 14, color: AppColors.danger),
+                    const SizedBox(width: 4),
+                    Text(
+                      'Jawabanmu: $userAns',
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.danger,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Row(
+                  children: [
+                    const Icon(Icons.check_circle_rounded, size: 14, color: AppColors.success),
+                    const SizedBox(width: 4),
+                    Text(
+                      'Jawaban benar: ${q.jawaban}',
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.success,
+                      ),
+                    ),
+                  ],
+                ),
+                if (q.penjelasan.isNotEmpty) ...[
+                  const SizedBox(height: 8),
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withValues(alpha: 0.7),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      q.penjelasan,
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: AppColors.textSecondary.withValues(alpha: 0.8),
+                        height: 1.4,
+                      ),
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          );
+        }).toList(),
+      ),
     );
   }
 }

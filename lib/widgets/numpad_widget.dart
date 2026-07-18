@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../services/sound_service.dart';
 import '../utils/constants.dart';
 
 class NumpadWidget extends StatelessWidget {
@@ -134,6 +135,7 @@ class _NumKeyState extends State<_NumKey>
   }
 
   void _handleTap() async {
+    SoundService.instance.playClick();
     await _ctrl.forward();
     await _ctrl.reverse();
     widget.onTap();

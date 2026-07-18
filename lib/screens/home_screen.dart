@@ -463,8 +463,8 @@ class _ProfilPage extends StatelessWidget {
           ],
         ),
         child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          const SizedBox(height: 20),
           GestureDetector(
             onTap: () => _showProfileImagePicker(context),
             child: Stack(
@@ -729,7 +729,7 @@ class _ProfilPage extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 100),
+          const SizedBox(height: 40),
         ],
       ),
     ));

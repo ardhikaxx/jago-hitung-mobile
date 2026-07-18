@@ -298,7 +298,6 @@ class _QuizScreenState extends State<QuizScreen>
             newLevel: newLevel,
             oldLevel: oldLevel,
           ),
-          ),
           transitionsBuilder: (_, a, anim, child) => FadeTransition(
             opacity: a,
             child: child,

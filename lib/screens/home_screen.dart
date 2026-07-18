@@ -505,15 +505,15 @@ class _ProfilPage extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: 4),
           Text(
             'Tap untuk ubah foto profil',
             style: TextStyle(
-              fontSize: 12,
+              fontSize: 11,
               color: AppColors.textSecondary,
             ),
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 12),
           Text(
             nama,
             style: const TextStyle(
@@ -530,9 +530,9 @@ class _ProfilPage extends StatelessWidget {
               color: AppColors.textSecondary,
             ),
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 16),
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(16),
@@ -552,14 +552,14 @@ class _ProfilPage extends StatelessWidget {
                   'Materi Dikerjakan',
                   AppColors.primary,
                 ),
-                const Divider(height: 32),
+                const Divider(height: 16),
                 _buildProfileStat(
                   Icons.check_circle_rounded,
                   '$totalSoal',
                   'Total Soal Dijawab',
                   AppColors.success,
                 ),
-                const Divider(height: 32),
+                const Divider(height: 16),
                 _buildProfileStat(
                   Icons.school_rounded,
                   'Kelas $kelasAktif',
@@ -570,9 +570,9 @@ class _ProfilPage extends StatelessWidget {
             ),
           ),
           // ── Settings ──
-          const SizedBox(height: 24),
+          const SizedBox(height: 16),
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(16),
@@ -653,7 +653,7 @@ class _ProfilPage extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 16),
           SizedBox(
             width: double.infinity,
             height: 50,
@@ -729,7 +729,7 @@ class _ProfilPage extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 24),
         ],
       ),
     ));

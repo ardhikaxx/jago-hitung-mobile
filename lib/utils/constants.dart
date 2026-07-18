@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color primary = Color(0xFF6C63FF);
-  static const Color primaryDark = Color(0xFF4A42D4);
-  static const Color secondary = Color(0xFFFF6584);
-  static const Color success = Color(0xFF4CAF50);
-  static const Color warning = Color(0xFFFFC107);
-  static const Color danger = Color(0xFFF44336);
-  static const Color background = Color(0xFFF5F7FF);
+  static const Color primary = Color(0xFF1388E8); // Blue
+  static const Color primaryDark = Color(0xFF003882);
+  static const Color secondary = Color(0xFFFFB200); // Yellow
+  static const Color secondaryDark = Color(0xFFC05200);
+  static const Color success = Color(0xFF65D016); // Green
+  static const Color successDark = Color(0xFF147500);
+  static const Color warning = Color(0xFFFFB200); // Yellow
+  static const Color warningDark = Color(0xFFC05200);
+  static const Color danger = Color(0xFFEB144C); // Red
+  static const Color dangerDark = Color(0xFF820024);
+  static const Color background = Color(0xFFF0F5FA);
   static const Color cardBg = Colors.white;
-  static const Color textPrimary = Color(0xFF2D3142);
+  static const Color textPrimary = Color(0xFF1D2030);
   static const Color textSecondary = Color(0xFF6B7280);
-  static const Color locked = Color(0xFFBDBDBD);
+  static const Color locked = Color(0xFF8090A0); // Grey
+  static const Color lockedDark = Color(0xFF455566);
+  static const Color special = Color(0xFFCC14D9); // Purple
+  static const Color specialDark = Color(0xFF660082);
+  static const Color outline = Color(0xFF1D2030); // Dark stroke
 }
 
 class AppConstants {

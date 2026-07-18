@@ -12,6 +12,7 @@ import '../widgets/numpad_widget.dart';
 import '../widgets/smart_illustration_card.dart';
 import '../widgets/celebration_widget.dart';
 import '../widgets/matching_widget.dart';
+import '../widgets/game_3d_button.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -526,15 +527,13 @@ class _QuizScreenState extends State<QuizScreen>
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.95),
+          color: Colors.white,
           borderRadius: BorderRadius.circular(24),
-          border: Border.all(color: Colors.white, width: 3),
-          boxShadow: [
+          border: Border.all(color: const Color(0xFF1D2030), width: 3),
+          boxShadow: const [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.2),
-              blurRadius: 20,
-              spreadRadius: 2,
-              offset: const Offset(0, 8),
+              color: Color(0xFF1D2030),
+              offset: Offset(0, 8),
             ),
           ],
         ),
@@ -589,7 +588,13 @@ class _QuizScreenState extends State<QuizScreen>
                           color: const Color(0xFFFFF3CD),
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(
-                              color: const Color(0xFFFFD700), width: 1),
+                              color: const Color(0xFF1D2030), width: 2),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color(0xFF1D2030),
+                              offset: Offset(0, 3),
+                            ),
+                          ],
                         ),
                         child: const Row(
                           mainAxisSize: MainAxisSize.min,
@@ -662,7 +667,13 @@ class _QuizScreenState extends State<QuizScreen>
             decoration: BoxDecoration(
               color: const Color(0xFFFFF8E1),
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: const Color(0xFFFFD700), width: 1),
+              border: Border.all(color: const Color(0xFF1D2030), width: 2),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0xFF1D2030),
+                  offset: Offset(0, 3),
+                ),
+              ],
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -747,14 +758,13 @@ class _QuizScreenState extends State<QuizScreen>
             decoration: BoxDecoration(
               color: bgColor,
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: borderColor, width: 2.5),
+              border: Border.all(color: borderColor == Colors.grey.shade200 ? const Color(0xFF1D2030) : borderColor, width: 3),
               boxShadow: [
                 BoxShadow(
                   color: isSelected && !_answered 
-                      ? color.withValues(alpha: 0.3) 
-                      : Colors.black.withValues(alpha: 0.08),
-                  blurRadius: isSelected ? 12 : 4,
-                  offset: isSelected ? const Offset(0, 6) : const Offset(0, 4),
+                      ? color.withValues(alpha: 0.8) 
+                      : const Color(0xFF1D2030),
+                  offset: const Offset(0, 6),
                 ),
               ],
             ),
@@ -1049,12 +1059,11 @@ class _QuizScreenState extends State<QuizScreen>
               end: Alignment.centerRight,
             ),
             borderRadius: BorderRadius.circular(16),
-            boxShadow: [
+            border: Border.all(color: const Color(0xFF1D2030), width: 3),
+            boxShadow: const [
               BoxShadow(
-                color: (_answered ? const Color(0xFF22C55E) : color)
-                    .withValues(alpha: 0.4),
-                blurRadius: 14,
-                offset: const Offset(0, 5),
+                color: Color(0xFF1D2030),
+                offset: Offset(0, 6),
               ),
             ],
           ),
@@ -1094,26 +1103,30 @@ class _QuizScreenState extends State<QuizScreen>
           style: TextStyle(color: AppColors.textSecondary),
         ),
         actions: [
-          TextButton(
+          Game3DButton(
             onPressed: () {
               SoundService.instance.playClick();
               Navigator.pop(ctx);
             },
-            child: const Text('Lanjutkan'),
+            color: Colors.grey.shade300,
+            shadowColor: Colors.grey.shade400,
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Text('Lanjutkan', style: TextStyle(color: Colors.black87, fontWeight: FontWeight.bold)),
+            ),
           ),
-          ElevatedButton(
+          Game3DButton(
             onPressed: () {
               SoundService.instance.playClick();
               Navigator.pop(ctx);
               Navigator.pop(context);
             },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: color,
-              foregroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
+            color: color,
+            shadowColor: Color.lerp(color, Colors.black, 0.4)!,
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Text('Keluar', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
             ),
-            child: const Text('Keluar'),
           ),
         ],
       ),

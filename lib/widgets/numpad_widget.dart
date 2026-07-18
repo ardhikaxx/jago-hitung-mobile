@@ -152,38 +152,40 @@ class _NumKeyState extends State<_NumKey>
           child: child,
         ),
         child: Container(
-          height: 46,
+          height: 50,
+          margin: const EdgeInsets.only(bottom: 4),
           decoration: BoxDecoration(
-            color: widget.isSpecial
-                ? widget.color.withValues(alpha: 0.1)
-                : Colors.white,
+            color: widget.isSpecial ? widget.color : Colors.white,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              color: widget.isSpecial
-                  ? widget.color.withValues(alpha: 0.3)
-                  : const Color(0xFFE8EDF5),
-              width: 1.5,
-            ),
+            border: Border.all(color: const Color(0xFF1D2030), width: 2.5),
             boxShadow: [
-              BoxShadow(
-                color: (widget.isSpecial ? widget.color : Colors.black)
-                    .withValues(alpha: widget.isSpecial ? 0.1 : 0.06),
-                blurRadius: 6,
-                offset: const Offset(0, 3),
+              const BoxShadow(
+                color: Color(0xFF1D2030),
+                offset: Offset(0, 5),
               ),
+              if (widget.isSpecial)
+                BoxShadow(
+                  color: widget.color == AppColors.danger 
+                      ? AppColors.dangerDark 
+                      : (widget.color == AppColors.warning ? AppColors.warningDark : widget.color),
+                  offset: const Offset(0, 3),
+                )
+              else
+                const BoxShadow(
+                  color: Color(0xFFE0E0E0),
+                  offset: Offset(0, 3),
+                ),
             ],
           ),
           child: Center(
             child: widget.icon != null
-                ? Icon(widget.icon, size: 20, color: widget.color)
+                ? Icon(widget.icon, size: 24, color: Colors.white)
                 : Text(
                     widget.label!,
                     style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w800,
-                      color: widget.isSpecial
-                          ? widget.color
-                          : AppColors.textPrimary,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w900,
+                      color: widget.isSpecial ? Colors.white : AppColors.textPrimary,
                     ),
                   ),
           ),

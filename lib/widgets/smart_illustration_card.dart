@@ -760,12 +760,11 @@ class SmartIllustrationCard extends StatelessWidget {
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: accentColor.withValues(alpha: 0.4), width: 1.5),
-        boxShadow: [
+        border: Border.all(color: const Color(0xFF1D2030), width: 3),
+        boxShadow: const [
           BoxShadow(
-            color: accentColor.withValues(alpha: 0.08),
-            blurRadius: 8,
-            offset: const Offset(0, 4),
+            color: Color(0xFF1D2030),
+            offset: Offset(0, 6),
           ),
         ],
       ),
@@ -847,7 +846,13 @@ class SmartIllustrationCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.blueGrey.shade50,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.blueGrey.shade300, width: 1.5),
+        border: Border.all(color: const Color(0xFF1D2030), width: 3),
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0xFF1D2030),
+            offset: Offset(0, 6),
+          ),
+        ],
       ),
       child: Column(
         children: [
@@ -926,7 +931,13 @@ class SmartIllustrationCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: accentColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: accentColor.withValues(alpha: 0.4), width: 1.5),
+        border: Border.all(color: const Color(0xFF1D2030), width: 3),
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0xFF1D2030),
+            offset: Offset(0, 6),
+          ),
+        ],
       ),
       child: Row(
         children: [

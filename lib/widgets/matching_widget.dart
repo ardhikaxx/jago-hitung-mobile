@@ -161,14 +161,13 @@ class _MatchingWidgetState extends State<MatchingWidget>
                         decoration: BoxDecoration(
                           color: bg,
                           borderRadius: BorderRadius.circular(14),
-                          border: Border.all(color: border, width: 2.5),
+                          border: Border.all(color: border == Colors.grey.shade200 ? const Color(0xFF1D2030) : border, width: 3),
                           boxShadow: [
                             BoxShadow(
                               color: isSelected
-                                  ? widget.color.withValues(alpha: 0.3)
-                                  : Colors.black.withValues(alpha: 0.06),
-                              blurRadius: isSelected ? 10 : 4,
-                              offset: Offset(0, isSelected ? 4 : 2),
+                                  ? widget.color.withValues(alpha: 0.8)
+                                  : const Color(0xFF1D2030),
+                              offset: Offset(0, isSelected ? 6 : 4),
                             ),
                           ],
                         ),
@@ -260,12 +259,11 @@ class _MatchingWidgetState extends State<MatchingWidget>
                         decoration: BoxDecoration(
                           color: bg,
                           borderRadius: BorderRadius.circular(14),
-                          border: Border.all(color: border, width: 2.5),
-                          boxShadow: [
+                          border: Border.all(color: border == Colors.grey.shade200 ? const Color(0xFF1D2030) : border, width: 3),
+                          boxShadow: const [
                             BoxShadow(
-                              color: Colors.black.withValues(alpha: 0.06),
-                              blurRadius: 4,
-                              offset: const Offset(0, 2),
+                              color: Color(0xFF1D2030),
+                              offset: Offset(0, 4),
                             ),
                           ],
                         ),
@@ -336,11 +334,11 @@ class _MatchingWidgetState extends State<MatchingWidget>
                   end: Alignment.centerRight,
                 ),
                 borderRadius: BorderRadius.circular(16),
-                boxShadow: [
+                border: Border.all(color: const Color(0xFF1D2030), width: 3),
+                boxShadow: const [
                   BoxShadow(
-                    color: widget.color.withValues(alpha: 0.4),
-                    blurRadius: 14,
-                    offset: const Offset(0, 5),
+                    color: Color(0xFF1D2030),
+                    offset: Offset(0, 6),
                   ),
                 ],
               ),
@@ -370,8 +368,11 @@ class _MatchingWidgetState extends State<MatchingWidget>
                 color: (_isAllCorrect())
                     ? const Color(0xFF4ADE80)
                     : const Color(0xFFFF6B6B),
-                width: 2,
+                width: 3,
               ),
+              boxShadow: const [
+                BoxShadow(color: Color(0xFF1D2030), offset: Offset(0, 4)),
+              ],
             ),
             child: Row(
               children: [

@@ -459,13 +459,13 @@ class _ProfilPage extends StatelessWidget {
           Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.95),
+          color: Colors.white,
           borderRadius: BorderRadius.circular(24),
-          boxShadow: [
+          border: Border.all(color: const Color(0xFF1D2030), width: 3),
+          boxShadow: const [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.2),
-              blurRadius: 16,
-              offset: const Offset(0, 4),
+              color: Color(0xFF1D2030),
+              offset: Offset(0, 6),
             ),
           ],
         ),
@@ -543,11 +543,11 @@ class _ProfilPage extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(16),
-              boxShadow: [
+              border: Border.all(color: const Color(0xFF1D2030), width: 3),
+              boxShadow: const [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.05),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
+                  color: Color(0xFF1D2030),
+                  offset: Offset(0, 6),
                 ),
               ],
             ),
@@ -586,11 +586,11 @@ class _ProfilPage extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(16),
-              boxShadow: [
+              border: Border.all(color: const Color(0xFF1D2030), width: 3),
+              boxShadow: const [
                 BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.05),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
+                  color: Color(0xFF1D2030),
+                  offset: Offset(0, 6),
                 ),
               ],
             ),

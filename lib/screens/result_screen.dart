@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../models/question_model.dart';
 import '../services/data_service.dart';
 import '../services/sound_service.dart';
+import '../widgets/game_3d_button.dart';
 import '../utils/constants.dart';
 import '../widgets/level_up_overlay.dart';
 import 'home_screen.dart';
@@ -132,11 +133,11 @@ class _ResultScreenState extends State<ResultScreen>
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
+                    border: Border.all(color: const Color(0xFF1D2030), width: 3),
+                    boxShadow: const [
                       BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.05),
-                        blurRadius: 10,
-                        offset: const Offset(0, 4),
+                        color: Color(0xFF1D2030),
+                        offset: Offset(0, 6),
                       ),
                     ],
                   ),
@@ -256,21 +257,24 @@ class _ResultScreenState extends State<ResultScreen>
                 if (!widget.lulus)
                   SizedBox(
                     width: double.infinity,
-                    height: 50,
-                    child: ElevatedButton.icon(
+                    child: Game3DButton(
                       onPressed: () {
                         SoundService.instance.playClick();
                         Navigator.pop(context);
                       },
-                      icon: const Icon(Icons.replay),
-                      label: const Text('Ulangi Materi',
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold)),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.warning,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                      color: AppColors.warning,
+                      shadowColor: AppColors.warningDark,
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 14),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.replay, color: Colors.white),
+                            SizedBox(width: 8),
+                            Text('Ulangi Materi',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
+                          ],
                         ),
                       ),
                     ),
@@ -279,8 +283,7 @@ class _ResultScreenState extends State<ResultScreen>
                 if (widget.lulus && nextTopicId != null)
                   SizedBox(
                     width: double.infinity,
-                    height: 50,
-                    child: ElevatedButton.icon(
+                    child: Game3DButton(
                       onPressed: () async {
                         SoundService.instance.playClick();
                         final nextTopic =
@@ -297,15 +300,19 @@ class _ResultScreenState extends State<ResultScreen>
                           );
                         }
                       },
-                      icon: const Icon(Icons.arrow_forward),
-                      label: const Text('Materi Selanjutnya',
-                          style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold)),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: color,
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                      color: color,
+                      shadowColor: Color.lerp(color, Colors.black, 0.4)!,
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 14),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.arrow_forward, color: Colors.white),
+                            SizedBox(width: 8),
+                            Text('Materi Selanjutnya',
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
+                          ],
                         ),
                       ),
                     ),
@@ -313,8 +320,7 @@ class _ResultScreenState extends State<ResultScreen>
                 if (widget.lulus && nextTopicId != null) const SizedBox(height: 12),
                 SizedBox(
                   width: double.infinity,
-                  height: 50,
-                  child: OutlinedButton.icon(
+                  child: Game3DButton(
                     onPressed: () {
                       SoundService.instance.playClick();
                       Navigator.pushAndRemoveUntil(
@@ -324,14 +330,18 @@ class _ResultScreenState extends State<ResultScreen>
                         (route) => false,
                       );
                     },
-                    icon: const Icon(Icons.home),
-                    label: const Text('Kembali ke Beranda',
-                        style: TextStyle(fontSize: 16)),
-                    style: OutlinedButton.styleFrom(
-                      foregroundColor: color,
-                      side: BorderSide(color: color),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                    color: Colors.white,
+                    shadowColor: Colors.grey.shade400,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.home, color: color),
+                          const SizedBox(width: 8),
+                          Text('Kembali ke Beranda',
+                              style: TextStyle(fontSize: 16, color: color, fontWeight: FontWeight.bold)),
+                        ],
                       ),
                     ),
                   ),

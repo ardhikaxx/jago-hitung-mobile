@@ -257,11 +257,11 @@ class _LevelUpOverlayState extends State<LevelUpOverlay>
                               ],
                             ),
                             borderRadius: BorderRadius.circular(20),
-                            boxShadow: [
+                            border: Border.all(color: const Color(0xFF1D2030), width: 3),
+                            boxShadow: const [
                               BoxShadow(
-                                color: const Color(0xFFFFD700).withValues(alpha: 0.5),
-                                blurRadius: 20,
-                                offset: const Offset(0, 8),
+                                color: Color(0xFF1D2030),
+                                offset: Offset(0, 6),
                               ),
                             ],
                           ),

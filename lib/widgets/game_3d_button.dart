@@ -38,15 +38,19 @@ class _Game3DButtonState extends State<Game3DButton> {
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 100),
-        margin: EdgeInsets.only(top: _isPressed ? 6 : 0, bottom: _isPressed ? 0 : 6),
+        margin: EdgeInsets.only(top: _isPressed ? 8 : 0, bottom: _isPressed ? 0 : 8),
         decoration: BoxDecoration(
           color: widget.color,
-          borderRadius: BorderRadius.circular(24),
-          border: Border.all(color: Colors.white.withValues(alpha: 0.8), width: 3),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: const Color(0xFF1D2030), width: 3),
           boxShadow: [
             BoxShadow(
-              color: widget.shadowColor,
+              color: const Color(0xFF1D2030),
               offset: Offset(0, _isPressed ? 0 : 8),
+            ),
+            BoxShadow(
+              color: widget.shadowColor,
+              offset: Offset(0, _isPressed ? 0 : 5),
             ),
           ],
         ),

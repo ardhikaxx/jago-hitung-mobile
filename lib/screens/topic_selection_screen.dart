@@ -638,45 +638,28 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
 
               const SizedBox(height: 4),
 
-              // ── Lingkaran node ──
+              // ── Lingkaran node (sekarang menjadi square ala game) ──
               Stack(
                 alignment: Alignment.center,
                 children: [
-                  // Outer glow
-                  if (unlocked)
-                    Container(
-                      width: diameter + 16,
-                      height: diameter + 16,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: (isSelesai ? color : Colors.white)
-                            .withValues(alpha: 0.25),
-                      ),
-                    ),
-                  // White ring
-                  Container(
-                    width: diameter + 8,
-                    height: diameter + 8,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white.withValues(alpha: unlocked ? 0.5 : 0.2),
-                    ),
-                  ),
-                  // Main circle
+                  // Main box
                   Container(
                     width: diameter,
                     height: diameter,
                     decoration: BoxDecoration(
-                      shape: BoxShape.circle,
                       color: nodeColor,
+                      borderRadius: BorderRadius.circular(18),
+                      border: Border.all(color: const Color(0xFF1D2030), width: 3),
                       boxShadow: [
                         BoxShadow(
-                          color: (unlocked ? color : Colors.black)
-                              .withValues(alpha: 0.35),
-                          blurRadius: 14,
-                          spreadRadius: 2,
-                          offset: const Offset(0, 5),
+                          color: const Color(0xFF1D2030),
+                          offset: const Offset(0, 6),
                         ),
+                        if (unlocked)
+                          BoxShadow(
+                            color: isSelesai ? color : Colors.white54,
+                            offset: const Offset(0, 3),
+                          ),
                       ],
                     ),
                     child: Center(
@@ -692,21 +675,27 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
                   ),
                   // Nomor urut (pojok kanan atas)
                   Positioned(
-                    top: 0,
-                    right: 0,
+                    top: -6,
+                    right: -6,
                     child: Container(
-                      width: 22,
-                      height: 22,
+                      width: 26,
+                      height: 26,
                       decoration: BoxDecoration(
+                        color: unlocked ? color : Colors.grey.shade600,
                         shape: BoxShape.circle,
-                        color: unlocked ? color.withValues(alpha: 0.9) : Colors.grey.shade600,
-                        border: Border.all(color: Colors.white, width: 1.5),
+                        border: Border.all(color: const Color(0xFF1D2030), width: 2),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Color(0xFF1D2030),
+                            offset: Offset(0, 2),
+                          ),
+                        ],
                       ),
                       child: Center(
                         child: Text(
                           '${index + 1}',
                           style: const TextStyle(
-                            fontSize: 10,
+                            fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),

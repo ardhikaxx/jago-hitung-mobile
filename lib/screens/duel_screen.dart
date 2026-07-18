@@ -18,6 +18,8 @@ class DuelScreen extends StatefulWidget {
 class _DuelScreenState extends State<DuelScreen> {
   int _player1Score = 0;
   int _player2Score = 0;
+  int _p1Combo = 0;
+  int _p2Combo = 0;
   int _currentIndex = 0;
   bool _isAnswered = false;
   
@@ -85,8 +87,12 @@ class _DuelScreenState extends State<DuelScreen> {
         _roundWinner = player;
         if (player == 1) {
           _player1Score++;
+          _p1Combo++;
+          _p2Combo = 0;
         } else {
           _player2Score++;
+          _p2Combo++;
+          _p1Combo = 0;
         }
 
         Future.delayed(const Duration(seconds: 1), () {
@@ -98,11 +104,12 @@ class _DuelScreenState extends State<DuelScreen> {
         });
       } else {
         SoundService.instance.playWrong();
-        // Freeze this player for 2 seconds
         if (player == 1) {
           _p1Frozen = true;
+          _p1Combo = 0;
         } else {
           _p2Frozen = true;
+          _p2Combo = 0;
         }
         Future.delayed(const Duration(seconds: 1), () {
           if (!mounted) return;
@@ -181,6 +188,33 @@ class _DuelScreenState extends State<DuelScreen> {
     );
   }
 
+  Widget _buildAnimatedText(String text, Color color, {double fontSize = 32}) {
+    return TweenAnimationBuilder(
+      key: ValueKey(text),
+      duration: const Duration(milliseconds: 600),
+      tween: Tween<double>(begin: 0.0, end: 1.0),
+      curve: Curves.elasticOut,
+      builder: (context, double value, child) {
+        return Transform.scale(
+          scale: value,
+          child: Opacity(
+            opacity: value.clamp(0.0, 1.0),
+            child: Text(
+              text,
+              style: TextStyle(
+                color: color,
+                fontSize: fontSize,
+                fontWeight: FontWeight.w900,
+                shadows: const [Shadow(color: Colors.black45, offset: Offset(2, 2), blurRadius: 4)],
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   Widget _buildPlayerArea(int player, Color color, bool isReversed) {
     bool isFrozen = player == 1 ? _p1Frozen : _p2Frozen;
     
@@ -201,29 +235,38 @@ class _DuelScreenState extends State<DuelScreen> {
                     color: Colors.black.withValues(alpha: 0.3),
                     borderRadius: BorderRadius.circular(20),
                   ),
-                  child: Text(
-                    'Skor: ${player == 1 ? _player1Score : _player2Score}',
-                    style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Skor: ${player == 1 ? _player1Score : _player2Score}',
+                        style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      if ((player == 1 ? _p1Combo : _p2Combo) > 1) ...[
+                        const SizedBox(width: 8),
+                        Text(
+                          '🔥 x${player == 1 ? _p1Combo : _p2Combo}',
+                          style: const TextStyle(color: Colors.yellow, fontSize: 18, fontWeight: FontWeight.w900),
+                        ),
+                      ],
+                    ],
                   ),
                 ),
               ],
             ),
             const Spacer(),
             if (isFrozen)
-              const Text(
-                '❌ WAKTU BEKU ❌',
-                style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
-              )
+              _buildAnimatedText('❌ WAKTU BEKU ❌', Colors.white, fontSize: 24)
             else if (_isAnswered && _roundWinner == player)
-              const Text(
-                '🔥 BENAR! 🔥',
-                style: TextStyle(color: Colors.yellow, fontSize: 32, fontWeight: FontWeight.w900),
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _buildAnimatedText('🔥 BENAR! 🔥', Colors.yellow),
+                  if ((player == 1 ? _p1Combo : _p2Combo) > 1)
+                    _buildAnimatedText('COMBO x${player == 1 ? _p1Combo : _p2Combo}!', Colors.orangeAccent, fontSize: 24),
+                ],
               )
             else if (_isAnswered && _roundWinner != player)
-              const Text(
-                'Terlalu Lambat!',
-                style: TextStyle(color: Colors.white70, fontSize: 24, fontWeight: FontWeight.bold),
-              )
+              _buildAnimatedText('Terlalu Lambat!', Colors.white70, fontSize: 24)
             else ...[
               // Question
               Container(

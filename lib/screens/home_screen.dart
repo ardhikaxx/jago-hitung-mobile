@@ -219,7 +219,7 @@ class _KelasPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 4),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   decoration: BoxDecoration(
@@ -233,7 +233,7 @@ class _KelasPage extends StatelessWidget {
                     style: TextStyle(fontSize: 13, fontWeight: FontWeight.w800, color: Colors.white),
                   ),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 4),
               ],
             ),
           ),

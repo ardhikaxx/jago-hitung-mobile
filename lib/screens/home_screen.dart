@@ -454,7 +454,9 @@ class _ProfilPage extends StatelessWidget {
 
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
-      child: Container(
+      child: Column(
+        children: [
+          Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         decoration: BoxDecoration(
           color: Colors.white.withValues(alpha: 0.95),
@@ -737,10 +739,13 @@ class _ProfilPage extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 90),
         ],
       ),
-    ));
+    ),
+    const SizedBox(height: 90),
+      ],
+    ),
+  );
   }
 
   Widget _buildProfileStat(

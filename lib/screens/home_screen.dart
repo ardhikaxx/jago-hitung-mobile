@@ -555,6 +555,45 @@ class _ProfilPage extends StatelessWidget {
             height: 50,
             child: OutlinedButton.icon(
               onPressed: () async {
+                final confirm = await showDialog<bool>(
+                  context: context,
+                  builder: (ctx) => AlertDialog(
+                    backgroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    title: const Text(
+                      'Yakin ingin keluar?',
+                      style: TextStyle(fontWeight: FontWeight.w900),
+                    ),
+                    content: const Text(
+                      'Kamu akan kembali ke halaman login.',
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(ctx, false),
+                        child: const Text(
+                          'Batal',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.textSecondary,
+                          ),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () => Navigator.pop(ctx, true),
+                        child: const Text(
+                          'Keluar',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.danger,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+                if (confirm != true) return;
                 await AuthService.instance.signOut();
                 if (context.mounted) {
                   Navigator.pushReplacement(

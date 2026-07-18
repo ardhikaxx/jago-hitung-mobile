@@ -128,6 +128,10 @@ class UserProgress {
     }
     return total;
   }
+
+  int get currentLevel {
+    return (totalXP ~/ 500) + 1;
+  }
 }
 
 class TopicProgress {

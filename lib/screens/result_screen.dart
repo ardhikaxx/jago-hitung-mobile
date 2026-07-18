@@ -20,6 +20,9 @@ class ResultScreen extends StatefulWidget {
   final List<bool> results;
   final List<Question>? questions;
   final List<String>? userAnswers;
+  final bool isLevelUp;
+  final int newLevel;
+  final int oldLevel;
 
   const ResultScreen({
     super.key,
@@ -33,6 +36,9 @@ class ResultScreen extends StatefulWidget {
     required this.results,
     this.questions,
     this.userAnswers,
+    this.isLevelUp = false,
+    this.newLevel = 1,
+    this.oldLevel = 1,
   });
 
   @override
@@ -50,13 +56,7 @@ class _ResultScreenState extends State<ResultScreen>
   }
 
   void _checkLevelUp() {
-    final topicOrder = AppConstants.getTopicOrder(widget.kelas);
-    final isLastTopic =
-        topicOrder.isNotEmpty && widget.topikId == topicOrder.last;
-    final hasNextGrade =
-        AppConstants.namaKelas.containsKey(widget.kelas + 1);
-
-    if (widget.lulus && isLastTopic && hasNextGrade) {
+    if (widget.isLevelUp) {
       Future.delayed(const Duration(milliseconds: 800), () {
         if (mounted) setState(() => _showLevelUp = true);
       });
@@ -75,8 +75,8 @@ class _ResultScreenState extends State<ResultScreen>
     if (_showLevelUp) {
       return Scaffold(
         body: LevelUpOverlay(
-          fromClassName: AppConstants.namaKelas[widget.kelas] ?? 'Kelas ${widget.kelas}',
-          toClassName: AppConstants.namaKelas[widget.kelas + 1] ?? 'Kelas ${widget.kelas + 1}',
+          fromClassName: 'Level ${widget.oldLevel}',
+          toClassName: 'Level ${widget.newLevel}',
           onContinue: () {
             setState(() => _showLevelUp = false);
           },

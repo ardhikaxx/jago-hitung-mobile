@@ -176,7 +176,7 @@ class _LevelUpOverlayState extends State<LevelUpOverlay>
                       ),
                       const SizedBox(height: 8),
                       Text(
-                        'Kamu berhasil menyelesaikan',
+                        'Pencapaian XP membawamu dari',
                         style: TextStyle(
                           fontSize: 16,
                           color: Colors.white.withValues(alpha: 0.8),
@@ -224,7 +224,7 @@ class _LevelUpOverlayState extends State<LevelUpOverlay>
                       ),
                       const SizedBox(height: 12),
                       Text(
-                        'Sekarang kamu bisa main di',
+                        'menjadi',
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.white.withValues(alpha: 0.7),
@@ -239,7 +239,30 @@ class _LevelUpOverlayState extends State<LevelUpOverlay>
                           color: Colors.white,
                         ),
                       ),
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 12),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFFFD700).withValues(alpha: 0.2),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: const Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.monetization_on_rounded, color: Color(0xFFFFD700), size: 24),
+                            SizedBox(width: 8),
+                            Text(
+                              '+100 Koin Bonus!',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFFFFD700),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 20),
                       GestureDetector(
                         onTap: () {
                           widget.onContinue();

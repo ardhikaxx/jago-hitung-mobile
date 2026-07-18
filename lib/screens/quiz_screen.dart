@@ -241,9 +241,21 @@ class _QuizScreenState extends State<QuizScreen>
     final skor = baseSkor + bonusCombo;
     final lulus = baseSkor >= AppConstants.skorLulusMinimum;
 
+    final oldProgress = await FirestoreService.instance.getUserProgress(user!.uid);
+    final oldTotalXP = oldProgress?.totalXP ?? 0;
+    final oldLevel = (oldTotalXP ~/ 500) + 1;
+    
+    final oldTopikSkor = oldProgress?.getTopikProgress(widget.topic.id, widget.kelas)?.skor ?? 0;
+    // Score only increases XP if the new score is higher.
+    final finalSkor = skor > oldTopikSkor ? skor : oldTopikSkor;
+    final newTotalXP = oldTotalXP - oldTopikSkor + finalSkor;
+    final newLevel = (newTotalXP ~/ 500) + 1;
+    
+    final isLevelUp = newLevel > oldLevel;
+
     final progress = TopicProgress(
       topikId: widget.topic.id,
-      skor: skor,
+      skor: finalSkor,
       jumlahBenar: _benarCount,
       jumlahSoal: jumlahSoal,
       lulus: lulus,
@@ -253,6 +265,10 @@ class _QuizScreenState extends State<QuizScreen>
     int earnedCoins = skor ~/ 10;
     if (_isKilat) {
       earnedCoins *= 5;
+    }
+    
+    if (isLevelUp) {
+      earnedCoins += 100; // Bonus Koin Naik Level
     }
 
     await FirestoreService.instance.saveTopikProgress(
@@ -271,13 +287,17 @@ class _QuizScreenState extends State<QuizScreen>
             topicName: widget.topic.topik,
             topikId: widget.topic.id,
             kelas: widget.kelas,
-            skor: skor,
+            skor: finalSkor,
             benar: _benarCount,
             jumlahSoal: jumlahSoal,
             lulus: lulus,
             results: _results,
             questions: _questions,
             userAnswers: _userAnswers,
+            isLevelUp: isLevelUp,
+            newLevel: newLevel,
+            oldLevel: oldLevel,
+          ),
           ),
           transitionsBuilder: (_, a, anim, child) => FadeTransition(
             opacity: a,

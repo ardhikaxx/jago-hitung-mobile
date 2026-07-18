@@ -70,7 +70,22 @@ class _QuizScreenState extends State<QuizScreen>
   void initState() {
     super.initState();
 
-    _questions = List.from(widget.topic.soal)..shuffle();
+    _questions = widget.topic.soal.map((q) {
+      List<String>? shuffledPilihan = q.pilihan != null ? List<String>.from(q.pilihan!) : null;
+      if (shuffledPilihan != null) shuffledPilihan.shuffle();
+      return Question(
+        id: q.id,
+        tipe: q.tipe,
+        pertanyaan: q.pertanyaan,
+        ilustrasi: q.ilustrasi,
+        pilihan: shuffledPilihan,
+        jawaban: q.jawaban,
+        petunjuk: q.petunjuk,
+        penjelasan: q.penjelasan,
+        pasanganKiri: q.pasanganKiri,
+        pasanganKanan: q.pasanganKanan,
+      );
+    }).toList()..shuffle();
 
     _cardController = AnimationController(
       vsync: this,
@@ -358,17 +373,21 @@ class _QuizScreenState extends State<QuizScreen>
           // ── Tombol aksi ──
           if (!_currentQuestion.isMatching || _answered)
             _buildActionButton(color),
+            ],
+          ),
 
           // ── Combo Overlay ──
           if (_currentCombo >= 3)
-            Positioned(
-              top: 140,
-              left: 0,
-              right: 0,
-              child: ComboOverlay(comboCount: _currentCombo),
+            Positioned.fill(
+              child: IgnorePointer(
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 100),
+                    child: ComboOverlay(comboCount: _currentCombo),
+                  ),
+                ),
+              ),
             ),
-            ],
-          ),
         ],
       ),
     );

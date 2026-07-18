@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import '../theme/game_colors.dart';
 
 class AchievementBadge extends StatelessWidget {
   final String iconUrl;
   final bool isUnlocked;
   
   const AchievementBadge({
-    Key? key,
+    super.key,
     required this.iconUrl,
     this.isUnlocked = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

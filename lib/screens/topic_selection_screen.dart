@@ -619,14 +619,6 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // ── Bintang ──
-              if (stars > 0)
-                _buildStars(stars)
-              else
-                const SizedBox(height: 22),
-
-              const SizedBox(height: 4),
-
               // ── Lingkaran node (sekarang menjadi square ala game) ──
               Stack(
                 clipBehavior: Clip.none,
@@ -639,7 +631,10 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
                     decoration: BoxDecoration(
                       color: nodeColor,
                       shape: BoxShape.circle,
-                      border: Border.all(color: const Color(0xFF1D2030), width: 4),
+                      border: Border.all(
+                        color: isSelesai ? Colors.white : const Color(0xFF1D2030), 
+                        width: 4
+                      ),
                       boxShadow: [
                         BoxShadow(
                           color: const Color(0xFF1D2030),
@@ -655,7 +650,7 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
                     child: Center(
                       child: unlocked
                           ? (isSelesai
-                              ? Icon(Icons.star_rounded,
+                              ? const Icon(Icons.star_rounded,
                                   color: Colors.white, size: 40)
                               : Icon(_getTopicIcon(topic.id),
                                   color: iconColor, size: 32))
@@ -696,10 +691,32 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
                       ),
                     ),
                   ),
+                  // Bintang ditaruh di bawah lingkaran (overlapping)
+                  if (stars > 0)
+                    Positioned(
+                      bottom: -12,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: const Color(0xFFFFD633), width: 2),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(alpha: 0.3),
+                              blurRadius: 4,
+                              offset: const Offset(0, 2),
+                            ),
+                          ],
+                        ),
+                        child: _buildStars(stars),
+                      ),
+                    ),
                 ],
               ),
 
-              const SizedBox(height: 8),
+              // Beri jarak ekstra karena bintang sekarang di bottom: -12
+              const SizedBox(height: 16),
 
               // ── Label nama materi ──
               Container(

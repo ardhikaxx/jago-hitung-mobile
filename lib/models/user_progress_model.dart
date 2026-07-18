@@ -55,8 +55,12 @@ class UserProgress {
     Map<String, TopicProgress> parsedTopik = {};
     if (rawTopik is Map) {
       rawTopik.forEach((key, value) {
-        if (value is Map<String, dynamic>) {
-          parsedTopik[key] = TopicProgress.fromMap(value);
+        if (value is Map) {
+          try {
+            parsedTopik[key.toString()] = TopicProgress.fromMap(Map<String, dynamic>.from(value));
+          } catch (e) {
+            print('Error parsing topic progress: $e');
+          }
         }
       });
     }
@@ -90,6 +94,14 @@ class UserProgress {
 
   TopicProgress? getTopikProgress(String topikId, int kelas) {
     return topikProgress['$kelas-$topikId'];
+  }
+
+  int get totalXP {
+    int total = 0;
+    for (var progress in topikProgress.values) {
+      total += progress.skor;
+    }
+    return total;
   }
 }
 

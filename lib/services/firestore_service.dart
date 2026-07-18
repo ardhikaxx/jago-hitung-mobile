@@ -58,4 +58,16 @@ class FirestoreService {
   Future<void> updateAchievements(String uid, List<String> achievementIds) async {
     await _userDoc(uid).update({'achievements': achievementIds});
   }
+
+  Future<List<UserProgress>> getLeaderboard() async {
+    try {
+      final snapshot = await _firestore.collection('users').get();
+      final users = snapshot.docs.map((doc) => UserProgress.fromMap(doc.data())).toList();
+      users.sort((a, b) => b.totalXP.compareTo(a.totalXP));
+      return users.take(50).toList();
+    } catch (e) {
+      print('Error getting leaderboard: $e');
+      return [];
+    }
+  }
 }

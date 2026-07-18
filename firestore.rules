@@ -4,18 +4,18 @@ service cloud.firestore {
 
     // Users collection - each user can only read/write their own data
     match /users/{userId} {
-      // User can read their own document
-      allow read: if request.auth != null && request.auth.uid == userId;
+      // All authenticated users can read user documents (needed for leaderboard)
+      allow read: if request.auth != null;
       
       // User can create their own document during registration
       allow create: if request.auth != null && request.auth.uid == userId
         && request.resource.data.keys().hasAll(['uid', 'nama', 'email', 'profileImage', 'kelasAktif', 'topikProgress'])
         && request.resource.data.uid == userId;
       
-      // User can update their own document (progress, kelasAktif, profileImage)
+      // User can update their own document (progress, kelasAktif, profileImage, achievements)
       allow update: if request.auth != null && request.auth.uid == userId
         && request.resource.data.diff(resource.data).affectedKeys()
-            .hasOnly(['topikProgress', 'kelasAktif', 'profileImage']);
+            .hasOnly(['topikProgress', 'kelasAktif', 'profileImage', 'achievements']);
       
       // No deletion allowed
       allow delete: if false;

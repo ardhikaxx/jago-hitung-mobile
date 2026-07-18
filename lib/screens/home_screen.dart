@@ -8,6 +8,7 @@ import '../models/achievement_model.dart';
 import '../utils/constants.dart';
 import 'login_screen.dart';
 import 'topic_selection_screen.dart';
+import 'leaderboard_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../services/sound_service.dart';
 import '../widgets/game_3d_button.dart';
@@ -62,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   index: _currentIndex,
                   children: [
                     _KelasPage(progress: progress, user: user!),
+                    LeaderboardPage(currentProgress: progress),
                     _ProfilPage(progress: progress, user: user!),
                   ],
                 ),
@@ -105,7 +107,10 @@ class _HomeScreenState extends State<HomeScreen> {
               child: _buildNavItem(0, Icons.videogame_asset_rounded, 'Main'),
             ),
             Expanded(
-              child: _buildNavItem(1, Icons.face_retouching_natural_rounded, 'Profil'),
+              child: _buildNavItem(1, Icons.leaderboard_rounded, 'Peringkat'),
+            ),
+            Expanded(
+              child: _buildNavItem(2, Icons.face_retouching_natural_rounded, 'Profil'),
             ),
           ],
         ),

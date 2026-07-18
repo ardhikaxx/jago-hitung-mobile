@@ -143,12 +143,12 @@ class _DuelScreenState extends State<DuelScreen> {
       context: context,
       barrierDismissible: false,
       builder: (_) => AlertDialog(
-        backgroundColor: const Color(0xFF2D1B69),
+        backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         title: Text(
           'KUIS SELESAI',
           textAlign: TextAlign.center,
-          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: const TextStyle(color: AppColors.primary, fontWeight: FontWeight.bold),
         ),
         content: Column(
           mainAxisSize: MainAxisSize.min,
@@ -161,11 +161,11 @@ class _DuelScreenState extends State<DuelScreen> {
             const SizedBox(height: 20),
             Text(
               'Skor Atas: $_player2Score',
-              style: const TextStyle(color: Colors.white, fontSize: 18),
+              style: const TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.bold),
             ),
             Text(
               'Skor Bawah: $_player1Score',
-              style: const TextStyle(color: Colors.white, fontSize: 18),
+              style: const TextStyle(color: Colors.black87, fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ],
         ),

@@ -27,15 +27,31 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, snapshot) {
         final progress = snapshot.data;
         return Scaffold(
+          extendBodyBehindAppBar: true,
           backgroundColor: AppColors.background,
-          body: SafeArea(
-            child: IndexedStack(
-              index: _currentIndex,
-              children: [
-                _KelasPage(progress: progress, user: user!),
-                _ProfilPage(progress: progress, user: user!),
-              ],
-            ),
+          body: Stack(
+            children: [
+              Positioned.fill(
+                child: Image.asset(
+                  'assets/images/bg_home.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Positioned.fill(
+                child: Container(
+                  color: Colors.black.withValues(alpha: 0.3),
+                ),
+              ),
+              SafeArea(
+                child: IndexedStack(
+                  index: _currentIndex,
+                  children: [
+                    _KelasPage(progress: progress, user: user!),
+                    _ProfilPage(progress: progress, user: user!),
+                  ],
+                ),
+              ),
+            ],
           ),
           bottomSheet: _buildFloatingNavBar(),
         );
@@ -152,16 +168,17 @@ class _KelasPage extends StatelessWidget {
                           Text(
                             'Halo, $nama!',
                             style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.textPrimary,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white,
+                              shadows: [Shadow(color: Colors.black45, blurRadius: 4)],
                             ),
                           ),
                           const Text(
                             'Pilih kelas untuk belajar',
                             style: TextStyle(
                               fontSize: 13,
-                              color: AppColors.textSecondary,
+                              color: Colors.white70,
                             ),
                           ),
                         ],
@@ -173,17 +190,18 @@ class _KelasPage extends StatelessWidget {
                 const Text(
                   'Pilih Kelas',
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.textPrimary,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.white,
+                    shadows: [Shadow(color: Colors.black45, blurRadius: 4)],
                   ),
                 ),
                 const SizedBox(height: 4),
-                Text(
+                const Text(
                   'Selesaikan materi untuk membuka kelas berikutnya',
                   style: TextStyle(
                     fontSize: 13,
-                    color: AppColors.textSecondary,
+                    color: Colors.white70,
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -251,29 +269,40 @@ class _KelasPage extends StatelessWidget {
               );
             }
           : null,
-      child: Container(
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
         decoration: BoxDecoration(
           gradient: unlocked
               ? LinearGradient(
                   colors: [
                     color,
-                    color.withValues(alpha: 0.75),
+                    Color.lerp(color, Colors.black, 0.2)!,
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 )
               : null,
-          color: unlocked ? null : AppColors.locked,
-          borderRadius: BorderRadius.circular(20),
+          color: unlocked ? null : Colors.grey.shade800,
+          borderRadius: BorderRadius.circular(24),
+          border: Border.all(
+            color: unlocked ? Colors.white.withValues(alpha: 0.8) : Colors.transparent,
+            width: 2.5,
+          ),
           boxShadow: unlocked
               ? [
                   BoxShadow(
-                    color: color.withValues(alpha: 0.45),
-                    blurRadius: 12,
-                    offset: const Offset(0, 6),
+                    color: color.withValues(alpha: 0.5),
+                    blurRadius: 16,
+                    offset: const Offset(0, 8),
                   )
                 ]
-              : [],
+              : [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.3),
+                    blurRadius: 8,
+                    offset: const Offset(0, 4),
+                  )
+                ],
         ),
         child: Padding(
           padding: const EdgeInsets.all(14),
@@ -319,9 +348,10 @@ class _KelasPage extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
                   fontSize: 26,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w900,
                   color: Colors.white,
                   height: 1.2,
+                  shadows: [Shadow(color: Colors.black26, blurRadius: 4)],
                 ),
               ),
 
@@ -397,7 +427,20 @@ class _ProfilPage extends StatelessWidget {
 
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
-      child: Column(
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+        decoration: BoxDecoration(
+          color: Colors.white.withValues(alpha: 0.95),
+          borderRadius: BorderRadius.circular(24),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.2),
+              blurRadius: 16,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Column(
         children: [
           const SizedBox(height: 20),
           GestureDetector(
@@ -534,10 +577,10 @@ class _ProfilPage extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
         ],
       ),
-    );
+    ));
   }
 
   Widget _buildProfileStat(

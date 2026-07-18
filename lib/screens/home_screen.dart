@@ -737,6 +737,7 @@ class _ProfilPage extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(height: 90),
         ],
       ),
     ));

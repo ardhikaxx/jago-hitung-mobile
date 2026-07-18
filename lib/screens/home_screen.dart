@@ -106,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
       behavior: HitTestBehavior.opaque,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        margin: const EdgeInsets.all(6),
+        margin: EdgeInsets.fromLTRB(6, isSelected ? 2 : 6, 6, isSelected ? 10 : 6),
         decoration: BoxDecoration(
           color: isSelected ? const Color(0xFFFFB300) : Colors.transparent,
           borderRadius: BorderRadius.circular(30),

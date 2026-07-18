@@ -342,7 +342,7 @@ class _KelasPage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
                     child: Row(
                       children: [
-                        const Icon(Icons.stars_rounded, color: AppColors.secondary, size: 36),
+                        const Icon(Icons.stars_rounded, color: Colors.white, size: 36),
                         const SizedBox(width: 12),
                         Expanded(
                           child: Column(

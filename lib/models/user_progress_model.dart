@@ -6,6 +6,7 @@ class UserProgress {
   final int kelasAktif;
   final Map<String, TopicProgress> topikProgress;
   final DateTime createdAt;
+  final List<String> achievements;
 
   UserProgress({
     required this.uid,
@@ -15,8 +16,10 @@ class UserProgress {
     this.kelasAktif = 1,
     Map<String, TopicProgress>? topikProgress,
     DateTime? createdAt,
+    List<String>? achievements,
   })  : topikProgress = topikProgress ?? {},
-        createdAt = createdAt ?? DateTime.now();
+        createdAt = createdAt ?? DateTime.now(),
+        achievements = achievements ?? [];
 
   Map<String, dynamic> toMap() {
     return {
@@ -27,6 +30,7 @@ class UserProgress {
       'kelasAktif': kelasAktif,
       'topikProgress': topikProgress.map((key, value) => MapEntry(key, value.toMap())),
       'createdAt': createdAt.toIso8601String(),
+      'achievements': achievements,
     };
   }
 
@@ -65,6 +69,9 @@ class UserProgress {
       kelasAktif: map['kelasAktif'] ?? 1,
       topikProgress: parsedTopik,
       createdAt: parsedCreatedAt,
+      achievements: map['achievements'] != null
+          ? List<String>.from(map['achievements'])
+          : [],
     );
   }
 

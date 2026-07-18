@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../services/auth_service.dart';
 import '../services/firestore_service.dart';
+import '../services/achievement_service.dart';
 import '../models/user_progress_model.dart';
+import '../models/achievement_model.dart';
 import '../utils/constants.dart';
 import 'login_screen.dart';
 import 'topic_selection_screen.dart';
@@ -43,6 +45,9 @@ class _HomeScreenState extends State<HomeScreen> {
       stream: FirestoreService.instance.getUserProgressStream(user!.uid),
       builder: (context, snapshot) {
         final progress = snapshot.data;
+        if (progress != null && user != null) {
+          AchievementService.instance.syncAchievements(progress, user!.uid);
+        }
         return Scaffold(
           extendBodyBehindAppBar: true,
           backgroundColor: AppColors.background,
@@ -569,6 +574,9 @@ class _ProfilPage extends StatelessWidget {
               ],
             ),
           ),
+          // ── Achievements ──
+          const SizedBox(height: 16),
+          _AchievementsSection(progress: p),
           // ── Settings ──
           const SizedBox(height: 16),
           Container(
@@ -857,6 +865,117 @@ class _ProfilPage extends StatelessWidget {
           },
         );
       },
+    );
+  }
+}
+
+class _AchievementsSection extends StatelessWidget {
+  final UserProgress? progress;
+
+  const _AchievementsSection({required this.progress});
+
+  @override
+  Widget build(BuildContext context) {
+    if (progress == null) return const SizedBox.shrink();
+    final achievements = AchievementService.instance.evaluateAchievements(progress!);
+    final unlockedCount = achievements.where((a) => a.unlocked).length;
+
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.05),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.emoji_events_rounded, color: Color(0xFFFFD700), size: 20),
+              const SizedBox(width: 8),
+              const Text(
+                'Lencana',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+              const Spacer(),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                decoration: BoxDecoration(
+                  color: AppColors.primary.withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Text(
+                  '$unlockedCount/${achievements.length}',
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.primary,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: achievements.map((a) => _buildBadge(a)).toList(),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBadge(Achievement a) {
+    return Tooltip(
+      message: '${a.title}\n${a.description}',
+      child: Container(
+        width: 56,
+        height: 56,
+        decoration: BoxDecoration(
+          color: a.unlocked
+              ? a.color.withValues(alpha: 0.15)
+              : Colors.grey.shade100,
+          borderRadius: BorderRadius.circular(14),
+          border: Border.all(
+            color: a.unlocked
+                ? a.color.withValues(alpha: 0.4)
+                : Colors.grey.shade200,
+            width: 2,
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              a.icon,
+              size: 22,
+              color: a.unlocked ? a.color : Colors.grey.shade400,
+            ),
+            Text(
+              a.title,
+              style: TextStyle(
+                fontSize: 8,
+                fontWeight: FontWeight.bold,
+                color: a.unlocked ? a.color : Colors.grey.shade400,
+              ),
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -45,6 +45,7 @@ class FirestoreService {
         'profileImage': '',
         'kelasAktif': 1,
         'topikProgress': {},
+        'achievements': [],
         'createdAt': FieldValue.serverTimestamp(),
       });
     }
@@ -52,5 +53,9 @@ class FirestoreService {
 
   Future<void> updateProfileImage(String uid, String imagePath) async {
     await _userDoc(uid).update({'profileImage': imagePath});
+  }
+
+  Future<void> updateAchievements(String uid, List<String> achievementIds) async {
+    await _userDoc(uid).update({'achievements': achievementIds});
   }
 }

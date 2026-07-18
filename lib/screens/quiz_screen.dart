@@ -338,7 +338,10 @@ class _QuizScreenState extends State<QuizScreen>
             children: [
               // Tombol back
               GestureDetector(
-                onTap: () => _showQuitDialog(color),
+                onTap: () {
+                  SoundService.instance.playClick();
+                  _showQuitDialog(color);
+                },
                 child: Container(
                   width: 38,
                   height: 38,
@@ -568,7 +571,10 @@ class _QuizScreenState extends State<QuizScreen>
                   const Spacer(),
                   if (_currentQuestion.petunjuk.isNotEmpty && !_answered)
                     GestureDetector(
-                      onTap: _showNextHint,
+                      onTap: () {
+                        SoundService.instance.playClick();
+                        _showNextHint();
+                      },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 10, vertical: 4),
@@ -998,7 +1004,14 @@ class _QuizScreenState extends State<QuizScreen>
         ],
       ),
       child: GestureDetector(
-        onTap: _answered ? _nextQuestion : _checkAnswer,
+        onTap: () {
+          SoundService.instance.playClick();
+          if (_answered) {
+            _nextQuestion();
+          } else {
+            _checkAnswer();
+          }
+        },
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           height: 54,
@@ -1057,11 +1070,15 @@ class _QuizScreenState extends State<QuizScreen>
         ),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(ctx),
+            onPressed: () {
+              SoundService.instance.playClick();
+              Navigator.pop(ctx);
+            },
             child: const Text('Lanjutkan'),
           ),
           ElevatedButton(
             onPressed: () {
+              SoundService.instance.playClick();
               Navigator.pop(ctx);
               Navigator.pop(context);
             },

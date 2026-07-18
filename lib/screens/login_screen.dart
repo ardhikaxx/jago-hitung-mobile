@@ -4,6 +4,7 @@ import '../services/auth_service.dart';
 import '../utils/constants.dart';
 import 'register_screen.dart';
 import 'home_screen.dart';
+import '../services/sound_service.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -175,7 +176,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: double.infinity,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: _loading ? null : _login,
+                      onPressed: _loading ? null : () {
+                        SoundService.instance.playClick();
+                        _login();
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.primary,
                         foregroundColor: Colors.white,
@@ -204,7 +208,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: double.infinity,
                     height: 50,
                     child: OutlinedButton.icon(
-                      onPressed: _loading ? null : _loginGoogle,
+                      onPressed: _loading ? null : () {
+                        SoundService.instance.playClick();
+                        _loginGoogle();
+                      },
                       icon: const Icon(Icons.g_mobiledata, size: 28),
                       label: const Text('Masuk dengan Google'),
                       style: OutlinedButton.styleFrom(
@@ -223,6 +230,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       const Text('Belum punya akun? '),
                       GestureDetector(
                         onTap: () {
+                          SoundService.instance.playClick();
                           Navigator.push(
                             context,
                             MaterialPageRoute(

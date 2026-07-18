@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../models/question_model.dart';
 import '../services/data_service.dart';
+import '../services/firestore_service.dart';
+import '../services/sound_service.dart';
 import '../utils/constants.dart';
 import 'home_screen.dart';
 import 'quiz_screen.dart';
@@ -217,6 +219,7 @@ class ResultScreen extends StatelessWidget {
                     height: 50,
                     child: ElevatedButton.icon(
                       onPressed: () {
+                        SoundService.instance.playClick();
                         Navigator.pop(context);
                       },
                       icon: const Icon(Icons.replay),
@@ -239,6 +242,7 @@ class ResultScreen extends StatelessWidget {
                     height: 50,
                     child: ElevatedButton.icon(
                       onPressed: () async {
+                        SoundService.instance.playClick();
                         final nextTopic =
                             await DataService.instance.getTopic(nextTopicId);
                         if (context.mounted) {
@@ -272,6 +276,7 @@ class ResultScreen extends StatelessWidget {
                   height: 50,
                   child: OutlinedButton.icon(
                     onPressed: () {
+                      SoundService.instance.playClick();
                       Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(

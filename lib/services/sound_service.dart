@@ -1,51 +1,48 @@
-import 'package:flutter/services.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 class SoundService {
-  static final SoundService instance = SoundService._();
-  SoundService._();
+  static final SoundService instance = SoundService._internal();
 
-  final AudioPlayer _player = AudioPlayer();
-
-  void init() {}
-
-  Future<void> playClick() async {
-    try {
-      await _player.stop();
-      await _player.play(AssetSource('sounds/click.wav'));
-    } catch (_) {
-      HapticFeedback.lightImpact();
-    }
+  factory SoundService() {
+    return instance;
   }
 
-  Future<void> playCorrect() async {
-    try {
-      await _player.stop();
-      await _player.play(AssetSource('sounds/correct.wav'));
-    } catch (_) {
-      HapticFeedback.mediumImpact();
-    }
+  SoundService._internal();
+
+  final AudioPlayer _clickPlayer = AudioPlayer();
+  final AudioPlayer _correctPlayer = AudioPlayer();
+  final AudioPlayer _wrongPlayer = AudioPlayer();
+
+  Future<void> init() async {
+    // Preload sounds for faster playback
+    await _clickPlayer.setSource(AssetSource('sounds/click.wav'));
+    await _correctPlayer.setSource(AssetSource('sounds/success.wav'));
+    await _wrongPlayer.setSource(AssetSource('sounds/error.wav'));
+    
+    // Set players to low latency mode if needed
+    _clickPlayer.setPlayerMode(PlayerMode.lowLatency);
+    _correctPlayer.setPlayerMode(PlayerMode.lowLatency);
+    _wrongPlayer.setPlayerMode(PlayerMode.lowLatency);
   }
 
-  Future<void> playWrong() async {
+  void playClick() async {
     try {
-      await _player.stop();
-      await _player.play(AssetSource('sounds/wrong.wav'));
-    } catch (_) {
-      HapticFeedback.heavyImpact();
-    }
+      await _clickPlayer.stop();
+      await _clickPlayer.resume();
+    } catch (_) {}
   }
 
-  Future<void> playCelebration() async {
+  void playCorrect() async {
     try {
-      await _player.stop();
-      await _player.play(AssetSource('sounds/celebration.wav'));
-    } catch (_) {
-      HapticFeedback.mediumImpact();
-    }
+      await _correctPlayer.stop();
+      await _correctPlayer.resume();
+    } catch (_) {}
   }
 
-  void dispose() {
-    _player.dispose();
+  void playWrong() async {
+    try {
+      await _wrongPlayer.stop();
+      await _wrongPlayer.resume();
+    } catch (_) {}
   }
 }

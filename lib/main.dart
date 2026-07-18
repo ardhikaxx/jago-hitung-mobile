@@ -7,11 +7,14 @@ import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
 import 'utils/constants.dart';
 
+import 'services/sound_service.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await SoundService().init();
   runApp(const JagoHitungApp());
 }
 

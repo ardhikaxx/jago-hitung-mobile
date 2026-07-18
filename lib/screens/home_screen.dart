@@ -7,6 +7,7 @@ import '../utils/constants.dart';
 import 'login_screen.dart';
 import 'topic_selection_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../services/sound_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -102,7 +103,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildNavItem(int index, IconData icon, String label) {
     final isSelected = _currentIndex == index;
     return GestureDetector(
-      onTap: () => setState(() => _currentIndex = index),
+      onTap: () {
+        SoundService.instance.playClick();
+        setState(() => _currentIndex = index);
+      },
       behavior: HitTestBehavior.opaque,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
@@ -290,6 +294,7 @@ class _KelasPage extends StatelessWidget {
     return Game3DButton(
       onPressed: unlocked
           ? () {
+              SoundService.instance.playClick();
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -555,6 +560,7 @@ class _ProfilPage extends StatelessWidget {
             height: 50,
             child: OutlinedButton.icon(
               onPressed: () async {
+                SoundService.instance.playClick();
                 final confirm = await showDialog<bool>(
                   context: context,
                   builder: (ctx) => AlertDialog(
@@ -571,7 +577,10 @@ class _ProfilPage extends StatelessWidget {
                     ),
                     actions: [
                       TextButton(
-                        onPressed: () => Navigator.pop(ctx, false),
+                        onPressed: () {
+                          SoundService.instance.playClick();
+                          Navigator.pop(ctx, false);
+                        },
                         child: const Text(
                           'Batal',
                           style: TextStyle(
@@ -581,7 +590,10 @@ class _ProfilPage extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: () => Navigator.pop(ctx, true),
+                        onPressed: () {
+                          SoundService.instance.playClick();
+                          Navigator.pop(ctx, true);
+                        },
                         child: const Text(
                           'Keluar',
                           style: TextStyle(
@@ -716,6 +728,7 @@ class _ProfilPage extends StatelessWidget {
                       final isSelected = imgPath == currentImage;
                       return GestureDetector(
                         onTap: () async {
+                          SoundService.instance.playClick();
                           await FirestoreService.instance
                               .updateProfileImage(user.uid, imgPath);
                           if (context.mounted) Navigator.pop(context);

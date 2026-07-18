@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../services/auth_service.dart';
 import '../utils/constants.dart';
 import 'home_screen.dart';
+import '../services/sound_service.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -75,7 +76,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: AppColors.textPrimary),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            SoundService.instance.playClick();
+            Navigator.pop(context);
+          },
         ),
       ),
       body: SafeArea(
@@ -189,7 +193,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     width: double.infinity,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: _loading ? null : _register,
+                      onPressed: _loading ? null : () {
+                        SoundService.instance.playClick();
+                        _register();
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.primary,
                         foregroundColor: Colors.white,
@@ -219,7 +226,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     children: [
                       const Text('Sudah punya akun? '),
                       GestureDetector(
-                        onTap: () => Navigator.pop(context),
+                        onTap: () {
+                          SoundService.instance.playClick();
+                          Navigator.pop(context);
+                        },
                         child: Text(
                           'Masuk',
                           style: TextStyle(

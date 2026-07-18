@@ -8,6 +8,7 @@ import '../models/topic_model.dart';
 import '../models/user_progress_model.dart';
 import '../utils/constants.dart';
 import 'quiz_screen.dart';
+import '../services/sound_service.dart';
 
 // ── Icon mapping per topik ──────────────────────────────────────────────────
 const Map<String, IconData> _topicIcons = {
@@ -325,7 +326,10 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
             children: [
               // Tombol back bergaya game
               GestureDetector(
-                onTap: () => Navigator.pop(context),
+                onTap: () {
+                  SoundService.instance.playClick();
+                  Navigator.pop(context);
+                },
                 child: Container(
                   width: 40,
                   height: 40,
@@ -584,6 +588,7 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
       child: GestureDetector(
         onTap: unlocked
             ? () async {
+                SoundService.instance.playClick();
                 final topicData = await DataService.instance.getTopic(topic.id);
                 if (mounted) {
                   Navigator.push(
@@ -603,6 +608,7 @@ class _TopicSelectionScreenState extends State<TopicSelectionScreen>
                 }
               }
             : () {
+                SoundService.instance.playClick();
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: const Row(
                     children: [

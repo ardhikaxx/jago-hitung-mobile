@@ -3,12 +3,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../services/auth_service.dart';
 import '../services/firestore_service.dart';
 import '../services/achievement_service.dart';
+import '../services/data_service.dart';
 import '../models/user_progress_model.dart';
 import '../models/achievement_model.dart';
+import '../models/topic_model.dart';
+import '../models/question_model.dart';
 import '../utils/constants.dart';
 import 'login_screen.dart';
 import 'topic_selection_screen.dart';
 import 'leaderboard_page.dart';
+import 'quiz_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../services/sound_service.dart';
 import '../widgets/game_3d_button.dart';
@@ -175,6 +179,71 @@ class _KelasPage extends StatelessWidget {
 
   const _KelasPage({required this.progress, required this.user});
 
+  Future<void> _startDailyChallenge(BuildContext context, UserProgress? progress) async {
+    if (progress == null) return;
+    
+    List<TopicProgress> passedTopicProgresses = progress.topikProgress.values.where((p) => p.lulus).toList();
+    
+    if (passedTopicProgresses.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Selesaikan minimal 1 topik dulu untuk membuka Kuis Misteri!'),
+          backgroundColor: AppColors.warning,
+        ),
+      );
+      return;
+    }
+    
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => const Center(child: CircularProgressIndicator()),
+    );
+    
+    try {
+      List<Question> allQuestions = [];
+      passedTopicProgresses.shuffle();
+      final topicsToLoad = passedTopicProgresses.take(5).toList();
+      
+      for (var tp in topicsToLoad) {
+        final topicObj = await DataService.instance.getTopic(tp.topikId);
+        allQuestions.addAll(topicObj.soal);
+      }
+      
+      allQuestions.shuffle();
+      final selectedQuestions = allQuestions.take(5).toList();
+      
+      if (context.mounted) Navigator.pop(context);
+      
+      if (selectedQuestions.isEmpty) return;
+      
+      final challengeTopic = Topic(
+        id: 'daily-challenge',
+        kelas: progress.kelasAktif,
+        topik: 'Kuis Misteri Harian',
+        deskripsi: 'Tantangan Harian',
+        jumlahSoal: 5,
+        icon: '🎁',
+        soal: selectedQuestions,
+      );
+      
+      if (context.mounted) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => QuizScreen(
+              topic: challengeTopic,
+              kelas: progress.kelasAktif,
+              quizMode: 'misteri',
+            ),
+          ),
+        );
+      }
+    } catch (e) {
+      if (context.mounted) Navigator.pop(context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final nama = progress?.nama ?? user.displayName ?? 'Siswa';
@@ -264,7 +333,46 @@ class _KelasPage extends StatelessWidget {
                     },
                   ),
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 16),
+                Game3DButton(
+                  onPressed: () => _startDailyChallenge(context, progress),
+                  color: const Color(0xFFCC14D9),
+                  shadowColor: const Color(0xFF660082),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.stars_rounded, color: Colors.yellow, size: 36),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text(
+                                'Kuis Misteri Hari Ini',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                              ),
+                              Text(
+                                'Mainkan untuk dapat 2x Koin!',
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
                 Stack(
                   children: [
                     Text(

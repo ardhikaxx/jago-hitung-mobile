@@ -267,6 +267,10 @@ class _QuizScreenState extends State<QuizScreen>
       earnedCoins *= 5;
     }
     
+    if (widget.quizMode == 'misteri') {
+      earnedCoins *= 2;
+    }
+    
     if (isLevelUp) {
       earnedCoins += 100; // Bonus Koin Naik Level
     }

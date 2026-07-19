@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../models/question_model.dart';
 import '../services/sound_service.dart';
 import '../utils/constants.dart';
-import '../widgets/game_background.dart';
 
 class DuelScreen extends StatefulWidget {
   final List<Question> questions;

@@ -496,7 +496,6 @@ class _KelasPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 12),
                 Stack(
                   children: [
                     Text(

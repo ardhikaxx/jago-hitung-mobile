@@ -210,9 +210,15 @@ class _DailyQuestDialogState extends State<DailyQuestDialog> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  '📋 Misi Hari Ini',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: AppColors.primary),
+                Row(
+                  children: [
+                    const Icon(Icons.assignment_rounded, color: AppColors.primary, size: 28),
+                    const SizedBox(width: 8),
+                    const Text(
+                      'Misi Hari Ini',
+                      style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: AppColors.primary),
+                    ),
+                  ],
                 ),
                 IconButton(
                   icon: const Icon(Icons.close, color: Colors.grey),

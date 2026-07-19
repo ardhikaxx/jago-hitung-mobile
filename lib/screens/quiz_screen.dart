@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:confetti/confetti.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../models/question_model.dart';
@@ -16,6 +18,7 @@ import '../widgets/matching_widget.dart';
 import '../widgets/game_3d_button.dart';
 import '../widgets/game_background.dart';
 import '../widgets/combo_overlay.dart';
+import '../widgets/shake_widget.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -62,6 +65,9 @@ class _QuizScreenState extends State<QuizScreen>
   late Animation<double> _feedbackScale;
   late Animation<double> _pulse;
 
+  final GlobalKey<ShakeWidgetState> _shakeKey = GlobalKey<ShakeWidgetState>();
+  late ConfettiController _confettiController;
+
   User? get user => AuthService.instance.currentUser;
   Question get _currentQuestion => _questions[_currentIndex];
 
@@ -99,6 +105,8 @@ class _QuizScreenState extends State<QuizScreen>
       vsync: this,
       duration: const Duration(milliseconds: 900),
     )..repeat(reverse: true);
+
+    _confettiController = ConfettiController(duration: const Duration(seconds: 3));
 
     _cardScale = CurvedAnimation(
       parent: _cardController,
@@ -146,6 +154,7 @@ class _QuizScreenState extends State<QuizScreen>
     _cardController.dispose();
     _feedbackController.dispose();
     _pulseController.dispose();
+    _confettiController.dispose();
     super.dispose();
   }
 
@@ -194,8 +203,12 @@ class _QuizScreenState extends State<QuizScreen>
     });
 
     if (benar) {
+      if (_currentCombo >= 5 && _currentCombo % 5 == 0) {
+        _confettiController.play();
+      }
       SoundService.instance.playCorrect();
     } else {
+      _shakeKey.currentState?.shake();
       SoundService.instance.playWrong();
     }
 
@@ -363,12 +376,17 @@ class _QuizScreenState extends State<QuizScreen>
               color: Colors.black.withValues(alpha: 0.3),
             ),
           ),
-          Column(
-            children: [
-              // ── Game Header ──
-              _buildGameHeader(color, progressVal, total),
-
-          // ── Soal area ──
+          ShakeWidget(
+            key: _shakeKey,
+            shakeCount: 3,
+            shakeOffset: 12.0,
+            duration: const Duration(milliseconds: 400),
+            child: Column(
+              children: [
+                // ── Game Header ──
+                _buildGameHeader(color, progressVal, total),
+  
+            // ── Soal area ──
           Expanded(
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
@@ -400,6 +418,20 @@ class _QuizScreenState extends State<QuizScreen>
                   ],
                 ),
               ),
+            ),
+          ),
+          ],
+          ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: ConfettiWidget(
+              confettiController: _confettiController,
+              blastDirection: pi / 2, 
+              maxBlastForce: 15, 
+              minBlastForce: 5, 
+              emissionFrequency: 0.05,
+              numberOfParticles: 40,
+              gravity: 0.2,
             ),
           ),
 

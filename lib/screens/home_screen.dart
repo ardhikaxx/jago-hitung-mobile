@@ -496,6 +496,7 @@ class _KelasPage extends StatelessWidget {
                     ),
                   ],
                 ),
+                const SizedBox(height: 12),
                 Stack(
                   children: [
                     Text(
@@ -503,7 +504,6 @@ class _KelasPage extends StatelessWidget {
                       style: GoogleFonts.fredoka(
                         fontSize: 44,
                         fontWeight: FontWeight.w900,
-                        height: 0.8,
                         foreground: Paint()
                           ..style = PaintingStyle.stroke
                           ..strokeWidth = 10
@@ -515,7 +515,6 @@ class _KelasPage extends StatelessWidget {
                       style: GoogleFonts.fredoka(
                         fontSize: 44,
                         fontWeight: FontWeight.w900,
-                        height: 0.8,
                         color: Colors.white, // Back to white
                         shadows: const [Shadow(color: Colors.black45, blurRadius: 8, offset: Offset(0, 4))],
                       ),

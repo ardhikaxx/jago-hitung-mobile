@@ -677,18 +677,18 @@ class _KelasPage extends StatelessWidget {
                   child: Row(
                     children: [
                       SizedBox(
-                        width: 200,
+                        width: 160,
                         key: misteriKey,
                         child: Game3DButton(
                           onPressed: () => _startDailyChallenge(context, progress),
                           color: AppColors.secondary,
                           shadowColor: Color.lerp(AppColors.secondary, Colors.black, 0.4)!,
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
                             child: Row(
                               children: [
-                                const Icon(Icons.stars_rounded, color: Colors.white, size: 32),
-                                const SizedBox(width: 8),
+                                const Icon(Icons.stars_rounded, color: Colors.white, size: 28),
+                                const SizedBox(width: 6),
                                 Expanded(
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -696,11 +696,13 @@ class _KelasPage extends StatelessWidget {
                                     children: const [
                                       Text(
                                         'Kuis Misteri',
-                                        style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w900),
+                                        style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w900),
+                                        maxLines: 1,
                                       ),
                                       Text(
                                         'Dapat 2x Koin!',
-                                        style: TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.bold),
+                                        style: TextStyle(color: Colors.white70, fontSize: 9, fontWeight: FontWeight.bold),
+                                        maxLines: 1,
                                       ),
                                     ],
                                   ),
@@ -710,20 +712,20 @@ class _KelasPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 12),
+                      const SizedBox(width: 8),
                       SizedBox(
-                        width: 200,
+                        width: 150,
                         key: duelKey,
                         child: Game3DButton(
                           onPressed: () => _startDuelMode(context, progress),
                           color: const Color(0xFFFF6B6B),
                           shadowColor: const Color(0xFFB93333),
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
                             child: Row(
                               children: [
-                                const Icon(Icons.sports_esports_rounded, color: Colors.white, size: 32),
-                                const SizedBox(width: 8),
+                                const Icon(Icons.sports_esports_rounded, color: Colors.white, size: 28),
+                                const SizedBox(width: 6),
                                 Expanded(
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -731,11 +733,13 @@ class _KelasPage extends StatelessWidget {
                                     children: const [
                                       Text(
                                         'Duel 1v1',
-                                        style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w900),
+                                        style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w900),
+                                        maxLines: 1,
                                       ),
                                       Text(
                                         'Main Bareng!',
-                                        style: TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.bold),
+                                        style: TextStyle(color: Colors.white70, fontSize: 9, fontWeight: FontWeight.bold),
+                                        maxLines: 1,
                                       ),
                                     ],
                                   ),
@@ -745,19 +749,19 @@ class _KelasPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 12),
+                      const SizedBox(width: 8),
                       SizedBox(
-                        width: 220,
+                        width: 170,
                         child: Game3DButton(
                           onPressed: () => _startTimeBombMode(context, progress),
                           color: const Color(0xFF455A64),
                           shadowColor: const Color(0xFF263238),
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 8),
                             child: Row(
                               children: [
-                                const Icon(Icons.timer_rounded, color: Colors.white, size: 32),
-                                const SizedBox(width: 8),
+                                const Icon(Icons.timer_rounded, color: Colors.white, size: 28),
+                                const SizedBox(width: 6),
                                 Expanded(
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -765,11 +769,12 @@ class _KelasPage extends StatelessWidget {
                                     children: const [
                                       Text(
                                         'Bom Waktu',
-                                        style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w900),
+                                        style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w900),
+                                        maxLines: 1,
                                       ),
                                       Text(
                                         'Tantangan Kecepatan',
-                                        style: TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.bold),
+                                        style: TextStyle(color: Colors.white70, fontSize: 9, fontWeight: FontWeight.bold),
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
                                       ),

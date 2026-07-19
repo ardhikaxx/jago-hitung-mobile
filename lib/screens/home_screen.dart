@@ -670,85 +670,119 @@ class _KelasPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-                Row(
-                  children: [
-                    Expanded(
-                      key: misteriKey,
-                      child: Game3DButton(
-                        onPressed: () => _startDailyChallenge(context, progress),
-                        color: AppColors.secondary,
-                        shadowColor: Color.lerp(AppColors.secondary, Colors.black, 0.4)!,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Icon(Icons.stars_rounded, color: Colors.white, size: 28),
-                              SizedBox(height: 4),
-                              Text(
-                                'Misteri',
-                                style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w900),
-                                textAlign: TextAlign.center,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ],
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  physics: const BouncingScrollPhysics(),
+                  clipBehavior: Clip.none,
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 200,
+                        key: misteriKey,
+                        child: Game3DButton(
+                          onPressed: () => _startDailyChallenge(context, progress),
+                          color: AppColors.secondary,
+                          shadowColor: Color.lerp(AppColors.secondary, Colors.black, 0.4)!,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                            child: Row(
+                              children: [
+                                const Icon(Icons.stars_rounded, color: Colors.white, size: 32),
+                                const SizedBox(width: 8),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      Text(
+                                        'Kuis Misteri',
+                                        style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w900),
+                                      ),
+                                      Text(
+                                        'Dapat 2x Koin!',
+                                        style: TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      key: duelKey,
-                      child: Game3DButton(
-                        onPressed: () => _startDuelMode(context, progress),
-                        color: const Color(0xFFFF6B6B),
-                        shadowColor: const Color(0xFFB93333),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Icon(Icons.sports_esports_rounded, color: Colors.white, size: 28),
-                              SizedBox(height: 4),
-                              Text(
-                                'Duel',
-                                style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w900),
-                                textAlign: TextAlign.center,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ],
+                      const SizedBox(width: 12),
+                      SizedBox(
+                        width: 200,
+                        key: duelKey,
+                        child: Game3DButton(
+                          onPressed: () => _startDuelMode(context, progress),
+                          color: const Color(0xFFFF6B6B),
+                          shadowColor: const Color(0xFFB93333),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                            child: Row(
+                              children: [
+                                const Icon(Icons.sports_esports_rounded, color: Colors.white, size: 32),
+                                const SizedBox(width: 8),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      Text(
+                                        'Duel 1v1',
+                                        style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w900),
+                                      ),
+                                      Text(
+                                        'Main Bareng!',
+                                        style: TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Game3DButton(
-                        onPressed: () => _startTimeBombMode(context, progress),
-                        color: const Color(0xFF455A64), // Blue Grey
-                        shadowColor: const Color(0xFF263238),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 2),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Icon(Icons.timer_rounded, color: Colors.white, size: 28),
-                              SizedBox(height: 4),
-                              Text(
-                                'Bom Wkt',
-                                style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w900),
-                                textAlign: TextAlign.center,
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ],
+                      const SizedBox(width: 12),
+                      SizedBox(
+                        width: 220,
+                        child: Game3DButton(
+                          onPressed: () => _startTimeBombMode(context, progress),
+                          color: const Color(0xFF455A64),
+                          shadowColor: const Color(0xFF263238),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+                            child: Row(
+                              children: [
+                                const Icon(Icons.timer_rounded, color: Colors.white, size: 32),
+                                const SizedBox(width: 8),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      Text(
+                                        'Bom Waktu',
+                                        style: TextStyle(color: Colors.white, fontSize: 14, fontWeight: FontWeight.w900),
+                                      ),
+                                      Text(
+                                        'Tantangan Kecepatan',
+                                        style: TextStyle(color: Colors.white70, fontSize: 11, fontWeight: FontWeight.bold),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 16), // add space before PILIH KELAS
                 Stack(

@@ -300,8 +300,11 @@ class _HomeScreenState extends State<HomeScreen> {
       padding: const EdgeInsets.fromLTRB(24, 0, 24, 20),
       height: 90,
       color: Colors.transparent,
-      child: Container(
-        height: 70,
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 600),
+          child: Container(
+            height: 70,
         decoration: BoxDecoration(
           color: Colors.white.withValues(alpha: 0.9),
           borderRadius: BorderRadius.circular(35),
@@ -332,7 +335,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-    );
+    )));
   }
 
   Widget _buildNavItem(int index, IconData icon, String label) {
@@ -856,8 +859,8 @@ class _KelasPage extends StatelessWidget {
         SliverPadding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           sliver: SliverGrid(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 220,
               crossAxisSpacing: 12,
               mainAxisSpacing: 12,
               childAspectRatio: 1.0,
@@ -1060,9 +1063,12 @@ class _ProfilPage extends StatelessWidget {
 
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
-      child: Column(
-        children: [
-          Container(
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 600),
+          child: Column(
+            children: [
+              Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -1354,8 +1360,10 @@ class _ProfilPage extends StatelessWidget {
         ],
       ),
     ),
-    const SizedBox(height: 90),
-      ],
+            const SizedBox(height: 90),
+          ],
+        ),
+      ),
     ),
   );
   }
@@ -1440,8 +1448,8 @@ class _ProfilPage extends StatelessWidget {
                     controller: scrollController,
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 4,
+                        const SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 80,
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                     ),
@@ -1611,8 +1619,11 @@ class _ShopPage extends StatelessWidget {
     final purchased = progress?.purchasedAvatars ?? [];
     final purchasable = AuthService.purchasableAvatars;
 
-    return Column(
-      children: [
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 600),
+        child: Column(
+          children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
           child: Container(
@@ -1641,8 +1652,8 @@ class _ShopPage extends StatelessWidget {
         Expanded(
           child: GridView.builder(
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 120),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 120,
               crossAxisSpacing: 12,
               mainAxisSpacing: 12,
               childAspectRatio: 0.75,
@@ -1705,7 +1716,7 @@ class _ShopPage extends StatelessWidget {
           ),
         ),
       ],
-    );
+    )));
   }
 
   void _buyAvatar(BuildContext context, String avatarPath, int price, int currentKoin) {

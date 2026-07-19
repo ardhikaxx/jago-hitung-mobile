@@ -37,7 +37,10 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 600),
+        child: CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
@@ -114,7 +117,7 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
             ),
           ),
       ],
-    );
+    )));
   }
 
   Widget _buildLeaderboardItem(UserProgress user, int rank, bool isMe) {

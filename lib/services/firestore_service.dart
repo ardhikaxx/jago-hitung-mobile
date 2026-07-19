@@ -55,8 +55,13 @@ class FirestoreService {
         'koin': 0,
         'purchasedAvatars': [],
         'createdAt': FieldValue.serverTimestamp(),
+        'hasSeenTutorial': false,
       });
     }
+  }
+
+  Future<void> updateHasSeenTutorial(String uid) async {
+    await _userDoc(uid).update({'hasSeenTutorial': true});
   }
 
   Future<void> updateProfileImage(String uid, String imagePath) async {

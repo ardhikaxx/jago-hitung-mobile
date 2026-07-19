@@ -20,6 +20,7 @@ import '../widgets/game_3d_button.dart';
 import '../widgets/daily_quest_dialog.dart';
 import '../widgets/game_background.dart';
 import '../widgets/daily_streak_dialog.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,6 +32,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   bool _streakChecked = false;
+  
+  final GlobalKey _kelasKey = GlobalKey();
+  final GlobalKey _misteriKey = GlobalKey();
+  final GlobalKey _duelKey = GlobalKey();
+  final GlobalKey _questKey = GlobalKey();
+  
+  late TutorialCoachMark tutorialCoachMark;
+
   User? get user => AuthService.instance.currentUser;
 
   @override
@@ -102,6 +111,93 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  void _showTutorial(UserProgress progress) {
+    tutorialCoachMark = TutorialCoachMark(
+      targets: _createTargets(),
+      colorShadow: AppColors.primary,
+      textSkip: "LEWATI",
+      paddingFocus: 10,
+      opacityShadow: 0.8,
+      onFinish: () {
+        FirestoreService.instance.updateHasSeenTutorial(user!.uid);
+        _checkAndShowStreak(progress);
+      },
+      onSkip: () {
+        FirestoreService.instance.updateHasSeenTutorial(user!.uid);
+        _checkAndShowStreak(progress);
+        return true;
+      },
+    )..show(context: context);
+  }
+
+  List<TargetFocus> _createTargets() {
+    return [
+      TargetFocus(
+        identify: "kelas-target",
+        keyTarget: _kelasKey,
+        alignSkip: Alignment.topRight,
+        contents: [
+          TargetContent(
+            align: ContentAlign.top,
+            builder: (context, controller) {
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text("Pilih Kelasmu!", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24)),
+                  SizedBox(height: 10),
+                  Text("Pilih kelas yang sesuai dengan kemampuanmu untuk mulai belajar matematika.", style: TextStyle(color: Colors.white, fontSize: 16)),
+                ],
+              );
+            },
+          ),
+        ],
+      ),
+      TargetFocus(
+        identify: "misteri-target",
+        keyTarget: _misteriKey,
+        alignSkip: Alignment.topRight,
+        contents: [
+          TargetContent(
+            align: ContentAlign.bottom,
+            builder: (context, controller) {
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text("Kuis Misteri", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24)),
+                  SizedBox(height: 10),
+                  Text("Selesaikan topik untuk membuka Kuis Misteri dan dapatkan Koin 2x lipat!", style: TextStyle(color: Colors.white, fontSize: 16)),
+                ],
+              );
+            },
+          ),
+        ],
+      ),
+      TargetFocus(
+        identify: "quest-target",
+        keyTarget: _questKey,
+        alignSkip: Alignment.bottomLeft,
+        contents: [
+          TargetContent(
+            align: ContentAlign.bottom,
+            builder: (context, controller) {
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text("Misi Harian", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24)),
+                  SizedBox(height: 10),
+                  Text("Selesaikan misimu setiap hari untuk membuka Peti Harta Karun berisi koin melimpah!", style: TextStyle(color: Colors.white, fontSize: 16)),
+                ],
+              );
+            },
+          ),
+        ],
+      ),
+    ];
+  }
+
   int _getStreakReward(int day) {
      switch(day) {
        case 1: return 50;
@@ -127,7 +223,12 @@ class _HomeScreenState extends State<HomeScreen> {
           if (!_streakChecked) {
              _streakChecked = true;
              WidgetsBinding.instance.addPostFrameCallback((_) {
-               _checkAndShowStreak(progress);
+               final isNewUser = progress.koin == 0 && progress.totalKoin == 0 && progress.purchasedAvatars.isEmpty;
+               if (!progress.hasSeenTutorial && isNewUser) {
+                 _showTutorial(progress);
+               } else {
+                 _checkAndShowStreak(progress);
+               }
              });
           }
           AchievementService.instance.syncAchievements(progress, user!.uid);
@@ -147,7 +248,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: IndexedStack(
                   index: _currentIndex,
                   children: [
-                    _KelasPage(progress: progress, user: user!),
+                    _KelasPage(
+                      progress: progress, 
+                      user: user!,
+                      kelasKey: _kelasKey,
+                      misteriKey: _misteriKey,
+                      duelKey: _duelKey,
+                      questKey: _questKey,
+                    ),
                     LeaderboardPage(currentProgress: progress),
                     _ShopPage(progress: progress, user: user!),
                     _ProfilPage(progress: progress, user: user!),
@@ -254,8 +362,19 @@ class _HomeScreenState extends State<HomeScreen> {
 class _KelasPage extends StatelessWidget {
   final UserProgress? progress;
   final User user;
+  final GlobalKey kelasKey;
+  final GlobalKey misteriKey;
+  final GlobalKey duelKey;
+  final GlobalKey questKey;
 
-  const _KelasPage({required this.progress, required this.user});
+  const _KelasPage({
+    required this.progress, 
+    required this.user,
+    required this.kelasKey,
+    required this.misteriKey,
+    required this.duelKey,
+    required this.questKey,
+  });
 
   Future<void> _startDailyChallenge(BuildContext context, UserProgress? progress) async {
     if (progress == null) return;
@@ -441,6 +560,7 @@ class _KelasPage extends StatelessWidget {
                             ),
                           ),
                           GestureDetector(
+                            key: questKey,
                             onTap: () {
                               if (progress != null) {
                                 showDialog(
@@ -492,6 +612,7 @@ class _KelasPage extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
+                      key: misteriKey,
                       child: Game3DButton(
                         onPressed: () => _startDailyChallenge(context, progress),
                         color: AppColors.secondary,
@@ -532,6 +653,7 @@ class _KelasPage extends StatelessWidget {
                     ),
                     const SizedBox(width: 12),
                     Expanded(
+                      key: duelKey,
                       child: Game3DButton(
                         onPressed: () => _startDuelMode(context, progress),
                         color: const Color(0xFFFF6B6B), // Red/Pinkish for duel
@@ -573,6 +695,7 @@ class _KelasPage extends StatelessWidget {
                   ],
                 ),
                 Stack(
+                  key: kelasKey,
                   children: [
                     Text(
                       'PILIH KELAS',

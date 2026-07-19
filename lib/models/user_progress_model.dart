@@ -13,6 +13,7 @@ class UserProgress {
   final String lastLoginDate;
   final int currentStreak;
   final bool streakClaimedToday;
+  final bool hasSeenTutorial;
 
   UserProgress({
     required this.uid,
@@ -29,6 +30,7 @@ class UserProgress {
     this.lastLoginDate = '',
     this.currentStreak = 0,
     this.streakClaimedToday = false,
+    this.hasSeenTutorial = false,
   })  : topikProgress = topikProgress ?? {},
         createdAt = createdAt ?? DateTime.now(),
         achievements = achievements ?? [],
@@ -59,6 +61,7 @@ class UserProgress {
       'lastLoginDate': lastLoginDate,
       'currentStreak': currentStreak,
       'streakClaimedToday': streakClaimedToday,
+      'hasSeenTutorial': hasSeenTutorial,
     };
   }
 
@@ -120,6 +123,7 @@ class UserProgress {
       lastLoginDate: map['lastLoginDate'] ?? '',
       currentStreak: map['currentStreak'] ?? 0,
       streakClaimedToday: map['streakClaimedToday'] ?? false,
+      hasSeenTutorial: map['hasSeenTutorial'] ?? false,
     );
   }
 

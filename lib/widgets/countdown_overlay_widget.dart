@@ -14,10 +14,7 @@ class CountdownOverlayWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color getTextColor() {
-      if (showGo) return const Color(0xFF00FFD1); // Cyan terang
-      if (countdown == 3) return const Color(0xFFFF4B4B); // Merah
-      if (countdown == 2) return const Color(0xFFFFB300); // Oranye
-      return const Color(0xFFFFFF00); // Kuning
+      return Colors.white;
     }
 
     String getText() {

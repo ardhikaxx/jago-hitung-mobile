@@ -5,7 +5,7 @@ import '../models/question_model.dart';
 import '../services/sound_service.dart';
 import '../utils/constants.dart';
 import '../widgets/game_background.dart';
-import '../widgets/shake_widget.dart';
+import '../widgets/screen_shake_widget.dart';
 
 class TimeBombScreen extends StatefulWidget {
   final List<Question> questions;
@@ -28,7 +28,7 @@ class _TimeBombScreenState extends State<TimeBombScreen> with TickerProviderStat
   List<String> _shuffledChoices = [];
   
   final TextEditingController _answerCtrl = TextEditingController();
-  final GlobalKey<ShakeWidgetState> _shakeKey = GlobalKey<ShakeWidgetState>();
+  final GlobalKey<ScreenShakeWidgetState> _shakeKey = GlobalKey<ScreenShakeWidgetState>();
   
   late AnimationController _bombPulseController;
   late Animation<double> _bombPulse;
@@ -219,8 +219,8 @@ class _TimeBombScreenState extends State<TimeBombScreen> with TickerProviderStat
                       : Colors.black.withValues(alpha: 0.4),
             ),
           ),
-          ShakeWidget(
-            key: _shakeKey,
+          ScreenShakeWidget(
+            shakeKey: _shakeKey,
             shakeCount: 4,
             shakeOffset: 15.0,
             duration: const Duration(milliseconds: 300),

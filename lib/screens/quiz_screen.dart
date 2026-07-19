@@ -18,7 +18,7 @@ import '../widgets/matching_widget.dart';
 import '../widgets/game_3d_button.dart';
 import '../widgets/game_background.dart';
 import '../widgets/combo_overlay.dart';
-import '../widgets/shake_widget.dart';
+import '../widgets/screen_shake_widget.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -65,7 +65,7 @@ class _QuizScreenState extends State<QuizScreen>
   late Animation<double> _feedbackScale;
   late Animation<double> _pulse;
 
-  final GlobalKey<ShakeWidgetState> _shakeKey = GlobalKey<ShakeWidgetState>();
+  final GlobalKey<ScreenShakeWidgetState> _shakeKey = GlobalKey<ScreenShakeWidgetState>();
   late ConfettiController _confettiController;
 
   User? get user => AuthService.instance.currentUser;
@@ -376,8 +376,8 @@ class _QuizScreenState extends State<QuizScreen>
               color: Colors.black.withValues(alpha: 0.3),
             ),
           ),
-          ShakeWidget(
-            key: _shakeKey,
+          ScreenShakeWidget(
+            shakeKey: _shakeKey,
             shakeCount: 3,
             shakeOffset: 12.0,
             duration: const Duration(milliseconds: 400),
@@ -420,8 +420,18 @@ class _QuizScreenState extends State<QuizScreen>
               ),
             ),
           ),
-          ],
+
+          // ── Numpad (fill in) ──
+          if (q.isFillIn && !_answered)
+            NumpadWidget(onTap: _onNumpadTap, showDecimal: false, color: color),
+
+          // ── Tombol aksi ──
+          if (!_currentQuestion.isMatching || _answered)
+            _buildActionButton(color),
+              ],
+            ),
           ),
+          
           Align(
             alignment: Alignment.topCenter,
             child: ConfettiWidget(
@@ -433,16 +443,6 @@ class _QuizScreenState extends State<QuizScreen>
               numberOfParticles: 40,
               gravity: 0.2,
             ),
-          ),
-
-          // ── Numpad (fill in) ──
-          if (q.isFillIn && !_answered)
-            NumpadWidget(onTap: _onNumpadTap, showDecimal: false, color: color),
-
-          // ── Tombol aksi ──
-          if (!_currentQuestion.isMatching || _answered)
-            _buildActionButton(color),
-            ],
           ),
 
           // ── Combo Overlay ──

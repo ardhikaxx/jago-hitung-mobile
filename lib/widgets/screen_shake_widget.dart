@@ -1,28 +1,29 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-class ShakeWidget extends StatefulWidget {
+class ScreenShakeWidget extends StatefulWidget {
   final Widget child;
   final Duration duration;
   final double shakeOffset;
   final int shakeCount;
   final bool shakeOnStart;
-  final GlobalKey<ShakeWidgetState> key;
+  final GlobalKey<ScreenShakeWidgetState> shakeKey;
 
-  const ShakeWidget({
-    required this.key,
+  const ScreenShakeWidget({
+    super.key,
+    required this.shakeKey,
     required this.child,
     this.duration = const Duration(milliseconds: 400),
     this.shakeOffset = 10.0,
     this.shakeCount = 3,
     this.shakeOnStart = false,
-  }) : super(key: key);
+  });
 
   @override
-  ShakeWidgetState createState() => ShakeWidgetState();
+  ScreenShakeWidgetState createState() => ScreenShakeWidgetState();
 }
 
-class ShakeWidgetState extends State<ShakeWidget> with SingleTickerProviderStateMixin {
+class ScreenShakeWidgetState extends State<ScreenShakeWidget> with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _animation;
 

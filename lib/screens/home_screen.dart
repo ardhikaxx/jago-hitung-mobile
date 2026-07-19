@@ -760,8 +760,8 @@ class _KelasPage extends StatelessWidget {
                   width: double.infinity,
                   child: Game3DButton(
                     onPressed: () => _startTimeBombMode(context, progress),
-                    color: Colors.purple, 
-                    shadowColor: const Color(0xFF6A1B9A),
+                    color: const Color(0xFF455A64), // Blue Grey
+                    shadowColor: const Color(0xFF263238),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
                       child: Row(

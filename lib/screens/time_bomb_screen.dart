@@ -6,6 +6,7 @@ import '../services/sound_service.dart';
 import '../utils/constants.dart';
 import '../widgets/game_background.dart';
 import '../widgets/screen_shake_widget.dart';
+import '../widgets/countdown_overlay_widget.dart';
 
 class TimeBombScreen extends StatefulWidget {
   final List<Question> questions;
@@ -384,35 +385,7 @@ class _TimeBombScreenState extends State<TimeBombScreen> with TickerProviderStat
           ),
           
           if (_isCountingDown)
-            Positioned.fill(
-              child: Container(
-                color: Colors.black.withValues(alpha: 0.7),
-                child: Center(
-                  child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 300),
-                    transitionBuilder: (Widget child, Animation<double> animation) {
-                      return ScaleTransition(scale: animation, child: child);
-                    },
-                    child: Text(
-                      _showGo ? 'MULAI!' : '$_countdown',
-                      key: ValueKey<String>(_showGo ? 'GO' : '$_countdown'),
-                      style: TextStyle(
-                        fontSize: _showGo ? 80 : 120,
-                        fontWeight: FontWeight.w900,
-                        color: _showGo ? Colors.greenAccent : Colors.white,
-                        shadows: const [
-                          Shadow(
-                            color: Colors.black,
-                            offset: Offset(4, 4),
-                            blurRadius: 10,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            CountdownOverlayWidget(countdown: _countdown, showGo: _showGo),
         ],
       ),
     );

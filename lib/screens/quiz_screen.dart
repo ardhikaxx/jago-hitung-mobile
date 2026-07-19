@@ -19,6 +19,7 @@ import '../widgets/game_3d_button.dart';
 import '../widgets/game_background.dart';
 import '../widgets/combo_overlay.dart';
 import '../widgets/screen_shake_widget.dart';
+import '../widgets/countdown_overlay_widget.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -490,35 +491,7 @@ class _QuizScreenState extends State<QuizScreen>
             ),
             
           if (_isCountingDown)
-            Positioned.fill(
-              child: Container(
-                color: Colors.black.withValues(alpha: 0.7),
-                child: Center(
-                  child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 300),
-                    transitionBuilder: (Widget child, Animation<double> animation) {
-                      return ScaleTransition(scale: animation, child: child);
-                    },
-                    child: Text(
-                      _showGo ? 'MULAI!' : '$_countdown',
-                      key: ValueKey<String>(_showGo ? 'GO' : '$_countdown'),
-                      style: TextStyle(
-                        fontSize: _showGo ? 80 : 120,
-                        fontWeight: FontWeight.w900,
-                        color: _showGo ? Colors.greenAccent : Colors.white,
-                        shadows: const [
-                          Shadow(
-                            color: Colors.black,
-                            offset: Offset(4, 4),
-                            blurRadius: 10,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            CountdownOverlayWidget(countdown: _countdown, showGo: _showGo),
         ],
       ),
     );

@@ -14,6 +14,7 @@ import 'topic_selection_screen.dart';
 import 'leaderboard_page.dart';
 import 'quiz_screen.dart';
 import 'duel_screen.dart';
+import 'time_bomb_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../services/sound_service.dart';
 import '../widgets/game_3d_button.dart';
@@ -494,6 +495,66 @@ class _KelasPage extends StatelessWidget {
     }
   }
 
+  Future<void> _startTimeBombMode(BuildContext context, UserProgress? progress) async {
+    if (progress == null) return;
+    
+    // Check if user has enough XP (e.g. >= 500 which means Level 2)
+    if (progress.totalXP < 500 && progress.kelasAktif == 1) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Selesaikan topik di Kelas 1 hingga mencapai 500 XP untuk membuka Bom Waktu!'),
+          backgroundColor: AppColors.warning,
+        ),
+      );
+      return;
+    }
+    
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (_) => const Center(child: CircularProgressIndicator()),
+    );
+    
+    try {
+      List<Question> allQuestions = [];
+      List<TopicProgress> passedTopicProgresses = progress.topikProgress.values.where((p) => p.lulus).toList();
+      passedTopicProgresses.shuffle();
+      
+      final topicsToLoad = passedTopicProgresses.take(10).toList();
+      for (var tp in topicsToLoad) {
+        final topicObj = await DataService.instance.getTopic(tp.topikId);
+        allQuestions.addAll(topicObj.soal);
+      }
+      
+      allQuestions.shuffle();
+      final selectedQuestions = allQuestions.take(50).toList(); // Up to 50 questions
+      
+      if (context.mounted) Navigator.pop(context);
+      
+      if (selectedQuestions.isEmpty) {
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Tidak ada soal yang tersedia!'), backgroundColor: AppColors.warning),
+          );
+        }
+        return;
+      }
+      
+      if (context.mounted) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => TimeBombScreen(
+              questions: selectedQuestions,
+            ),
+          ),
+        );
+      }
+    } catch (e) {
+      if (context.mounted) Navigator.pop(context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final nama = progress?.nama ?? user.displayName ?? 'Siswa';
@@ -694,6 +755,48 @@ class _KelasPage extends StatelessWidget {
                     ),
                   ],
                 ),
+                const SizedBox(height: 12),
+                SizedBox(
+                  width: double.infinity,
+                  child: Game3DButton(
+                    onPressed: () => _startTimeBombMode(context, progress),
+                    color: Colors.purple, 
+                    shadowColor: const Color(0xFF6A1B9A),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text("💣", style: TextStyle(fontSize: 28)),
+                          const SizedBox(width: 8),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Text(
+                                'Bom Waktu',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                              ),
+                              Text(
+                                'Tantangan Kecepatan',
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16), // add space before PILIH KELAS
                 Stack(
                   key: kelasKey,
                   children: [

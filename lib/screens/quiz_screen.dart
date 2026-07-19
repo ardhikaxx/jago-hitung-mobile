@@ -71,7 +71,6 @@ class _QuizScreenState extends State<QuizScreen>
   bool _isCountingDown = true;
   int _countdown = 3;
   bool _showGo = false;
-  bool get _isMisteri => widget.topic.id == 'misteri';
 
   User? get user => AuthService.instance.currentUser;
   Question get _currentQuestion => _questions[_currentIndex];

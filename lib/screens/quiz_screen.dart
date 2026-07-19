@@ -45,6 +45,7 @@ class _QuizScreenState extends State<QuizScreen>
   bool _answered = false;
   bool _showHint = false;
   int _hintIndex = 0;
+  bool _isProcessing = false;
   late List<Question> _questions;
 
   // Timer Mode Kilat
@@ -247,7 +248,8 @@ class _QuizScreenState extends State<QuizScreen>
     _feedbackController.forward();
   }
 
-  void _nextQuestion() {
+  Future<void> _nextQuestion() async {
+    if (_isProcessing) return;
     if (_currentIndex < _questions.length - 1) {
       setState(() {
         _currentIndex++;
@@ -263,7 +265,7 @@ class _QuizScreenState extends State<QuizScreen>
       _resetTimer();
     } else {
       _questionTimer?.cancel();
-      _finishQuiz();
+      await _finishQuiz();
     }
   }
 
@@ -279,93 +281,115 @@ class _QuizScreenState extends State<QuizScreen>
   }
 
   Future<void> _finishQuiz() async {
-    final jumlahSoal = _questions.length;
-    final baseSkor = (_benarCount / jumlahSoal * 100).round();
-    final bonusCombo = _maxCombo >= 3 ? (_maxCombo * 5) : 0;
-    final skor = baseSkor + bonusCombo;
-    final lulus = baseSkor >= AppConstants.skorLulusMinimum;
+    if (_isProcessing) return;
+    setState(() => _isProcessing = true);
 
-    final oldProgress = await FirestoreService.instance.getUserProgress(user!.uid);
-    final oldTotalXP = oldProgress?.totalXP ?? 0;
-    final oldLevel = (oldTotalXP ~/ 500) + 1;
-    
-    final oldTopikSkor = oldProgress?.getTopikProgress(widget.topic.id, widget.kelas)?.skor ?? 0;
-    // Score only increases XP if the new score is higher.
-    final finalSkor = skor > oldTopikSkor ? skor : oldTopikSkor;
-    final newTotalXP = oldTotalXP - oldTopikSkor + finalSkor;
-    final newLevel = (newTotalXP ~/ 500) + 1;
-    
-    final isLevelUp = newLevel > oldLevel;
+    try {
+      final jumlahSoal = _questions.length;
+      final baseSkor = (_benarCount / jumlahSoal * 100).round();
+      final bonusCombo = _maxCombo >= 3 ? (_maxCombo * 5) : 0;
+      final skor = baseSkor + bonusCombo;
+      final lulus = baseSkor >= AppConstants.skorLulusMinimum;
 
-    final progress = TopicProgress(
-      topikId: widget.topic.id,
-      skor: finalSkor,
-      jumlahBenar: _benarCount,
-      jumlahSoal: jumlahSoal,
-      lulus: lulus,
-      lastAttempt: DateTime.now(),
-    );
+      final oldProgress = await FirestoreService.instance.getUserProgress(user!.uid);
+      final oldTotalXP = oldProgress?.totalXP ?? 0;
+      final oldLevel = (oldTotalXP ~/ 500) + 1;
+      
+      final oldTopikSkor = oldProgress?.getTopikProgress(widget.topic.id, widget.kelas)?.skor ?? 0;
+      final finalSkor = skor > oldTopikSkor ? skor : oldTopikSkor;
+      final newTotalXP = oldTotalXP - oldTopikSkor + finalSkor;
+      final newLevel = (newTotalXP ~/ 500) + 1;
+      
+      final isLevelUp = newLevel > oldLevel;
 
-    int earnedCoins = skor ~/ 10;
-    if (_isKilat) {
-      earnedCoins *= 5;
-    }
-    
-    if (widget.quizMode == 'misteri') {
-      earnedCoins *= 2;
-    }
-    
-    if (isLevelUp) {
-      earnedCoins += 100; // Bonus Koin Naik Level
-    }
-
-    if (oldProgress != null) {
-      // The quest requires 10 consecutive correct answers, so we store the max combo achieved.
-      // But actually, we just need to know if they ever reached 10.
-      oldProgress.checkAndResetDailyQuests();
-      int currentCombo = oldProgress.dailyQuests['combo_count'] ?? 0;
-      if (_maxCombo > currentCombo) {
-        oldProgress.dailyQuests['combo_count'] = _maxCombo;
-      }
-      if (widget.quizMode == 'misteri') {
-        oldProgress.updateQuestProgress('misteri_count', 1);
-      }
-      await FirestoreService.instance.saveDailyQuests(user!.uid, oldProgress.dailyQuests);
-    }
-
-    await FirestoreService.instance.saveTopikProgress(
-      user!.uid,
-      widget.kelas,
-      widget.topic.id,
-      progress,
-      coinReward: earnedCoins,
-    );
-
-    if (mounted) {
-      Navigator.pushReplacement(
-        context,
-        PageRouteBuilder(
-          pageBuilder: (_, a, _) => ResultScreen(
-            topicName: widget.topic.topik,
-            topikId: widget.topic.id,
-            kelas: widget.kelas,
-            skor: finalSkor,
-            benar: _benarCount,
-            jumlahSoal: jumlahSoal,
-            lulus: lulus,
-            results: _results,
-            questions: _questions,
-            userAnswers: _userAnswers,
-            isLevelUp: isLevelUp,
-            newLevel: newLevel,
-            oldLevel: oldLevel,
-          ),
-          transitionsBuilder: (_, a, anim, child) => FadeTransition(
-            opacity: a,
-            child: child,
-          ),
-        ),
+      final progress = TopicProgress(
+        topikId: widget.topic.id,
+        skor: finalSkor,
+        jumlahBenar: _benarCount,
+        jumlahSoal: jumlahSoal,
+        lulus: lulus,
+        lastAttempt: DateTime.now(),
       );
+
+      int earnedCoins = skor ~/ 10;
+      if (_isKilat) {
+        earnedCoins *= 5;
+      }
+      
+      if (widget.quizMode == 'misteri') {
+        earnedCoins *= 2;
+      }
+      
+      if (isLevelUp) {
+        earnedCoins += 100;
+      }
+
+      if (oldProgress != null) {
+        oldProgress.checkAndResetDailyQuests();
+        int currentCombo = oldProgress.dailyQuests['combo_count'] ?? 0;
+        if (_maxCombo > currentCombo) {
+          oldProgress.dailyQuests['combo_count'] = _maxCombo;
+        }
+        if (widget.quizMode == 'misteri') {
+          oldProgress.updateQuestProgress('misteri_count', 1);
+        }
+        await FirestoreService.instance.saveDailyQuests(user!.uid, oldProgress.dailyQuests);
+      }
+
+      await FirestoreService.instance.saveTopikProgress(
+        user!.uid,
+        widget.kelas,
+        widget.topic.id,
+        progress,
+        coinReward: earnedCoins,
+      );
+
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (_, a, _) => ResultScreen(
+              topicName: widget.topic.topik,
+              topikId: widget.topic.id,
+              kelas: widget.kelas,
+              skor: finalSkor,
+              benar: _benarCount,
+              jumlahSoal: jumlahSoal,
+              lulus: lulus,
+              results: _results,
+              questions: _questions,
+              userAnswers: _userAnswers,
+              isLevelUp: isLevelUp,
+              newLevel: newLevel,
+              oldLevel: oldLevel,
+            ),
+            transitionsBuilder: (_, a, anim, child) => FadeTransition(
+              opacity: a,
+              child: child,
+            ),
+          ),
+        );
+      }
+    } catch (e) {
+      setState(() => _isProcessing = false);
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Row(
+              children: [
+                const Icon(Icons.error_outline, color: Colors.white, size: 18),
+                const SizedBox(width: 8),
+                Expanded(child: Text('Gagal menyimpan progress: ${e.toString()}')),
+              ],
+            ),
+            backgroundColor: AppColors.danger,
+            behavior: SnackBarBehavior.floating,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            margin: const EdgeInsets.all(16),
+            duration: const Duration(seconds: 4),
+          ),
+        );
+      }
     }
   }
 
@@ -1245,22 +1269,26 @@ class _QuizScreenState extends State<QuizScreen>
       padding: EdgeInsets.fromLTRB(
           16, 12, 16, MediaQuery.of(context).padding.bottom + 12),
       child: GestureDetector(
-        onTap: () {
-          SoundService.instance.playClick();
-          if (_answered) {
-            _nextQuestion();
-          } else {
-            _checkAnswer();
-          }
-        },
+        onTap: _isProcessing
+            ? null
+            : () {
+                SoundService.instance.playClick();
+                if (_answered) {
+                  _nextQuestion();
+                } else {
+                  _checkAnswer();
+                }
+              },
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           height: 54,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: _answered
-                  ? [const Color(0xFF22C55E), const Color(0xFF16A34A)]
-                  : [color, Color.lerp(color, Colors.black, 0.15)!],
+              colors: _isProcessing
+                  ? [Colors.grey, Colors.grey.shade600]
+                  : _answered
+                      ? [const Color(0xFF22C55E), const Color(0xFF16A34A)]
+                      : [color, Color.lerp(color, Colors.black, 0.15)!],
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
             ),
@@ -1274,15 +1302,24 @@ class _QuizScreenState extends State<QuizScreen>
             ],
           ),
           child: Center(
-            child: Text(
-              label,
-              style: const TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-                letterSpacing: 0.5,
-              ),
-            ),
+            child: _isProcessing
+                ? const SizedBox(
+                    width: 24,
+                    height: 24,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 3,
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                    ),
+                  )
+                : Text(
+                    label,
+                    style: const TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
           ),
         ),
       ),

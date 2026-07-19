@@ -15,7 +15,7 @@ service cloud.firestore {
       // User can update their own document
       allow update: if request.auth != null && request.auth.uid == userId
         && request.resource.data.diff(resource.data).affectedKeys()
-            .hasOnly(['topikProgress', 'kelasAktif', 'profileImage', 'achievements', 'koin', 'purchasedAvatars']);
+            .hasOnly(['topikProgress', 'kelasAktif', 'profileImage', 'achievements', 'koin', 'purchasedAvatars', 'dailyQuests', 'lastLoginDate', 'currentStreak', 'streakClaimedToday', 'lastSpinDate', 'hasSeenTutorial']);
       
       // No deletion allowed
       allow delete: if false;

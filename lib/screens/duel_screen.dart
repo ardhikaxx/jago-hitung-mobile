@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import '../models/question_model.dart';
 import '../services/sound_service.dart';
+import '../services/auth_service.dart';
+import '../services/firestore_service.dart';
 import '../utils/constants.dart';
 
 class DuelScreen extends StatefulWidget {
@@ -138,6 +140,8 @@ class _DuelScreenState extends State<DuelScreen> {
       winnerColor = AppColors.secondary;
     }
 
+    _updateDuelQuest();
+
     showDialog(
       context: context,
       barrierDismissible: false,
@@ -185,6 +189,16 @@ class _DuelScreenState extends State<DuelScreen> {
         ],
       ),
     );
+  }
+
+  Future<void> _updateDuelQuest() async {
+    final uid = AuthService.instance.currentUser?.uid;
+    if (uid == null) return;
+    final progress = await FirestoreService.instance.getUserProgress(uid);
+    if (progress != null) {
+      progress.updateQuestProgress('duel_count', 1);
+      await FirestoreService.instance.saveDailyQuests(uid, progress.dailyQuests);
+    }
   }
 
   Widget _buildAnimatedText(String text, Color color, {double fontSize = 32}) {

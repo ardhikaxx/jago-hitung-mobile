@@ -17,6 +17,7 @@ import 'duel_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../services/sound_service.dart';
 import '../widgets/game_3d_button.dart';
+import '../widgets/daily_quest_dialog.dart';
 import '../widgets/game_background.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -361,6 +362,30 @@ class _KelasPage extends StatelessWidget {
                                   ],
                                 ),
                               ],
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              if (progress != null) {
+                                showDialog(
+                                  context: context,
+                                  builder: (_) => DailyQuestDialog(progress: progress!),
+                                );
+                              }
+                            },
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              margin: const EdgeInsets.only(right: 8),
+                              decoration: BoxDecoration(
+                                color: Colors.amber.withValues(alpha: 0.2),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: const Icon(
+                                Icons.assignment_rounded,
+                                color: Colors.amber,
+                                size: 22,
+                              ),
                             ),
                           ),
                           GestureDetector(

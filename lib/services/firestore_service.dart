@@ -37,6 +37,10 @@ class FirestoreService {
     await _userDoc(uid).update({'kelasAktif': kelas});
   }
 
+  Future<void> saveDailyQuests(String uid, Map<String, dynamic> dailyQuests) async {
+    await _userDoc(uid).update({'dailyQuests': dailyQuests});
+  }
+
   Future<void> initUserProgress(String uid, String nama, String email) async {
     final doc = await _userDoc(uid).get();
     if (!doc.exists) {

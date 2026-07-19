@@ -9,6 +9,7 @@ class UserProgress {
   final List<String> achievements;
   final int koin;
   final List<String> purchasedAvatars;
+  final Map<String, dynamic> dailyQuests;
 
   UserProgress({
     required this.uid,
@@ -21,10 +22,12 @@ class UserProgress {
     List<String>? achievements,
     this.koin = 0,
     List<String>? purchasedAvatars,
+    Map<String, dynamic>? dailyQuests,
   })  : topikProgress = topikProgress ?? {},
         createdAt = createdAt ?? DateTime.now(),
         achievements = achievements ?? [],
-        purchasedAvatars = purchasedAvatars ?? [];
+        purchasedAvatars = purchasedAvatars ?? [],
+        dailyQuests = dailyQuests ?? {};
 
   int get totalKoin {
     int total = 0;
@@ -46,6 +49,7 @@ class UserProgress {
       'achievements': achievements,
       'koin': koin,
       'purchasedAvatars': purchasedAvatars,
+      'dailyQuests': dailyQuests,
     };
   }
 
@@ -101,6 +105,9 @@ class UserProgress {
       purchasedAvatars: map['purchasedAvatars'] != null
           ? List<String>.from(map['purchasedAvatars'])
           : [],
+      dailyQuests: map['dailyQuests'] != null
+          ? Map<String, dynamic>.from(map['dailyQuests'])
+          : {},
     );
   }
 
@@ -131,6 +138,27 @@ class UserProgress {
 
   int get currentLevel {
     return (totalXP ~/ 500) + 1;
+  }
+
+  void checkAndResetDailyQuests() {
+    final today = "${DateTime.now().year}-${DateTime.now().month.toString().padLeft(2, '0')}-${DateTime.now().day.toString().padLeft(2, '0')}";
+    if (dailyQuests['date'] != today) {
+      dailyQuests.clear();
+      dailyQuests['date'] = today;
+      dailyQuests['misteri_count'] = 0;
+      dailyQuests['combo_count'] = 0;
+      dailyQuests['duel_count'] = 0;
+      dailyQuests['misteri_claimed'] = false;
+      dailyQuests['combo_claimed'] = false;
+      dailyQuests['duel_claimed'] = false;
+      dailyQuests['chest_claimed'] = false;
+    }
+  }
+
+  void updateQuestProgress(String questKey, int amount) {
+    checkAndResetDailyQuests();
+    int current = dailyQuests[questKey] ?? 0;
+    dailyQuests[questKey] = current + amount;
   }
 }
 

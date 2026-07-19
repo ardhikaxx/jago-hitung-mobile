@@ -275,6 +275,20 @@ class _QuizScreenState extends State<QuizScreen>
       earnedCoins += 100; // Bonus Koin Naik Level
     }
 
+    if (oldProgress != null) {
+      // The quest requires 10 consecutive correct answers, so we store the max combo achieved.
+      // But actually, we just need to know if they ever reached 10.
+      oldProgress.checkAndResetDailyQuests();
+      int currentCombo = oldProgress.dailyQuests['combo_count'] ?? 0;
+      if (_maxCombo > currentCombo) {
+        oldProgress.dailyQuests['combo_count'] = _maxCombo;
+      }
+      if (widget.quizMode == 'misteri') {
+        oldProgress.updateQuestProgress('misteri_count', 1);
+      }
+      await FirestoreService.instance.saveDailyQuests(user!.uid, oldProgress.dailyQuests);
+    }
+
     await FirestoreService.instance.saveTopikProgress(
       user!.uid,
       widget.kelas,

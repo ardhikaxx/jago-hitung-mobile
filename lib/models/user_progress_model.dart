@@ -10,6 +10,9 @@ class UserProgress {
   final int koin;
   final List<String> purchasedAvatars;
   final Map<String, dynamic> dailyQuests;
+  final String lastLoginDate;
+  final int currentStreak;
+  final bool streakClaimedToday;
 
   UserProgress({
     required this.uid,
@@ -23,6 +26,9 @@ class UserProgress {
     this.koin = 0,
     List<String>? purchasedAvatars,
     Map<String, dynamic>? dailyQuests,
+    this.lastLoginDate = '',
+    this.currentStreak = 0,
+    this.streakClaimedToday = false,
   })  : topikProgress = topikProgress ?? {},
         createdAt = createdAt ?? DateTime.now(),
         achievements = achievements ?? [],
@@ -50,6 +56,9 @@ class UserProgress {
       'koin': koin,
       'purchasedAvatars': purchasedAvatars,
       'dailyQuests': dailyQuests,
+      'lastLoginDate': lastLoginDate,
+      'currentStreak': currentStreak,
+      'streakClaimedToday': streakClaimedToday,
     };
   }
 
@@ -108,6 +117,9 @@ class UserProgress {
       dailyQuests: map['dailyQuests'] != null
           ? Map<String, dynamic>.from(map['dailyQuests'])
           : {},
+      lastLoginDate: map['lastLoginDate'] ?? '',
+      currentStreak: map['currentStreak'] ?? 0,
+      streakClaimedToday: map['streakClaimedToday'] ?? false,
     );
   }
 

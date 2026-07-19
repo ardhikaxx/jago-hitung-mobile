@@ -80,6 +80,14 @@ class FirestoreService {
     });
   }
 
+  Future<void> updateDailyStreak(String uid, String lastLoginDate, int currentStreak, bool streakClaimedToday) async {
+    await _userDoc(uid).update({
+      'lastLoginDate': lastLoginDate,
+      'currentStreak': currentStreak,
+      'streakClaimedToday': streakClaimedToday,
+    });
+  }
+
   Future<List<UserProgress>> getLeaderboard() async {
     try {
       final snapshot = await _firestore.collection('users').get();

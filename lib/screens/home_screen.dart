@@ -19,6 +19,7 @@ import '../services/sound_service.dart';
 import '../widgets/game_3d_button.dart';
 import '../widgets/daily_quest_dialog.dart';
 import '../widgets/game_background.dart';
+import '../widgets/daily_streak_dialog.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,6 +30,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
+  bool _streakChecked = false;
   User? get user => AuthService.instance.currentUser;
 
   @override
@@ -45,6 +47,74 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
+  void _checkAndShowStreak(UserProgress progress) async {
+    final now = DateTime.now();
+    final todayStr = "${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}";
+    
+    if (progress.lastLoginDate == todayStr && progress.streakClaimedToday) {
+      return;
+    }
+    
+    int newStreak = progress.currentStreak;
+    if (progress.lastLoginDate.isNotEmpty && progress.lastLoginDate != todayStr) {
+      final lastLogin = DateTime.parse(progress.lastLoginDate);
+      final difference = DateTime(now.year, now.month, now.day).difference(DateTime(lastLogin.year, lastLogin.month, lastLogin.day)).inDays;
+      
+      if (difference == 1) {
+        newStreak++;
+      } else {
+        newStreak = 1;
+      }
+    } else if (progress.lastLoginDate.isEmpty) {
+      newStreak = 1;
+    }
+    
+    if (newStreak > 7) {
+       newStreak = 1;
+    }
+    
+    await FirestoreService.instance.updateDailyStreak(
+      user!.uid,
+      todayStr,
+      newStreak,
+      false,
+    );
+    
+    if (mounted && !progress.streakClaimedToday) {
+       showDialog(
+         context: context,
+         barrierDismissible: false,
+         builder: (_) => DailyStreakDialog(
+            streakDay: newStreak,
+            onClaim: () {
+               int reward = _getStreakReward(newStreak);
+               FirestoreService.instance.updateKoin(user!.uid, reward);
+               FirestoreService.instance.updateDailyStreak(
+                 user!.uid,
+                 todayStr,
+                 newStreak,
+                 true,
+               );
+               Navigator.pop(context);
+            }
+         )
+       );
+    }
+  }
+
+  int _getStreakReward(int day) {
+     switch(day) {
+       case 1: return 50;
+       case 2: return 100;
+       case 3: return 150;
+       case 4: return 200;
+       case 5: return 250;
+       case 6: return 300;
+       case 7: return 1000;
+       default: return 50;
+     }
+  }
+
   @override
   Widget build(BuildContext context) {
     if (user == null) return const LoginScreen();
@@ -54,6 +124,12 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, snapshot) {
         final progress = snapshot.data;
         if (progress != null && user != null) {
+          if (!_streakChecked) {
+             _streakChecked = true;
+             WidgetsBinding.instance.addPostFrameCallback((_) {
+               _checkAndShowStreak(progress);
+             });
+          }
           AchievementService.instance.syncAchievements(progress, user!.uid);
           if (progress.koin == 0 && progress.totalKoin > 0 && progress.purchasedAvatars.isEmpty) {
             FirestoreService.instance.updateKoin(user!.uid, progress.totalKoin);

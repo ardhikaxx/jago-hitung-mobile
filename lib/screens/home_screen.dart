@@ -388,82 +388,78 @@ class _KelasPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-                Game3DButton(
-                  onPressed: () => _startDailyChallenge(context, progress),
-                  color: AppColors.secondary,
-                  shadowColor: Color.lerp(AppColors.secondary, Colors.black, 0.4)!,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.stars_rounded, color: Colors.white, size: 36),
-                        const SizedBox(width: 12),
-                        Expanded(
+                Row(
+                  children: [
+                    Expanded(
+                      child: Game3DButton(
+                        onPressed: () => _startDailyChallenge(context, progress),
+                        color: AppColors.secondary,
+                        shadowColor: Color.lerp(AppColors.secondary, Colors.black, 0.4)!,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: const [
+                              Icon(Icons.stars_rounded, color: Colors.white, size: 36),
+                              SizedBox(height: 8),
                               Text(
-                                'Kuis Misteri Hari Ini',
+                                'Kuis Misteri',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w900,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
                               Text(
-                                'Mainkan untuk dapat 2x Koin!',
+                                'Dapat 2x Koin!',
                                 style: TextStyle(
                                   color: Colors.white70,
                                   fontSize: 12,
                                   fontWeight: FontWeight.bold,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
                             ],
                           ),
                         ),
-                        const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white),
-                      ],
+                      ),
                     ),
-                  ),
-                ),
-                const SizedBox(height: 12),
-                Game3DButton(
-                  onPressed: () => _startDuelMode(context, progress),
-                  color: const Color(0xFFFF6B6B), // Red/Pinkish for duel
-                  shadowColor: const Color(0xFFB93333),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.sports_esports_rounded, color: Colors.white, size: 36),
-                        const SizedBox(width: 12),
-                        Expanded(
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Game3DButton(
+                        onPressed: () => _startDuelMode(context, progress),
+                        color: const Color(0xFFFF6B6B), // Red/Pinkish for duel
+                        shadowColor: const Color(0xFFB93333),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: const [
+                              Icon(Icons.sports_esports_rounded, color: Colors.white, size: 36),
+                              SizedBox(height: 8),
                               Text(
-                                'Duel 1 Lawan 1',
+                                'Duel 1v1',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w900,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
                               Text(
-                                'Main bareng teman di 1 HP!',
+                                'Main Bareng!',
                                 style: TextStyle(
                                   color: Colors.white70,
                                   fontSize: 12,
                                   fontWeight: FontWeight.bold,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
                             ],
                           ),
                         ),
-                        const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white),
-                      ],
+                      ),
                     ),
-                  ),
+                  ],
                 ),
                 const SizedBox(height: 16),
                 Stack(

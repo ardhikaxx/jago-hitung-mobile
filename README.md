@@ -2,7 +2,16 @@
 
 **Jago Hitung** adalah aplikasi game edukasi matematika interaktif yang dirancang khusus untuk anak Sekolah Dasar (SD) Kelas 1 hingga 6. Dibangun dengan framework **Flutter** dan **Firebase**, aplikasi ini menggabungkan pembelajaran matematika dengan elemen *gamifikasi* (bermain sambil belajar) agar anak-anak tidak mudah bosan dan terus termotivasi untuk belajar.
 
-![Preview Aplikasi](Screenshot_1784438658.png)
+## 📸 Cuplikan Layar (Screenshots)
+
+<p align="center">
+  <img src="Screenshot_1784438566.png" width="30%" />
+  <img src="Screenshot_1784438658.png" width="30%" />
+  <img src="Screenshot_1784438688.png" width="30%" />
+  <br>
+  <img src="Screenshot_1784438693.png" width="30%" />
+  <img src="Screenshot_1784438698.png" width="30%" />
+</p>
 
 ---
 

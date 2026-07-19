@@ -68,14 +68,13 @@ class _QuizScreenState extends State<QuizScreen>
   final GlobalKey<ScreenShakeWidgetState> _shakeKey = GlobalKey<ScreenShakeWidgetState>();
   late ConfettiController _confettiController;
 
-  bool _isCountingDown = false;
+  bool _isCountingDown = true;
   int _countdown = 3;
   bool _showGo = false;
   bool get _isMisteri => widget.topic.id == 'misteri';
 
   User? get user => AuthService.instance.currentUser;
   Question get _currentQuestion => _questions[_currentIndex];
-
 
   @override
   void initState() {
@@ -128,12 +127,9 @@ class _QuizScreenState extends State<QuizScreen>
 
     _cardController.forward();
     SoundService.instance.init();
-    if (_isMisteri) {
-      _isCountingDown = true;
-      _startCountdown();
-    } else {
-      if (_isKilat) _startTimer();
-    }
+    
+    // Selalu hitung mundur di awal (untuk semua mode)
+    _startCountdown();
   }
 
   void _startCountdown() {

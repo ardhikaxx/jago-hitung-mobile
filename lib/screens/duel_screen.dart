@@ -33,10 +33,38 @@ class _DuelScreenState extends State<DuelScreen> {
   late Question _currentQuestion;
   List<String> _shuffledChoices = [];
 
+  bool _isCountingDown = true;
+  int _countdown = 3;
+  bool _showGo = false;
+
   @override
   void initState() {
     super.initState();
     _loadQuestion();
+    _startCountdown();
+  }
+
+  void _startCountdown() {
+    if (_countdown > 0) {
+      Future.delayed(const Duration(seconds: 1), () {
+        if (!mounted) return;
+        setState(() {
+          _countdown--;
+        });
+        _startCountdown();
+      });
+    } else {
+      if (!mounted) return;
+      setState(() {
+        _showGo = true;
+      });
+      Future.delayed(const Duration(milliseconds: 800), () {
+        if (!mounted) return;
+        setState(() {
+          _isCountingDown = false;
+        });
+      });
+    }
   }
 
   void _loadQuestion() {
@@ -75,6 +103,7 @@ class _DuelScreenState extends State<DuelScreen> {
   }
 
   void _handleAnswer(int player, String answer) {
+    if (_isCountingDown) return;
     if (_isAnswered) return;
     if (player == 1 && _p1Frozen) return;
     if (player == 2 && _p2Frozen) return;
@@ -341,28 +370,64 @@ class _DuelScreenState extends State<DuelScreen> {
 
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Column(
+      body: Stack(
         children: [
-          // Player 2 (Top - Rotated)
-          Expanded(
-            child: _buildPlayerArea(2, const Color(0xFFFF6B6B), true),
+          Column(
+            children: [
+              // Player 2 (Top - Rotated)
+              Expanded(
+                child: _buildPlayerArea(2, const Color(0xFFFF6B6B), true),
+              ),
+              // Divider
+              Container(
+                height: 10,
+                color: const Color(0xFF1D2030),
+                child: Center(
+                  child: Container(
+                    width: 60,
+                    height: 4,
+                    color: Colors.white54,
+                  ),
+                ),
+              ),
+              // Player 1 (Bottom - Normal)
+              Expanded(
+                child: _buildPlayerArea(1, AppColors.primary, false),
+              ),
+            ],
           ),
-          // Divider
-          Container(
-            height: 10,
-            color: const Color(0xFF1D2030),
-            child: Center(
+
+          // Countdown Overlay
+          if (_isCountingDown)
+            Positioned.fill(
               child: Container(
-                width: 60,
-                height: 4,
-                color: Colors.white54,
+                color: Colors.black.withValues(alpha: 0.7),
+                child: Center(
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 300),
+                    transitionBuilder: (Widget child, Animation<double> animation) {
+                      return ScaleTransition(scale: animation, child: child);
+                    },
+                    child: Text(
+                      _showGo ? 'MULAI!' : '$_countdown',
+                      key: ValueKey<String>(_showGo ? 'GO' : '$_countdown'),
+                      style: TextStyle(
+                        fontSize: _showGo ? 80 : 120,
+                        fontWeight: FontWeight.w900,
+                        color: _showGo ? Colors.greenAccent : Colors.white,
+                        shadows: const [
+                          Shadow(
+                            color: Colors.black,
+                            offset: Offset(4, 4),
+                            blurRadius: 10,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
-          ),
-          // Player 1 (Bottom - Normal)
-          Expanded(
-            child: _buildPlayerArea(1, AppColors.primary, false),
-          ),
         ],
       ),
     );

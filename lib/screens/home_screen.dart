@@ -499,7 +499,7 @@ class _KelasPage extends StatelessWidget {
                 Stack(
                   children: [
                     Text(
-                      'PILIH LEVEL',
+                      'PILIH KELAS',
                       style: GoogleFonts.fredoka(
                         fontSize: 44,
                         fontWeight: FontWeight.w900,
@@ -510,7 +510,7 @@ class _KelasPage extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'PILIH LEVEL',
+                      'PILIH KELAS',
                       style: GoogleFonts.fredoka(
                         fontSize: 44,
                         fontWeight: FontWeight.w900,

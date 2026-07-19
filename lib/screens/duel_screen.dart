@@ -263,8 +263,10 @@ class _DuelScreenState extends State<DuelScreen> {
     
     Widget content = Container(
       color: color,
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
       child: SafeArea(
+        top: false,
+        bottom: true,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

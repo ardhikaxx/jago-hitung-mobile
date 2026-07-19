@@ -422,27 +422,33 @@ class _KelasPage extends StatelessWidget {
                         shadowColor: Color.lerp(AppColors.secondary, Colors.black, 0.4)!,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-                          child: Column(
-                            children: const [
-                              Icon(Icons.stars_rounded, color: Colors.white, size: 36),
-                              SizedBox(height: 8),
-                              Text(
-                                'Kuis Misteri',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w900,
+                          child: Row(
+                            children: [
+                              const Icon(Icons.stars_rounded, color: Colors.white, size: 32),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: const [
+                                    Text(
+                                      'Kuis Misteri',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w900,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Dapat 2x Koin!',
+                                      style: TextStyle(
+                                        color: Colors.white70,
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                textAlign: TextAlign.center,
-                              ),
-                              Text(
-                                'Dapat 2x Koin!',
-                                style: TextStyle(
-                                  color: Colors.white70,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                textAlign: TextAlign.center,
                               ),
                             ],
                           ),
@@ -457,27 +463,33 @@ class _KelasPage extends StatelessWidget {
                         shadowColor: const Color(0xFFB93333),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-                          child: Column(
-                            children: const [
-                              Icon(Icons.sports_esports_rounded, color: Colors.white, size: 36),
-                              SizedBox(height: 8),
-                              Text(
-                                'Duel 1v1',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w900,
+                          child: Row(
+                            children: [
+                              const Icon(Icons.sports_esports_rounded, color: Colors.white, size: 32),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: const [
+                                    Text(
+                                      'Duel 1v1',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w900,
+                                      ),
+                                    ),
+                                    Text(
+                                      'Main Bareng!',
+                                      style: TextStyle(
+                                        color: Colors.white70,
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                textAlign: TextAlign.center,
-                              ),
-                              Text(
-                                'Main Bareng!',
-                                style: TextStyle(
-                                  color: Colors.white70,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                textAlign: TextAlign.center,
                               ),
                             ],
                           ),

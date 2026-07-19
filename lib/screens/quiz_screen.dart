@@ -68,6 +68,11 @@ class _QuizScreenState extends State<QuizScreen>
   final GlobalKey<ScreenShakeWidgetState> _shakeKey = GlobalKey<ScreenShakeWidgetState>();
   late ConfettiController _confettiController;
 
+  bool _isCountingDown = false;
+  int _countdown = 3;
+  bool _showGo = false;
+  bool get _isMisteri => widget.topic.id == 'misteri';
+
   User? get user => AuthService.instance.currentUser;
   Question get _currentQuestion => _questions[_currentIndex];
 
@@ -123,7 +128,36 @@ class _QuizScreenState extends State<QuizScreen>
 
     _cardController.forward();
     SoundService.instance.init();
-    if (_isKilat) _startTimer();
+    if (_isMisteri) {
+      _isCountingDown = true;
+      _startCountdown();
+    } else {
+      if (_isKilat) _startTimer();
+    }
+  }
+
+  void _startCountdown() {
+    if (_countdown > 0) {
+      Future.delayed(const Duration(seconds: 1), () {
+        if (!mounted) return;
+        setState(() {
+          _countdown--;
+        });
+        _startCountdown();
+      });
+    } else {
+      if (!mounted) return;
+      setState(() {
+        _showGo = true;
+      });
+      Future.delayed(const Duration(milliseconds: 800), () {
+        if (!mounted) return;
+        setState(() {
+          _isCountingDown = false;
+        });
+        if (_isKilat) _startTimer();
+      });
+    }
   }
 
   void _startTimer() {
@@ -159,6 +193,7 @@ class _QuizScreenState extends State<QuizScreen>
   }
 
   void _checkAnswer({bool autoSubmit = false}) {
+    if (_isCountingDown) return;
     if (_answered) return;
 
     final jawabanUser = _currentQuestion.isMultipleChoice
@@ -339,6 +374,7 @@ class _QuizScreenState extends State<QuizScreen>
   }
 
   void _onNumpadTap(String value) {
+    if (_isCountingDown) return;
     if (_answered) return;
     setState(() {
       if (value == 'DEL') {
@@ -453,6 +489,37 @@ class _QuizScreenState extends State<QuizScreen>
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 100),
                     child: ComboOverlay(comboCount: _currentCombo),
+                  ),
+                ),
+              ),
+            ),
+            
+          if (_isCountingDown)
+            Positioned.fill(
+              child: Container(
+                color: Colors.black.withValues(alpha: 0.7),
+                child: Center(
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 300),
+                    transitionBuilder: (Widget child, Animation<double> animation) {
+                      return ScaleTransition(scale: animation, child: child);
+                    },
+                    child: Text(
+                      _showGo ? 'MULAI!' : '$_countdown',
+                      key: ValueKey<String>(_showGo ? 'GO' : '$_countdown'),
+                      style: TextStyle(
+                        fontSize: _showGo ? 80 : 120,
+                        fontWeight: FontWeight.w900,
+                        color: _showGo ? Colors.greenAccent : Colors.white,
+                        shadows: const [
+                          Shadow(
+                            color: Colors.black,
+                            offset: Offset(4, 4),
+                            blurRadius: 10,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),

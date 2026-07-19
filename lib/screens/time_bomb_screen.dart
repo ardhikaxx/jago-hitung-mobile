@@ -36,6 +36,10 @@ class _TimeBombScreenState extends State<TimeBombScreen> with TickerProviderStat
   bool _isRedFlash = false;
   bool _isGreenFlash = false;
 
+  bool _isCountingDown = true;
+  int _countdown = 3;
+  bool _showGo = false;
+
   @override
   void initState() {
     super.initState();
@@ -47,7 +51,31 @@ class _TimeBombScreenState extends State<TimeBombScreen> with TickerProviderStat
     _bombPulse = Tween<double>(begin: 1.0, end: 1.2).animate(_bombPulseController);
     
     _loadQuestion();
-    _startTimer();
+    _startCountdown();
+  }
+
+  void _startCountdown() {
+    if (_countdown > 0) {
+      Future.delayed(const Duration(seconds: 1), () {
+        if (!mounted) return;
+        setState(() {
+          _countdown--;
+        });
+        _startCountdown();
+      });
+    } else {
+      if (!mounted) return;
+      setState(() {
+        _showGo = true;
+      });
+      Future.delayed(const Duration(milliseconds: 800), () {
+        if (!mounted) return;
+        setState(() {
+          _isCountingDown = false;
+        });
+        _startTimer();
+      });
+    }
   }
   
   void _startTimer() {
@@ -84,6 +112,7 @@ class _TimeBombScreenState extends State<TimeBombScreen> with TickerProviderStat
   }
 
   void _checkAnswer(String answer) {
+    if (_isCountingDown) return;
     if (_answered) return;
     
     if (answer.isEmpty) {
@@ -353,6 +382,37 @@ class _TimeBombScreenState extends State<TimeBombScreen> with TickerProviderStat
               ),
             ),
           ),
+          
+          if (_isCountingDown)
+            Positioned.fill(
+              child: Container(
+                color: Colors.black.withValues(alpha: 0.7),
+                child: Center(
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 300),
+                    transitionBuilder: (Widget child, Animation<double> animation) {
+                      return ScaleTransition(scale: animation, child: child);
+                    },
+                    child: Text(
+                      _showGo ? 'MULAI!' : '$_countdown',
+                      key: ValueKey<String>(_showGo ? 'GO' : '$_countdown'),
+                      style: TextStyle(
+                        fontSize: _showGo ? 80 : 120,
+                        fontWeight: FontWeight.w900,
+                        color: _showGo ? Colors.greenAccent : Colors.white,
+                        shadows: const [
+                          Shadow(
+                            color: Colors.black,
+                            offset: Offset(4, 4),
+                            blurRadius: 10,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
         ],
       ),
     );

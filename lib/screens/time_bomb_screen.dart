@@ -144,7 +144,7 @@ class _TimeBombScreenState extends State<TimeBombScreen> with TickerProviderStat
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
         title: const Column(
           children: [
-            Text("💣", style: TextStyle(fontSize: 48)),
+            Icon(Icons.timer_off_rounded, size: 48, color: Colors.red),
             SizedBox(height: 8),
             Text("WAKTU HABIS!", style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
           ],
@@ -243,7 +243,7 @@ class _TimeBombScreenState extends State<TimeBombScreen> with TickerProviderStat
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Text("💣", style: TextStyle(fontSize: 28)),
+                          const Icon(Icons.timer_rounded, color: Colors.white, size: 28),
                           const SizedBox(width: 12),
                           Text(
                             "$_timeLeft",

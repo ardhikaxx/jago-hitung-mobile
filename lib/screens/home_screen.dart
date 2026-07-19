@@ -767,7 +767,7 @@ class _KelasPage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text("💣", style: TextStyle(fontSize: 28)),
+                          const Icon(Icons.timer_rounded, color: Colors.white, size: 28),
                           const SizedBox(width: 8),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,

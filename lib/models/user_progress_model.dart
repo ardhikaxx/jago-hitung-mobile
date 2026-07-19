@@ -11,6 +11,7 @@ class UserProgress {
   final List<String> purchasedAvatars;
   final Map<String, dynamic> dailyQuests;
   final String lastLoginDate;
+  final String lastSpinDate;
   final int currentStreak;
   final bool streakClaimedToday;
   final bool hasSeenTutorial;
@@ -28,6 +29,7 @@ class UserProgress {
     List<String>? purchasedAvatars,
     Map<String, dynamic>? dailyQuests,
     this.lastLoginDate = '',
+    this.lastSpinDate = '',
     this.currentStreak = 0,
     this.streakClaimedToday = false,
     this.hasSeenTutorial = false,
@@ -59,6 +61,7 @@ class UserProgress {
       'purchasedAvatars': purchasedAvatars,
       'dailyQuests': dailyQuests,
       'lastLoginDate': lastLoginDate,
+      'lastSpinDate': lastSpinDate,
       'currentStreak': currentStreak,
       'streakClaimedToday': streakClaimedToday,
       'hasSeenTutorial': hasSeenTutorial,
@@ -121,6 +124,7 @@ class UserProgress {
           ? Map<String, dynamic>.from(map['dailyQuests'])
           : {},
       lastLoginDate: map['lastLoginDate'] ?? '',
+      lastSpinDate: map['lastSpinDate'] ?? '',
       currentStreak: map['currentStreak'] ?? 0,
       streakClaimedToday: map['streakClaimedToday'] ?? false,
       hasSeenTutorial: map['hasSeenTutorial'] ?? false,

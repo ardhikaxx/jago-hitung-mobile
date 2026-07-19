@@ -93,6 +93,12 @@ class FirestoreService {
     });
   }
 
+  Future<void> updateLastSpinDate(String uid, String date) async {
+    await _userDoc(uid).update({
+      'lastSpinDate': date,
+    });
+  }
+
   Future<List<UserProgress>> getLeaderboard() async {
     try {
       final snapshot = await _firestore.collection('users').get();

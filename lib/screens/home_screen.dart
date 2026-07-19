@@ -21,6 +21,7 @@ import '../widgets/game_3d_button.dart';
 import '../widgets/daily_quest_dialog.dart';
 import '../widgets/game_background.dart';
 import '../widgets/daily_streak_dialog.dart';
+import '../widgets/daily_spin_dialog.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -62,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final todayStr = "${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}";
     
     if (progress.lastLoginDate == todayStr && progress.streakClaimedToday) {
+      _checkAndShowSpin(progress);
       return;
     }
     
@@ -106,9 +108,26 @@ class _HomeScreenState extends State<HomeScreen> {
                  true,
                );
                Navigator.pop(context);
+               _checkAndShowSpin(progress);
             }
          )
        );
+    } else {
+       _checkAndShowSpin(progress);
+    }
+  }
+
+  void _checkAndShowSpin(UserProgress progress) {
+    final todayStr = "${DateTime.now().year}-${DateTime.now().month.toString().padLeft(2, '0')}-${DateTime.now().day.toString().padLeft(2, '0')}";
+    if (progress.lastSpinDate != todayStr && mounted) {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (_) => DailySpinDialog(
+          progress: progress,
+          onSpinComplete: () {},
+        ),
+      );
     }
   }
 
